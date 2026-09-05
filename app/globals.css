@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-chalk text-steel-800 font-sans antialiased;
+    font-feature-settings: "palt";
+  }
+  ::selection {
+    @apply bg-vermilion text-chalk;
+  }
+}
+
+@layer components {
+  /* 縦書きアクセント（和モダン） */
+  .tate {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.3em;
+  }
+
+  /* セクション見出し: 朱の角印＋英字キッカー */
+  .kicker {
+    @apply flex items-center gap-2 text-[11px] tracking-widest2 uppercase text-vermilion font-sans font-bold;
+  }
+  .kicker::before {
+    content: "";
+    @apply inline-block h-2.5 w-2.5 bg-vermilion;
+  }
+
+  .section-title {
+    @apply font-display text-2xl leading-snug text-steel-900 md:text-3xl;
+  }
+
+  /* テーブル基本 */
+  .spec-table {
+    @apply w-full border-collapse text-sm leading-relaxed;
+  }
+  .spec-table th {
+    @apply bg-steel-800 px-3 py-3 text-left align-top font-display font-normal tracking-wider text-chalk;
+  }
+  .spec-table td {
+    @apply border-b border-chalk-line bg-chalk-card px-3 py-3 align-top;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-vermilion px-6 py-3 font-display tracking-wider text-chalk transition-colors hover:bg-vermilion-deep;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-steel-300 bg-chalk-card px-6 py-3 font-display tracking-wider text-steel-800 transition-colors hover:border-vermilion hover:text-vermilion;
+  }
+
+  .tag-na {
+    @apply text-steel-500;
+  }
+}
