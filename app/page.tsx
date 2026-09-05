@@ -107,10 +107,12 @@ export default function HomePage() {
               </p>
               <p className="mt-4 text-xs text-steel-500">
                 掲載:{" "}
-                {cat.companySlugs
-                  .map((s) => companies.find((c) => c.slug === s)?.name)
-                  .filter(Boolean)
-                  .join("・")}
+                {cat.companySlugs.length > 0
+                  ? cat.companySlugs
+                      .map((s) => companies.find((c) => c.slug === s)?.name)
+                      .filter(Boolean)
+                      .join("・")
+                  : "買取業者は該当なし（一括査定・価格比較サービスを掲載）"}
               </p>
               <span
                 aria-hidden="true"
