@@ -1,4 +1,4 @@
-export const SITE_URL = "https://pcsp-kaitori-deploy.pages.dev"; // 仮ドメイン。確定後に差し替え
+export const SITE_URL = "https://sell-device.com"; // 本番ドメイン（2026-09-05確定）
 export const SITE_NAME = "PC・スマホ買取ナビ";
 export const SITE_TAGLINE = "売る前の5分で読む、中立のPC・スマホ買取ナビ";
 export const CHECKED_DATE = "2026-09-05";
