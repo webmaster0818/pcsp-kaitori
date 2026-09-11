@@ -238,6 +238,34 @@ export default function HoujinSituationPage() {
           </ul>
         </section>
 
+        {/* 個別テーマの解説ページ */}
+        <section className="mt-14">
+          <h2 className="section-title mb-2">テーマ別の詳しい解説</h2>
+          <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">
+            このページは法人の端末処分の全体像をまとめたものです。つまずきやすい三つのテーマについては、確認事項と進め方を個別のページで詳しく整理しています。
+          </p>
+          <ul className="grid gap-3 text-sm md:grid-cols-3">
+            <li>
+              <Link href="/situation/houjin/data-shokyo-shomeisho/" className="block h-full border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">法人の端末処分とデータ消去証明書</span>
+                <span className="mt-1 block text-xs leading-loose text-steel-500">何のために求められるのか、記載項目、依頼前に確認したい質問、台帳との突き合わせ方</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/situation/houjin/lease-shisan-chui/" className="block h-full border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">リース品・資産計上した端末を手放すときの注意</span>
+                <span className="mt-1 block text-xs leading-loose text-steel-500">所有権での仕分け、残債の確認、固定資産台帳と社内決裁の順番</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/situation/houjin/jugyoin-tanmatsu-kaishu/" className="block h-full border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">従業員の業務端末を回収するときの進め方</span>
+                <span className="mt-1 block text-xs leading-loose text-steel-500">回収漏れ、私物混在の切り分け、MDM・組織アカウント解除の順番</span>
+              </Link>
+            </li>
+          </ul>
+        </section>
+
         {/* 個人との違い */}
         <section className="mt-14">
           <h2 className="section-title mb-2">法人の端末処分で個人と違う点</h2>
@@ -277,6 +305,11 @@ export default function HoujinSituationPage() {
               </div>
             ))}
           </div>
+          <p className="mt-4 max-w-3xl text-sm leading-loose text-steel-600">
+            証明書に記載されることが多い項目、依頼前に業者へ確認したい質問、受け取った証明書と資産台帳の突き合わせ方は、
+            <Link href="/situation/houjin/data-shokyo-shomeisho/" className="text-vermilion underline underline-offset-4">法人の端末処分とデータ消去証明書</Link>
+            のページで詳しく整理しています。
+          </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link href="/guide/data-shokyo/" className="btn-primary">端末ごとの初期化手順を見る</Link>
             <Link href="/compare/" className="btn-ghost">データ消去の扱いを比較表で見る</Link>
@@ -297,6 +330,11 @@ export default function HoujinSituationPage() {
           <p className="mt-3 text-xs text-steel-500">
             ※ 各管理サービスの操作手順は提供元の公式ドキュメントに従ってください。「探す」の個人向け解除手順は<Link href="/guide/activation-lock/" className="text-vermilion underline underline-offset-4">アクティベーションロックの解説ページ</Link>で整理しています。
           </p>
+          <p className="mt-4 max-w-3xl text-sm leading-loose text-steel-600">
+            従業員から端末を回収する場面では、回収・登録解除・初期化をどの順番で進めるかが要点になります。私物との切り分けや回収漏れへの対処を含めて、
+            <Link href="/situation/houjin/jugyoin-tanmatsu-kaishu/" className="text-vermilion underline underline-offset-4">従業員の業務端末を回収するときの進め方</Link>
+            にまとめています。
+          </p>
         </section>
 
         {/* リース・レンタル */}
@@ -310,6 +348,11 @@ export default function HoujinSituationPage() {
               </div>
             ))}
           </div>
+          <p className="mt-4 max-w-3xl text-sm leading-loose text-steel-600">
+            所有権での仕分け方、契約書のどこを見るか、資産計上された端末で経理と相談する項目は、
+            <Link href="/situation/houjin/lease-shisan-chui/" className="text-vermilion underline underline-offset-4">リース品・資産計上した端末を手放すときの注意</Link>
+            のページで整理しています。契約内容・会計方針により扱いが異なるため、判断はリース会社・経理部門への確認を前提にしてください。
+          </p>
         </section>
 
         {/* 流れ */}
@@ -385,6 +428,24 @@ export default function HoujinSituationPage() {
         <section className="mt-14">
           <h2 className="section-title mb-6">関連ページ</h2>
           <ul className="grid gap-3 text-sm md:grid-cols-2">
+            <li>
+              <Link href="/situation/houjin/data-shokyo-shomeisho/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">法人の端末処分とデータ消去証明書</span>
+                <span className="mt-1 block text-xs text-steel-500">何を求め、何を確認するか</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/situation/houjin/lease-shisan-chui/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">リース品・資産計上した端末を手放すときの注意</span>
+                <span className="mt-1 block text-xs text-steel-500">所有権・残債・社内手続き</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/situation/houjin/jugyoin-tanmatsu-kaishu/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">従業員の業務端末を回収するときの進め方</span>
+                <span className="mt-1 block text-xs text-steel-500">回収漏れ・私物混在・MDM解除</span>
+              </Link>
+            </li>
             <li>
               <Link href="/guide/data-shokyo/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">売る前のデータ消去ガイド</span>
