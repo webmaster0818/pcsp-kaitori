@@ -123,7 +123,7 @@ export const categories: Category[] = [
     name: "Windows PC・ノートPCの買取",
     short: "PC",
     lead: "ノートPC・デスクトップ・自作PC。データ消去の責任が最も重いカテゴリです。売る前の消去手順と、一括査定・価格比較型サービスの使い方を整理しました。",
-    companySlugs: [],
+    companySlugs: ["janpara", "pc-koubou", "rakuuru-sofmap", "takakuureru", "pcwrap", "pasokai"],
   },
   {
     slug: "tablet",
