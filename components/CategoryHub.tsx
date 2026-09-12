@@ -27,6 +27,13 @@ export interface HubProps {
   faqs: { q: string; a: string }[];
   /** 関連ガイドへの導線 */
   guides?: { href: string; label: string; desc: string }[];
+  /** 世代別・機種別ページへの導線（任意） */
+  models?: {
+    title: string;
+    lead: string;
+    note?: string;
+    items: { href: string; label: string; desc: string }[];
+  };
 }
 
 export default function CategoryHub({
@@ -38,6 +45,7 @@ export default function CategoryHub({
   cautions,
   faqs,
   guides = [],
+  models,
 }: HubProps) {
   const hubCompanies = cat.companySlugs.map((s) => getCompany(s));
   const otherCats = categories.filter((c) => c.slug !== cat.slug);
@@ -57,6 +65,28 @@ export default function CategoryHub({
           {h1}
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">{intro}</p>
+
+        {/* 世代別・機種別ページ（任意） */}
+        {models && models.items.length > 0 && (
+          <section className="mt-12">
+            <h2 className="section-title mb-2">{models.title}</h2>
+            <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">{models.lead}</p>
+            <ul className="grid gap-3 text-sm md:grid-cols-2">
+              {models.items.map((m) => (
+                <li key={m.href}>
+                  <Link
+                    href={m.href}
+                    className="block h-full border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion"
+                  >
+                    <span className="font-display text-steel-900">{m.label}</span>
+                    <span className="mt-1 block text-xs leading-relaxed text-steel-500">{m.desc}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            {models.note && <p className="mt-3 text-xs leading-loose text-steel-500">{models.note}</p>}
+          </section>
+        )}
 
         {/* 判断ポイント（一般知識） */}
         <section className="mt-12">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CategoryHub from "@/components/CategoryHub";
 import { getCategory } from "@/lib/companies";
+import { iphoneModels } from "@/lib/iphone-models";
 
 export const metadata: Metadata = {
   title: "iPhoneの買取｜売る前の準備と宅配買取サービスの条件比較",
@@ -17,6 +18,16 @@ export default function IphonePage() {
       kicker="IPHONE"
       h1="iPhoneの買取｜売る前の準備と、宅配買取サービスの条件比較"
       intro="iPhoneは中古市場での流通量が多く、機種・容量・状態ごとに買取条件が細かく分かれます。一方で、Apple IDに紐づく「探す」（アクティベーションロック）を解除しないまま送ると、多くの業者で買取が成立しません。このページでは、iPhoneを売る前に押さえておきたい一般的な判断ポイントと、掲載サービスの公式確認済み条件をまとめます。買取価格そのものは日々変動するため、各社公式サイトの最新表示をご確認ください。"
+      models={{
+        title: "世代別に確認する",
+        lead: "iPhoneは世代によって、一覧に並ぶ区分（Plus・mini・eなど）も、分割払いが残っている可能性も、状態の落ち方も変わります。手元の端末の世代が決まっているなら、下のページで「その世代を売るときに実際に効く確認」だけを読めます。掲載している機種名は、掲載社の公式サイトの機種一覧で実際に確認できたものだけです（2026年9月12日確認）。",
+        items: iphoneModels.map((m) => ({
+          href: m.path,
+          label: `${m.name}を売る前に確認すること`,
+          desc: m.summary,
+        })),
+        note: "※ 上記以外の世代（iPhone 11・X・XS・XR・8・7など）も、掲載社の機種一覧には掲載されています。世代別ページを用意していない機種については、このページの判断ポイントと各社の一次確認ページをご覧ください。買取価格は機種・状態・時期により大きく変動するため、当サイトでは金額・相場の数値は扱いません。",
+      }}
       points={[
         {
           t: "機種名・容量・キャリアを正確に把握する",
