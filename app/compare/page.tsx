@@ -10,12 +10,12 @@ import {
   platformCompanies,
   serviceTypeOf,
 } from "@/lib/companies";
-import { CHECKED_LABEL } from "@/lib/site";
+import { CHECKED_RANGE_LABEL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "PC・スマホ買取サービスの比較表【送料・返送料・入金・データ消去を公式確認】",
   description:
-    "古本市場（ふるいち）・Mac買取ネット・ネットオフの買取3社と、おいくら・ヒカカク・みんなの買取の一括査定/価格比較3サービスを統一フォーマットで比較。送料・梱包キット・返送料・査定日数・入金・キャンセル規定・データ消去・故障品の受付・古物商許可を各社公式サイトで一次確認し、確認日を明記しています。",
+    "iPhone・Android・iPad・Mac・Windows PCの買取サービス26社と、一括査定・価格比較型4サービスを統一フォーマットで比較。送料・梱包キット・返送料・査定日数・入金・キャンセル規定・データ消去・故障品の受付・古物商許可を各社公式サイトで一次確認し、確認日を明記しています。",
   alternates: { canonical: "/compare/" },
 };
 
@@ -35,7 +35,7 @@ export default function ComparePage() {
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           掲載サービスの条件を、各社公式サイトの一次確認に基づいて同じ物差しで並べています。
-          <strong className="text-steel-800">確認日: {CHECKED_LABEL}</strong>
+          <strong className="text-steel-800">確認日: {CHECKED_RANGE_LABEL}（各社の確認日は業者ページに記載）</strong>
           。公式サイトで確認できなかった項目は「公式では確認できず」とそのまま表示しています。買取価格そのものは日々変動するため掲載せず、条件の比較に絞っています。最新の条件・詳細な規定は必ず各社公式サイトでご確認ください。
         </p>
 
@@ -158,7 +158,7 @@ export default function ComparePage() {
           </table>
         </div>
         <p className="mt-3 text-xs text-steel-500">
-          ※ 横にスクロールできます。表中の「公式では確認できず」は、{CHECKED_LABEL}
+          ※ 横にスクロールできます。表中の「公式では確認できず」は、各社の確認日
           時点の当サイト調査で公式サイト上に記載を発見できなかったことを意味します（サービスが存在しないという意味ではありません）。
         </p>
 

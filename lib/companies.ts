@@ -99,7 +99,7 @@ export const categories: Category[] = [
     name: "iPhoneの買取",
     short: "iPhone",
     lead: "iPhoneは機種・容量・状態で条件が細かく分かれます。宅配買取を中心に、送料・返送料・入金・データ消去の扱いを一次確認で整理しました。",
-    companySlugs: ["furuichi", "netoff", "mac-kaitori-net", "geo-kaitori", "nicosuma-kaitori", "bookoff-mobile", "keitai-ichiba", "daikoku-mobile", "recommerce"],
+    companySlugs: ["furuichi", "netoff", "mac-kaitori-net", "geo-kaitori", "nicosuma-kaitori", "bookoff-mobile", "keitai-ichiba", "daikoku-mobile", "recommerce", "iosys-kaitori", "mobile-ichiban", "kaitori-rudeya", "apple-trade-in", "dospara-kaitori", "treasure-factory", "2nd-street", "hardoff", "eco-ring"],
   },
   {
     slug: "android",
@@ -107,7 +107,7 @@ export const categories: Category[] = [
     name: "Androidスマホの買取",
     short: "Android",
     lead: "Galaxy・Xperia・AQUOS・Pixelなど。メーカーが多く条件確認が煩雑になりがちなAndroid端末の売り方と、対応業者の条件をまとめました。",
-    companySlugs: ["furuichi", "netoff", "geo-kaitori", "nicosuma-kaitori", "bookoff-mobile", "keitai-ichiba", "daikoku-mobile", "recommerce"],
+    companySlugs: ["furuichi", "netoff", "geo-kaitori", "nicosuma-kaitori", "bookoff-mobile", "keitai-ichiba", "daikoku-mobile", "recommerce", "iosys-kaitori", "mobile-ichiban", "kaitori-rudeya", "apple-trade-in", "dospara-kaitori", "treasure-factory", "2nd-street", "hardoff", "eco-ring"],
   },
   {
     slug: "mac",
@@ -115,7 +115,7 @@ export const categories: Category[] = [
     name: "Mac・MacBookの買取",
     short: "Mac",
     lead: "MacBook・iMac・Mac miniはMac専門の買取サービスという選択肢があります。専門業者の条件と、売る前の初期化・「探す」解除の要点を整理しました。",
-    companySlugs: ["mac-kaitori-net"],
+    companySlugs: ["mac-kaitori-net", "iosys-kaitori", "mobile-ichiban", "kaitori-rudeya", "apple-trade-in", "dospara-kaitori", "tsukumo-kaitori", "kaitori-kensakukun", "2nd-street", "hardoff", "eco-ring"],
   },
   {
     slug: "pc",
@@ -123,7 +123,7 @@ export const categories: Category[] = [
     name: "Windows PC・ノートPCの買取",
     short: "PC",
     lead: "ノートPC・デスクトップ・自作PC。データ消去の責任が最も重いカテゴリです。売る前の消去手順と、一括査定・価格比較型サービスの使い方を整理しました。",
-    companySlugs: ["janpara", "pc-koubou", "rakuuru-sofmap", "takakuureru", "pcwrap", "pasokai", "recommerce"],
+    companySlugs: ["janpara", "pc-koubou", "rakuuru-sofmap", "takakuureru", "pcwrap", "pasokai", "recommerce", "iosys-kaitori", "kaitori-rudeya", "dospara-kaitori", "tsukumo-kaitori", "kaitori-kensakukun", "2nd-street", "hardoff", "eco-ring"],
   },
   {
     slug: "tablet",
@@ -131,7 +131,7 @@ export const categories: Category[] = [
     name: "iPad・タブレットの買取",
     short: "タブレット",
     lead: "iPad・Androidタブレット。Wi-Fiモデルとセルラーモデルの違い、アクティベーションロック解除など、タブレット特有の注意点と対応業者をまとめました。",
-    companySlugs: ["furuichi", "netoff", "mac-kaitori-net", "geo-kaitori", "nicosuma-kaitori", "bookoff-mobile", "keitai-ichiba", "daikoku-mobile"],
+    companySlugs: ["furuichi", "netoff", "mac-kaitori-net", "geo-kaitori", "nicosuma-kaitori", "bookoff-mobile", "keitai-ichiba", "daikoku-mobile", "iosys-kaitori", "mobile-ichiban", "kaitori-rudeya", "apple-trade-in", "dospara-kaitori", "tsukumo-kaitori", "kaitori-kensakukun", "treasure-factory", "2nd-street", "hardoff", "eco-ring"],
   },
 ];
 

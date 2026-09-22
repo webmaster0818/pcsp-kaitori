@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { categories, companies, platformCompanies } from "@/lib/companies";
 
 type Q1 = "iphone" | "android" | "mac" | "pc" | "tablet";
 type Q2 = "ugoku" | "kowareta" | "kidou_shinai";
@@ -52,24 +53,16 @@ const hubOf: Record<Q1, { path: string; label: string }> = {
   tablet: { path: "/tablet/", label: "iPad・タブレットの買取ハブ" },
 };
 
-const companiesOf: Record<Q1, ResultCompany[]> = {
-  iphone: [
-    { name: "古本市場（ふるいち）スマホ買取", slug: "furuichi" },
-    { name: "ネットオフ スマホ買取", slug: "netoff" },
-    { name: "Mac買取ネット", slug: "mac-kaitori-net" },
-  ],
-  android: [
-    { name: "古本市場（ふるいち）スマホ買取", slug: "furuichi" },
-    { name: "ネットオフ スマホ買取", slug: "netoff" },
-  ],
-  mac: [{ name: "Mac買取ネット", slug: "mac-kaitori-net" }],
-  pc: [],
-  tablet: [
-    { name: "古本市場（ふるいち）スマホ買取", slug: "furuichi" },
-    { name: "ネットオフ スマホ買取", slug: "netoff" },
-    { name: "Mac買取ネット", slug: "mac-kaitori-net" },
-  ],
-};
+/** カテゴリハブの掲載社（lib/companies.ts の categories）をそのまま使う */
+const companiesOf = Object.fromEntries(
+  categories.map((cat) => [
+    cat.slug,
+    cat.companySlugs.map((slug) => ({
+      name: companies.find((c) => c.slug === slug)?.name ?? slug,
+      slug,
+    })),
+  ]),
+) as Record<Q1, ResultCompany[]>;
 
 /** 判定ロジック（全開示・このままの順で評価） */
 function judge(q1: Q1, q2: Q2, q3: Q3, q4: Q4): Result {
@@ -102,11 +95,7 @@ function judge(q1: Q1, q2: Q2, q3: Q3, q4: Q4): Result {
       reason:
         "端末以外の不用品もまとめて手放したい場合は、複数の買取店にまとめて依頼できる一括査定型や、価格比較型のサービスという選択肢があります。端末単体の条件は該当カテゴリのハブでも確認できます。",
       hub: hubOf[q1],
-      companies: [
-        { name: "おいくら", slug: "oikura" },
-        { name: "ヒカカク", slug: "hikakaku" },
-        { name: "みんなの買取", slug: "minna-no-kaitori" },
-      ],
+      companies: platformCompanies.map((c) => ({ name: c.name, slug: c.slug })),
       guide: null,
     };
   }

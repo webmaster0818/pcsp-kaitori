@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { categories, companies, kaitoriCompanies, platformCompanies } from "@/lib/companies";
-import { CHECKED_LABEL, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { CHECKED_RANGE_LABEL, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME}｜${SITE_TAGLINE}`,
@@ -66,7 +66,7 @@ export default function HomePage() {
             <span className="text-vermilion">中立</span>のPC・スマホ買取ナビ。
           </h1>
           <p className="mt-8 max-w-xl text-sm leading-loose text-steel-200 md:text-base">
-            スマホやPCを売るとき、いちばん怖いのは「データ」と「送った後の条件」です。掲載サービスの送料・返送料・入金・データ消去の扱いは、すべて各社公式サイトを一次確認し、確認日（{CHECKED_LABEL}）を明記。確認できなかった項目は「公式では確認できず」と正直に書きます。
+            スマホやPCを売るとき、いちばん怖いのは「データ」と「送った後の条件」です。掲載サービスの送料・返送料・入金・データ消去の扱いは、すべて各社公式サイトを一次確認し、確認日（{CHECKED_RANGE_LABEL}）を各社ごとに明記。確認できなかった項目は「公式では確認できず」と正直に書きます。
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link href="/guide/data-shokyo/" className="btn-primary">
@@ -167,7 +167,7 @@ export default function HomePage() {
                 掲載サービスを、同じ物差しで並べる
               </h2>
               <p className="mt-4 max-w-2xl text-sm leading-loose text-steel-200">
-                買取サービス{kaitoriCompanies.length}社と一括査定・価格比較型{platformCompanies.length}サービス。送料・梱包キット・返送料・査定日数・入金タイミング・キャンセル規定・データ消去の扱い・故障品の受付・運営会社と古物商許可番号を統一フォーマットで比較しています（{CHECKED_LABEL}公式確認）。
+                買取サービス{kaitoriCompanies.length}社と一括査定・価格比較型{platformCompanies.length}サービス。送料・梱包キット・返送料・査定日数・入金タイミング・キャンセル規定・データ消去の扱い・故障品の受付・運営会社と古物商許可番号を統一フォーマットで比較しています（{CHECKED_RANGE_LABEL}公式確認）。
               </p>
             </div>
             <Link href="/compare/" className="btn-primary mt-8 shrink-0 md:mt-0">
@@ -197,7 +197,7 @@ export default function HomePage() {
           {[
             {
               t: "公式サイトの一次確認",
-              d: `掲載する条件はすべて各社公式サイトで確認し、確認日を明記します。今回の確認日は${CHECKED_LABEL}です。`,
+              d: `掲載する条件はすべて各社公式サイトで確認し、確認日を明記します。現在の掲載社は${CHECKED_RANGE_LABEL}に確認しています。`,
             },
             {
               t: "確認できないことは書かない",

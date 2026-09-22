@@ -8,7 +8,7 @@ import {
   getCompany,
   platformCompanies,
 } from "@/lib/companies";
-import { CHECKED_LABEL } from "@/lib/site";
+import { CHECKED_RANGE_LABEL } from "@/lib/site";
 
 export interface HubSectionItem {
   t: string;
@@ -113,7 +113,7 @@ export default function CategoryHub({
         <section className="mt-14">
           <h2 className="section-title mb-2">このカテゴリで掲載中の買取サービス</h2>
           <p className="mb-6 text-sm leading-loose text-steel-600">
-            各社の条件は公式サイトを一次確認したものです（確認日: {CHECKED_LABEL}）。「公式では確認できず」の項目は、公式サイト上に記載を発見できなかったことを意味します。買取価格は日々変動するため、必ず各社公式サイトの最新表示をご確認ください。
+            各社の条件は公式サイトを一次確認したものです（確認日: {CHECKED_RANGE_LABEL}。各社の確認日は業者ページに記載）。「公式では確認できず」の項目は、公式サイト上に記載を発見できなかったことを意味します。買取価格は日々変動するため、必ず各社公式サイトの最新表示をご確認ください。
           </p>
           {hubCompanies.length > 0 ? (
             <div className="grid gap-5 lg:grid-cols-2">
@@ -123,7 +123,7 @@ export default function CategoryHub({
             </div>
           ) : (
             <div className="border border-dashed border-steel-300 bg-chalk p-6 text-sm leading-loose text-steel-700">
-              確認日時点で、当サイト掲載の買取サービス3社（古本市場スマホ買取・ネットオフ スマホ買取・Mac買取ネット）はいずれも、公式サイト上でWindows PCを買取対象と明記していませんでした（Mac買取ネットは「公式では確認できず」）。このカテゴリでは、PCカテゴリを持つ一括査定・価格比較型サービスを下に掲載しています。正直に「該当なし」と表示し、掲載社の拡充は今後の更新で対応します。
+              確認日時点で、当サイト掲載の買取サービスのうち、公式サイト上でこのカテゴリを買取対象と明記している社はありませんでした。正直に「該当なし」と表示し、掲載社の拡充は今後の更新で対応します。
             </div>
           )}
         </section>
