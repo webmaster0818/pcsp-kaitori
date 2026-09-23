@@ -344,6 +344,30 @@ export default function ShitadoriHikakuGuidePage() {
           <h2 className="section-title mb-6">関連ページ</h2>
           <ul className="grid gap-3 text-sm md:grid-cols-2">
             <li>
+              <Link href="/guide/carrier-shitadori/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">キャリアの下取りプログラムの仕組みと条件</span>
+                <span className="mt-1 block text-xs text-steel-500">ドコモ・au・ソフトバンク・楽天モバイルを同じ項目で</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-merit-demerit/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りのメリット・デメリット</span>
+                <span className="mt-1 block text-xs text-steel-500">手間・受け取り方・期限・責任の所在</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-nagare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りの申し込みから完了までの流れ</span>
+                <span className="mt-1 block text-xs text-steel-500">店頭とオンライン（郵送）の違いと期限</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-dekinai/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りに出せない・減額になるケース</span>
+                <span className="mt-1 block text-xs text-steel-500">画面割れ・残債・ロック・期限</span>
+              </Link>
+            </li>
+            <li>
               <Link href="/guide/takuhai-nagare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">宅配買取の流れと梱包方法</span>
                 <span className="mt-1 block text-xs text-steel-500">買取を選んだときの申込から入金までの手順</span>

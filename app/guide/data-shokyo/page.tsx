@@ -476,6 +476,24 @@ export default function DataShokyoGuidePage() {
           <h2 className="section-title mb-6">関連ページ</h2>
           <ul className="grid gap-3 text-sm md:grid-cols-2">
             <li>
+              <Link href="/guide/osaifu-keitai/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">おサイフケータイ・電子マネーを先に移す</span>
+                <span className="mt-1 block text-xs text-steel-500">初期化前に済ませる順番</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/google-account-android/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">AndroidのGoogleアカウントの外し方</span>
+                <span className="mt-1 block text-xs text-steel-500">初期化しても残る紐づけ</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/pc-storage-shokyo/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">PCを売る前のストレージの扱い</span>
+                <span className="mt-1 block text-xs text-steel-500">回復キー・ドライブのクリーニング・抜いて売る</span>
+              </Link>
+            </li>
+            <li>
               <Link href="/guide/activation-lock/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">アクティベーションロックと「探す」の解除</span>
                 <span className="mt-1 block text-xs text-steel-500">iPhone・iPad・Mac を売る前の必須工程</span>
