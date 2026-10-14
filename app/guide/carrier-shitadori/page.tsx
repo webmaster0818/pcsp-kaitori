@@ -488,6 +488,24 @@ export default function CarrierShitadoriGuidePage() {
                 <span className="mt-1 block text-xs text-steel-500">キャリア下取りと比べたいときの対応業者</span>
               </Link>
             </li>
+            <li>
+              <Link href="/guide/shitadori-nagare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りの申し込みから完了までの流れ</span>
+                <span className="mt-1 block text-xs text-steel-500">店頭とオンライン（郵送）の違い・期限</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-dekinai/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りに出せない・減額になるケース</span>
+                <span className="mt-1 block text-xs text-steel-500">画面割れ・残債・ロック・期限ごとの選択肢</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-merit-demerit/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りのメリット・デメリット</span>
+                <span className="mt-1 block text-xs text-steel-500">手間・受け取り方・期限・データ消去の責任</span>
+              </Link>
+            </li>
           </ul>
         </section>
       </article>

@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL, OPERATOR, PUBLISHED_DATE } from "@/lib/site";
 
 const TITLE = "アクティベーションロックと「探す」の解除｜iPhone・iPad・Macを売る前に";
 const DESC =
-  "アクティベーションロックは Apple の「探す」に紐づく盗難防止機能で、解除しないまま送ると買取業者が再利用できず、一般に減額や買取不可の扱いになります。iPhone・iPad・Mac・Apple Watch で「探す」をオフにする手順、手元にない端末を iCloud.com から削除する方法、初期化後にロックが残るケース、Android の端末保護機能（FRP）との違いまでを整理します。";
+  "アクティベーションロックはAppleの「探す」に紐づく盗難防止機能で、解除しないまま送ると一般に減額や買取不可になります。iPhone・iPad・Mac・Apple Watchで「探す」をオフにする手順、iCloud.comからの削除、初期化後にロックが残るケース、AndroidのFRPとの違いを整理します。";
 const PATH = "/guide/activation-lock/";
 
 export const metadata: Metadata = {
@@ -424,6 +424,18 @@ export default function ActivationLockGuidePage() {
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">掲載業者の比較表</span>
                 <span className="mt-1 block text-xs text-steel-500">受け入れ条件・送料・入金を同じ物差しで比較</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/google-account-android/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">AndroidのGoogleアカウントの外し方</span>
+                <span className="mt-1 block text-xs text-steel-500">初期化しても残る紐づけを手放す前に確認</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/pc-storage-shokyo/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">PCを売る前のストレージの扱い</span>
+                <span className="mt-1 block text-xs text-steel-500">回復キーの控え・ドライブのクリーニング・抜いて売る選択</span>
               </Link>
             </li>
           </ul>

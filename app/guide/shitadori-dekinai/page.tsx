@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL, OPERATOR } from "@/lib/site";
 
 const TITLE = "下取りに出せない・減額になるケースと選択肢｜画面割れ・残債・ロック・期限";
 const DESC =
-  "キャリアの下取りプログラムには「受付できない状態」と「減額になる状態」が公式に定められています。画面割れ、電源が入らない、水濡れ、ネットワーク利用制限、残債、初期化・ロック未解除、返送期限といったケースごとに、各社の公式記載（2026年9月23日確認）を整理し、下取りが使えないときに残る選択肢と、買取なら受け付けている掲載社の記載を確認日つきでまとめます。";
+  "キャリアの下取りには「受付できない状態」と「減額になる状態」が公式に定められています。画面割れ、電源が入らない、水濡れ、ネットワーク利用制限、残債、ロック未解除、返送期限などケース別に各社の公式記載（2026年9月23日確認）を整理し、下取りが使えないときの選択肢をまとめます。";
 const PATH = "/guide/shitadori-dekinai/";
 const PAGE_DATE = "2026-09-23";
 const PAGE_DATE_LABEL = "2026年9月23日";
@@ -451,6 +451,18 @@ export default function ShitadoriDekinaiGuidePage() {
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">掲載社の統一比較表</span>
                 <span className="mt-1 block text-xs text-steel-500">故障品の扱い・本人確認・入金までを横並びで</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-nagare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りの申し込みから完了までの流れ</span>
+                <span className="mt-1 block text-xs text-steel-500">店頭とオンライン（郵送）の違い・期限</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/carrier-shitadori/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">キャリア下取りの仕組みと条件</span>
+                <span className="mt-1 block text-xs text-steel-500">ドコモ・au・ソフトバンク・楽天モバイルを同じ項目で整理</span>
               </Link>
             </li>
           </ul>

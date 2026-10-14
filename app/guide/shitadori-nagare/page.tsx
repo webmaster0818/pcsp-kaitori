@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL, OPERATOR } from "@/lib/site";
 
 const TITLE = "下取りの申し込みから完了までの流れ｜店頭とオンライン（郵送）の違い・期限・送ったあとの扱い";
 const DESC =
-  "キャリアの下取りは、店頭に持ち込む場合とオンライン（郵送）で送る場合で流れも期限も変わります。申し込み前に済ませる準備（初期化・各種ロック解除・電子証明書の失効・付属品やカードの取り外し）、店頭とオンラインそれぞれの手順、送付キットの受け取りと返送の期限、送ったあとに査定結果が申し込み時と異なった場合の扱いまで、各社の公式サイトに記載のある範囲で整理します。金額は扱いません。";
+  "キャリアの下取りは、店頭持ち込みとオンライン（郵送）で流れも期限も変わります。申し込み前の準備（初期化・ロック解除・電子証明書の失効・付属品の取り外し）、それぞれの手順、送付キットの返送期限、査定結果が申し込み時と異なった場合の扱いまで、各社の公式記載の範囲で整理します。";
 const PATH = "/guide/shitadori-nagare/";
 const PAGE_DATE = "2026-09-23";
 const PAGE_DATE_LABEL = "2026年9月23日";
@@ -543,6 +543,24 @@ export default function ShitadoriNagareGuidePage() {
               <Link href="/shindan/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">売り方診断</span>
                 <span className="mt-1 block text-xs text-steel-500">端末の状態と希望から確認先を案内</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-dekinai/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りに出せない・減額になるケース</span>
+                <span className="mt-1 block text-xs text-steel-500">画面割れ・残債・ロック・期限ごとの選択肢</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/carrier-shitadori/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">キャリア下取りの仕組みと条件</span>
+                <span className="mt-1 block text-xs text-steel-500">ドコモ・au・ソフトバンク・楽天モバイルを同じ項目で整理</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-merit-demerit/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りのメリット・デメリット</span>
+                <span className="mt-1 block text-xs text-steel-500">手間・受け取り方・期限・データ消去の責任</span>
               </Link>
             </li>
           </ul>

@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL, OPERATOR } from "@/lib/site";
 
 const TITLE = "Androidを手放す前のGoogleアカウントの外し方｜初期化しても残る紐づけ";
 const DESC =
-  "Androidスマホ・タブレットは、Googleアカウントを端末から外さないまま初期化すると、次の初期設定で以前のアカウント情報を求められる場合があります。iPhoneのアクティベーションロックに相当する端末保護機能の考え方、外す順番、手放したあとに遠隔でできること・できないこと、メーカーやキャリア独自のアカウントの存在、初期化できないときの相談先を整理します。";
+  "Androidは、Googleアカウントを外さないまま初期化すると、次の初期設定で以前のアカウント情報を求められる場合があります。端末保護機能の考え方、外す順番、手放したあとに遠隔でできること・できないこと、メーカーやキャリア独自のアカウント、初期化できないときの相談先を整理します。";
 const PATH = "/guide/google-account-android/";
 const PAGE_DATE = "2026-09-23";
 const PAGE_DATE_LABEL = "2026年9月23日";
@@ -587,6 +587,12 @@ export default function GoogleAccountAndroidGuidePage() {
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">統一比較表</span>
                 <span className="mt-1 block text-xs text-steel-500">掲載社の受け入れ条件を同じ物差しで比較</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/osaifu-keitai/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">おサイフケータイ・電子マネーの移行</span>
+                <span className="mt-1 block text-xs text-steel-500">初期化前に済ませる順番</span>
               </Link>
             </li>
           </ul>

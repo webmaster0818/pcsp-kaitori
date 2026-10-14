@@ -7,7 +7,7 @@ import { SITE_NAME, SITE_URL, OPERATOR } from "@/lib/site";
 
 const TITLE = "法人の端末処分とデータ消去証明書｜何を求め、何を確認するか";
 const DESC =
-  "法人がPC・スマホを処分・買取に出すときに求められるデータ消去証明書について、何のために必要になるのか、記載されることが多い項目、依頼前に業者へ確認したい質問、台数がまとまるときの台帳との突き合わせ、社内の承認と記録の残し方を一般知識として整理しました。消去の対応内容は事業者により異なるため、依頼前の確認を前提としています。";
+  "法人がPC・スマホを処分・買取に出すときに求められるデータ消去証明書について、必要になる理由、記載されることが多い項目、依頼前に業者へ確認したい質問、台帳との突き合わせ、社内の承認と記録の残し方を一般知識として整理しました。消去の対応内容は事業者により異なります。";
 const PATH = "/situation/houjin/data-shokyo-shomeisho/";
 const PUBLISHED = "2026-09-11";
 const PUBLISHED_LABEL = "2026年9月11日";
@@ -492,6 +492,12 @@ export default function HoujinDataShokyoShomeishoPage() {
               <Link href="/pc/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">Windows PC・ノートPCの買取</span>
                 <span className="mt-1 block text-xs text-steel-500">ストレージのデータ消去が要点</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/pc-storage-shokyo/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">PCを売る前のストレージの扱い</span>
+                <span className="mt-1 block text-xs text-steel-500">回復キーの控え・ドライブのクリーニング・抜いて売る選択</span>
               </Link>
             </li>
           </ul>

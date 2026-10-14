@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL, OPERATOR, PUBLISHED_DATE } from "@/lib/site";
 
 const TITLE = "スマホ・PCを売る前のデータ消去 完全手順｜iPhone・Android・Windows・Mac別";
 const DESC =
-  "スマホ・PCを買取に出す前のデータ消去手順をOS別に整理。バックアップ、iPhoneの「探す」オフとApple IDサインアウト、AndroidのGoogleアカウント削除、Windowsの「ドライブのクリーニング」、Macの「すべてのコンテンツと設定を消去」、SIM・SDカードの取り出し、おサイフケータイや認証アプリの移行までをチェックリスト付きで解説します。";
+  "スマホ・PCを買取に出す前のデータ消去手順をOS別に整理。バックアップ、iPhoneの「探す」オフ、AndroidのGoogleアカウント削除、Windowsの「ドライブのクリーニング」、Macの全消去、SIM・SDカードの取り出し、おサイフケータイや認証アプリの移行までをチェックリスト付きで解説します。";
 const PATH = "/guide/data-shokyo/";
 
 export const metadata: Metadata = {

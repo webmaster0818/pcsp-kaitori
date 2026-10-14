@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL, OPERATOR } from "@/lib/site";
 
 const TITLE = "おサイフケータイ・電子マネーは端末を手放す前に移す｜初期化前に済ませる順番";
 const DESC =
-  "スマホを下取り・買取に出す前に、おサイフケータイや電子マネー、交通系ICを移しておくための考え方を整理します。初期化してからでは取り出しにくくなる理由、サービス側の手続き→端末側の設定削除→初期化という一般的な順序、iPhoneのウォレットとAndroidのおサイフケータイの違い、公式ヘルプの探し方、端末が壊れている場合の相談先、買取店側は解除を代行しないことまで、変わりにくい確認の型としてまとめました。";
+  "スマホを下取り・買取に出す前に、おサイフケータイや電子マネー、交通系ICを移しておく考え方を整理。初期化後では取り出しにくい理由、サービス側の手続き→端末側の設定削除→初期化という順序、iPhoneのウォレットとの違い、壊れた端末の相談先、買取店は解除を代行しないことまでまとめました。";
 const PATH = "/guide/osaifu-keitai/";
 const PAGE_DATE = "2026-09-23";
 const PAGE_DATE_LABEL = "2026年9月23日";
@@ -533,6 +533,12 @@ export default function OsaifuKeitaiGuidePage() {
               <Link href="/situation/houjin/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">法人の端末処分</span>
                 <span className="mt-1 block text-xs text-steel-500">貸与端末をまとめて回収するときの進め方</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/google-account-android/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">AndroidのGoogleアカウントの外し方</span>
+                <span className="mt-1 block text-xs text-steel-500">初期化しても残る紐づけを手放す前に確認</span>
               </Link>
             </li>
           </ul>

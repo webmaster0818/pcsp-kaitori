@@ -509,6 +509,24 @@ export default function ShitadoriMeritDemeritPage() {
                 <span className="mt-1 block text-xs text-steel-500">送料・返送料・キャンセル条件を横並びで確認</span>
               </Link>
             </li>
+            <li>
+              <Link href="/guide/carrier-shitadori/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">キャリア下取りの仕組みと条件</span>
+                <span className="mt-1 block text-xs text-steel-500">ドコモ・au・ソフトバンク・楽天モバイルを同じ項目で整理</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-nagare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りの申し込みから完了までの流れ</span>
+                <span className="mt-1 block text-xs text-steel-500">店頭とオンライン（郵送）の違い・期限</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/guide/shitadori-dekinai/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                <span className="font-display text-steel-900">下取りに出せない・減額になるケース</span>
+                <span className="mt-1 block text-xs text-steel-500">画面割れ・残債・ロック・期限ごとの選択肢</span>
+              </Link>
+            </li>
           </ul>
         </section>
       </article>

@@ -17,6 +17,15 @@ export function generateStaticParams() {
   return companies.map((c) => ({ slug: c.slug }));
 }
 
+/** description を160字以内に収める（長い場合は補足文→運営会社名の順で省く） */
+function fitDesc(base: string, short: string): string {
+  const note = "確認できなかった項目は「公式では確認できず」と正直に記載しています。";
+  for (const s of [base + note, base + "未確認の項目は「公式では確認できず」と記載。", base, short]) {
+    if (s.length <= 160) return s;
+  }
+  return short;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -29,9 +38,14 @@ export async function generateMetadata({
     title: isPlatform
       ? `${c.name}の仕組みまとめ｜利用料・流れ・運営会社【${jaMonth(c.confirmed_date)}公式確認】`
       : `${c.name}の買取サービスまとめ｜送料・返送料・入金・データ消去【${jaMonth(c.confirmed_date)}公式確認】`,
-    description: isPlatform
-      ? `${c.name}（運営: ${c.operator.name}）の仕組み・対象・利用料・流れを公式サイトで一次確認（${jaDate(c.confirmed_date)}）。確認できなかった項目は「公式では確認できず」と正直に記載しています。`
-      : `${c.name}（運営: ${c.operator.name}）の送料・梱包キット・返送料・査定日数・入金タイミング・キャンセル規定・データ消去・故障品の受付を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。確認できなかった項目は「公式では確認できず」と正直に記載しています。`,
+    description: fitDesc(
+      isPlatform
+        ? `${c.name}（運営: ${c.operator.name}）の仕組み・対象・利用料・流れを公式サイトで一次確認（${jaDate(c.confirmed_date)}）。`
+        : `${c.name}（運営: ${c.operator.name}）の送料・梱包キット・返送料・査定日数・入金タイミング・キャンセル規定・データ消去・故障品の受付を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。`,
+      isPlatform
+        ? `${c.name}の仕組み・対象・利用料・流れを公式サイトで一次確認（${jaDate(c.confirmed_date)}）。運営は${c.operator.name}。`
+        : `${c.name}の送料・返送料・査定日数・入金タイミング・キャンセル規定・データ消去・故障品の受付を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。`,
+    ),
     alternates: { canonical: `/kaitori/${c.slug}/` },
   };
 }

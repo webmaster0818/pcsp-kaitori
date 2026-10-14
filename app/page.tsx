@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
 import { categories, companies, kaitoriCompanies, platformCompanies } from "@/lib/companies";
-import { CHECKED_RANGE_LABEL, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { CHECKED_RANGE_LABEL, SITE_NAME, SITE_TAGLINE, SITE_URL, OPERATOR } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME}｜${SITE_TAGLINE}`,
@@ -45,9 +46,30 @@ const guides = [
   },
 ];
 
+const homeLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+      inLanguage: "ja",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: OPERATOR.name,
+      address: OPERATOR.address,
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={homeLd} />
       {/* ヒーロー */}
       <section className="relative overflow-hidden bg-steel-900 text-chalk">
         <div
