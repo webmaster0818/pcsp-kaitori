@@ -38,6 +38,18 @@ export interface Company {
   features: string[];
   confirmed_date: string;
   note?: string | null;
+  /** 検索語に合わせた個別 title/description/h1（未指定なら共通テンプレート） */
+  seo?: { title: string; description: string; h1?: string; modified?: string } | null;
+  /** h1直下に置く「検索語への直接の答え」（公式確認値・出典・確認日つき） */
+  lead?: {
+    heading: string;
+    answer: string;
+    points?: string[];
+    sources: { label: string; url: string }[];
+    checked: string;
+  } | null;
+  /** 業者別の追加FAQ（スマホ・PCを売る人向けの論点） */
+  extra_faq?: { q: string; a: string }[] | null;
 }
 
 export const companies = raw as unknown as Company[];

@@ -34,6 +34,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = getCompany(slug);
   const isPlatform = c.kind === "platform";
+  if (c.seo) {
+    return {
+      title: c.seo.title,
+      description: c.seo.description,
+      alternates: { canonical: `/kaitori/${c.slug}/` },
+    };
+  }
   return {
     title: isPlatform
       ? `${c.name}の仕組みまとめ｜利用料・流れ・運営会社【${jaMonth(c.confirmed_date)}公式確認】`
@@ -78,6 +85,7 @@ export default async function KaitoriPage({
         },
       ]
     : companyFaq(c);
+  if (c.extra_faq) faqs.unshift(...c.extra_faq);
 
   const quickRows: { label: string; value: string }[] = isPlatform
     ? [
@@ -104,9 +112,9 @@ export default async function KaitoriPage({
         { label: "法人対応", value: fmt(c.houjin) },
       ];
 
-  const h1 = isPlatform
+  const h1 = c.seo?.h1 ?? (isPlatform
     ? `${c.name}の仕組みまとめ｜利用料・流れ・運営会社【${jaMonth(c.confirmed_date)}公式確認】`
-    : `${c.name}の買取サービスまとめ｜送料・返送料・入金・データ消去【${jaMonth(c.confirmed_date)}公式確認】`;
+    : `${c.name}の買取サービスまとめ｜送料・返送料・入金・データ消去【${jaMonth(c.confirmed_date)}公式確認】`);
 
   return (
     <>
@@ -123,8 +131,36 @@ export default async function KaitoriPage({
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
           {h1}
         </h1>
+        {c.lead && (
+          <section className="mt-6 max-w-3xl border-2 border-vermilion bg-chalk-warm p-5 md:p-6">
+            <h2 className="font-display text-base text-steel-900 md:text-lg">{c.lead.heading}</h2>
+            <p className="mt-3 text-sm leading-loose text-steel-800">{c.lead.answer}</p>
+            {c.lead.points && c.lead.points.length > 0 && (
+              <ul className="mt-4 space-y-2">
+                {c.lead.points.map((p) => (
+                  <li key={p} className="flex gap-2 text-[13px] leading-loose text-steel-800">
+                    <span aria-hidden="true" className="mt-2 inline-block h-2 w-2 shrink-0 bg-vermilion" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p className="mt-4 text-xs leading-relaxed text-steel-500">
+              出典：
+              {c.lead.sources.map((src, i) => (
+                <span key={src.url}>
+                  {i > 0 && "／"}
+                  <a href={src.url} rel="nofollow noopener" target="_blank" className="underline underline-offset-4 hover:text-vermilion">
+                    {src.label}
+                  </a>
+                </span>
+              ))}
+              （確認日：{jaDate(c.lead.checked)}）
+            </p>
+          </section>
+        )}
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          {c.name}のサービス条件を、公式サイトの記載に基づいて一次確認しました（確認日: {jaDate(c.confirmed_date)}）。
+          {c.name}のサービス条件を、公式サイトの記載に基づいて一次確認しました（確認日: {jaDate(c.confirmed_date)}{c.seo?.modified ? `、最終更新: ${jaDate(c.seo.modified)}` : ""}）。
           サービス形態: {serviceTypeOf(c)}。対象: {fmt(c.target)}。対応エリア: {fmt(c.area)}。買取価格は日々変動するため当ページには掲載せず、条件のみを整理しています。
         </p>
 

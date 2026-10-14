@@ -4,12 +4,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL, OPERATOR } from "@/lib/site";
 
-const TITLE = "Androidを手放す前のGoogleアカウントの外し方｜初期化しても残る紐づけ";
+const TITLE = "Android売却前のGoogleアカウント削除手順｜初期化の前に外してFRP（端末保護）を解除【Google公式確認】";
 const DESC =
-  "Androidは、Googleアカウントを外さないまま初期化すると、次の初期設定で以前のアカウント情報を求められる場合があります。端末保護機能の考え方、外す順番、手放したあとに遠隔でできること・できないこと、メーカーやキャリア独自のアカウント、初期化できないときの相談先を整理します。";
+  "Androidを売る・下取りに出す前は「設定→［パスワードとアカウント］→アカウントを削除→初期化」の順に。Google公式ヘルプは、FRP（デバイスの保護）を無効にするにはGoogleアカウントの削除が必要と案内。初期設定で止まる事態を防ぐ手順の要約と注意点（2026年10月14日確認）。";
 const PATH = "/guide/google-account-android/";
-const PAGE_DATE = "2026-09-23";
-const PAGE_DATE_LABEL = "2026年9月23日";
+const PAGE_PUBLISHED = "2026-09-23";
+const PAGE_DATE = "2026-10-14";
+const PAGE_DATE_LABEL = "2026年10月14日";
+const GOOGLE_CHECKED_LABEL = "2026年10月14日";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -22,7 +24,7 @@ const articleLd = {
   "@type": "Article",
   headline: TITLE,
   description: DESC,
-  datePublished: PAGE_DATE,
+  datePublished: PAGE_PUBLISHED,
   dateModified: PAGE_DATE,
   mainEntityOfPage: `${SITE_URL}${PATH}`,
   author: { "@type": "Organization", name: OPERATOR.name },
@@ -30,6 +32,15 @@ const articleLd = {
 };
 
 export default function GoogleAccountAndroidGuidePage() {
+  const quickSteps = [
+    "端末で使っているGoogleアカウントのユーザー名・パスワードと、画面ロックのPIN・パターン・パスワードを確認する。パスワードを再設定したばかりなら、24時間経ってから初期化する（Google公式ヘルプの案内）。",
+    "写真・連絡先などをバックアップする。",
+    "設定アプリ →［パスワードとアカウント］（端末により［ユーザーとアカウント］［アカウントを管理する］など）→ 削除するアカウント →［アカウントを削除］→［削除］で確定。端末で唯一のGoogleアカウントの場合はPIN等の入力を求められる。",
+    "保護はその端末に追加・同期したどのGoogleアカウントでも有効になるため、登録しているGoogleアカウントはすべて削除する。メーカー独自のアカウントもあれば外す。",
+    "70%以上充電してWi-Fiかモバイル回線につなぎ、設定アプリから出荷時の設定にリセットする（最長1時間ほどかかることがある）。",
+    "SIMカード・SDカードを抜き、再起動後の初期設定画面で以前のアカウント情報を求められないことを確認してから発送・持ち込みする。",
+  ];
+
   const conclusions = [
     "Androidにも、iPhoneのアクティベーションロックに相当する「端末保護機能」があります。盗まれた端末を初期化しただけでは使えないようにする仕組みで、初期化のあとの初期設定画面で、その端末に以前ログインしていたGoogleアカウントの情報を求められる場合があります。",
     "だから順番が大切です。「Googleアカウントを端末から削除する → 初期化する」の順で進めます。逆にしてしまうと、次に使う人が初期設定を完了できず、買取店では受け付けられない状態になることがあります。",
@@ -298,8 +309,39 @@ export default function GoogleAccountAndroidGuidePage() {
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">ANDROID ACCOUNT</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          Androidを手放す前のGoogleアカウントの外し方｜初期化しても残る紐づけ
+          Android売却前のGoogleアカウント削除手順｜初期化の前に外してFRP（端末保護）を解除
         </h1>
+
+        {/* 検索意図への直接の答え（Google公式ヘルプで確認） */}
+        <section className="mt-6 max-w-3xl border-2 border-vermilion bg-chalk-warm p-5 md:p-6">
+          <h2 className="font-display text-base text-steel-900 md:text-lg">結論：Googleアカウントを端末から削除してから初期化する</h2>
+          <p className="mt-3 text-sm leading-loose text-steel-800">
+            Androidを売る・譲る・下取りに出す前は、「Googleアカウントを端末から削除 → 出荷時の設定にリセット（初期化）」の順で進めます。Google公式ヘルプは、初期化された端末を他人が使えないようにする保護機能（FRP・デバイスの保護）について「デバイスの保護を無効にするには、お使いのデバイスから Google アカウントを削除します」と案内しています。削除しないまま初期化すると、初期設定でそのアカウント情報を入力できない限り「デバイスをまったく使用できなくなります」（同ヘルプ）。
+          </p>
+          <ol className="mt-4 space-y-2">
+            {quickSteps.map((q, i) => (
+              <li key={q} className="flex gap-3 text-[13px] leading-loose text-steel-800">
+                <span className="font-display text-sm text-vermilion">{i + 1}.</span>
+                <span>{q}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-4 text-xs leading-relaxed text-steel-500">
+            出典：
+            <a href="https://support.google.com/android/answer/9459346?hl=ja" rel="nofollow noopener" target="_blank" className="underline underline-offset-4 hover:text-vermilion">
+              Androidヘルプ「他人に無断で使用されないようにデバイスを保護する」
+            </a>
+            ／
+            <a href="https://support.google.com/android/answer/7664951?hl=ja" rel="nofollow noopener" target="_blank" className="underline underline-offset-4 hover:text-vermilion">
+              「Android でアカウントを追加または削除する」
+            </a>
+            ／
+            <a href="https://support.google.com/android/answer/6088915?hl=ja" rel="nofollow noopener" target="_blank" className="underline underline-offset-4 hover:text-vermilion">
+              「Android デバイスを出荷時の設定にリセットする」
+            </a>
+            （確認日：{GOOGLE_CHECKED_LABEL}）。項目名は端末・Androidのバージョンにより異なります（ヘルプにも「この手順の一部は、Android 14 以上でのみ動作します」とあります）。
+          </p>
+        </section>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           Androidスマホやタブレットを売る・譲る・下取りに出すときに、いちばん見落とされやすいのが「初期化しただけでは外れない紐づけ」です。iPhoneのアクティベーションロックはよく知られていますが、Androidにも同じ目的の端末保護機能があり、アカウントを外さずに初期化すると、次に使う人が初期設定を完了できなくなることがあります。このページでは、なぜ初期化の前にアカウントを削除する必要があるのか、Googleアカウント以外にどんな紐づけが残りうるのか、手放したあとに遠隔でできること・できないこと、そして初期化できないときの相談先を整理します。設定画面の名称や階層は端末やOSのバージョンによって変わるため、ここでは変わりにくい探し方を中心に説明します。
         </p>
