@@ -118,7 +118,7 @@ export default function ActivationLockGuidePage() {
       d: "Google アカウントを登録した Android 端末を、アカウントを削除せずに初期化すると、初期設定の途中で「以前この端末で使用していた Google アカウントでログインしてください」という画面が表示され、先に進めなくなります。これが FRP で、iPhone のアクティベーションロックと同じ目的の盗難対策です。Android 5.1 以降で一般的に有効になっています。",
     },
     {
-      t: "解除の基本：Google アカウントを端末から削除してから初期化する",
+      t: "解除は Google アカウントを端末から削除してから初期化します",
       d: "設定 → 「パスワードとアカウント」または「アカウント」→ 登録している Google アカウントをタップ → 「アカウントを削除」。複数のアカウントを登録している場合はすべて削除します。あわせて画面ロック（PIN・パターン・生体認証）を「なし」にしておくと、FRP が残る条件をより確実に解消できます。その後に「すべてのデータを消去（出荷時リセット）」を実行します。メニュー名は機種・OS バージョンにより異なります。",
     },
     {
@@ -240,7 +240,7 @@ export default function ActivationLockGuidePage() {
 
         {/* 「探す」オフ手順 */}
         <section className="mt-14">
-          <h2 className="section-title mb-6">端末別：「探す」をオフにして Apple ID からサインアウトする手順</h2>
+          <h2 className="section-title mb-6">iPhone・iPad・Mac 別の「探す」のオフと Apple ID からのサインアウト手順</h2>
           <div className="space-y-5">
             {offSteps.map((s, i) => (
               <div key={s.t} className="border border-chalk-line bg-chalk-card p-5">
