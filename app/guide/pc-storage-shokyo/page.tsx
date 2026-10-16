@@ -311,9 +311,9 @@ export default function PcStorageShokyoGuidePage() {
           公開日：{PAGE_DATE_LABEL}／掲載社の条件は各項に記載した確認日時点の公式サイトの記載です。当サイトでは買取価格・相場は扱いません。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">PCを手放す前に決めておく3つの事項</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

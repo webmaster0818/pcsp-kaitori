@@ -229,9 +229,9 @@ export default function HoujinDataShokyoShomeishoPage() {
           公開日: {PUBLISHED_LABEL}／本ページは一般的な情報の提供を目的としており、個別の法務・会計・監査上の判断を示すものではありません。消去の対応内容や証明書の発行条件は業者により異なるため、依頼前に必ず各社へご確認ください。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">データ消去証明書の要否と確認事項</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

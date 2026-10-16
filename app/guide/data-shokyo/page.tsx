@@ -232,9 +232,9 @@ export default function DataShokyoGuidePage() {
           スマホや PC を買取に出す際は、査定額とあわせてデータの扱いにも注意が必要です。写真・連絡先・決済情報・パスワードが入った端末を第三者に渡す以上、「初期化した」だけでは足りない工程がいくつかあります。本ページでは、バックアップからアカウントの解除、OS 別の初期化、SIM・SD カードの取り出し、おサイフケータイや認証アプリの移行までを、一般的な手順として順にご説明します。機種・OS バージョンにより名称や手順が異なるため、ご不明な点は各メーカーのサポートページでお使いの機種の表記をご確認ください。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">データ消去の順番と初期化前に移すもの</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

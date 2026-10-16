@@ -314,7 +314,7 @@ export default function GoogleAccountAndroidGuidePage() {
 
         {/* 検索意図への直接の答え（Google公式ヘルプで確認） */}
         <section className="mt-6 max-w-3xl border-2 border-vermilion bg-chalk-warm p-5 md:p-6">
-          <h2 className="font-display text-base text-steel-900 md:text-lg">要点：Googleアカウントを端末から削除してから初期化します</h2>
+          <h2 className="font-display text-base text-steel-900 md:text-lg">Googleアカウントを端末から削除してから初期化します</h2>
           <p className="mt-3 text-sm leading-loose text-steel-800">
             Androidを売る・譲る・下取りに出す前は、「Googleアカウントを端末から削除 → 出荷時の設定にリセット（初期化）」の順で進めます。Google公式ヘルプは、初期化された端末を他人が使えないようにする保護機能（FRP・デバイスの保護）について「デバイスの保護を無効にするには、お使いのデバイスから Google アカウントを削除します」と案内しています。削除しないまま初期化すると、初期設定でそのアカウント情報を入力できない限り「デバイスをまったく使用できなくなります」（同ヘルプ）。
           </p>
@@ -349,9 +349,9 @@ export default function GoogleAccountAndroidGuidePage() {
           本ページの内容は{PAGE_DATE_LABEL}時点の一般的な情報です。掲載社の条件は各社公式サイトで確認した内容を、確認日とともに引用しています。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">Googleアカウントの削除と初期化の前に確認する事項</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

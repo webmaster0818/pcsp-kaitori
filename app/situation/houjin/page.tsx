@@ -225,9 +225,9 @@ export default function HoujinSituationPage() {
           機器の入れ替えで不要になった業務用のノートPC、社用スマホ、タブレットをまとめて手放す際は、個人の売却とは異なる確認事項があります。具体的には、資産台帳と会計処理、情報漏えい対策としてのデータ消去と証明書、MDMや組織アカウントの解除、リース品の扱い、古物営業法上の本人確認です。本ページでは、法人の端末処分・買取で一般に必要となる確認事項と流れをご説明します。個別の会計・法務の判断は、担当部署や専門家へのご確認を前提としてください。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">法人の端末処分で事前に確認する事項</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

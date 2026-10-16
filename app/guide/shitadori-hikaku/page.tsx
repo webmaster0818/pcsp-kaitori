@@ -172,7 +172,7 @@ export default function ShitadoriHikakuGuidePage() {
 
         {/* 結論先出し */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">下取りと買取の還元方法の違いと使い分け</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

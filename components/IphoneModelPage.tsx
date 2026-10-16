@@ -145,6 +145,8 @@ export interface IphoneModelPageProps {
   model: IphoneModel;
   h1: string;
   intro: string;
+  /** 冒頭の要点セクションの見出し（ページごとに個別の文言を渡す） */
+  conclusionsTitle: string;
   /** 要点 */
   conclusions: string[];
   /** ラインナップ節の補足（世代ごとに異なる説明） */
@@ -164,6 +166,7 @@ export default function IphoneModelPage({
   model,
   h1,
   intro,
+  conclusionsTitle,
   conclusions,
   lineupNote,
   prepNote,
@@ -209,9 +212,9 @@ export default function IphoneModelPage({
           公開日: {IPHONE_MODEL_PUBLISHED_LABEL}／掲載社の条件は、公式サイトで一次確認した内容です。買取価格は機種・状態・時期により大きく変動するため、当サイトでは買取価格・相場の数値を掲載しておりません。最新の金額は、各社公式サイトの表示をご確認ください。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">{conclusionsTitle}</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

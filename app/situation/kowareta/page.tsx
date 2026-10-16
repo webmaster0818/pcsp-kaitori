@@ -207,9 +207,9 @@ export default function KowaretaSituationPage() {
           画面割れ、バッテリーの劣化、水没、電源が入らないなど、端末の故障にはさまざまな状態があり、買取での扱いもそれぞれ異なります。本ページでは、故障の種類ごとの査定での一般的な扱い、売る前に行うべきデータ消去と「探す」の解除、起動しない端末のデータリスクの考え方、買取不可の場合の処分先、故障品を受け付ける業者を選ぶ際の確認事項を、一般知識としてご説明します。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">故障した端末の買取と処分の選択肢</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

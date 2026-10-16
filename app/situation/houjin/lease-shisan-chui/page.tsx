@@ -221,9 +221,9 @@ export default function HoujinLeaseShisanChuiPage() {
           公開日: {PUBLISHED_LABEL}／本ページは一般的な情報の提供を目的としており、個別の契約の解釈、法務・会計・税務上の判断を示すものではありません。契約の内容と会計上の扱いは個別に異なります。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">所有権の区分と社内手続きの要点</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">

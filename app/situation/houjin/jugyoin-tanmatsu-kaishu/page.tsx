@@ -236,9 +236,9 @@ export default function HoujinJugyoinTanmatsuKaishuPage() {
           公開日: {PUBLISHED_LABEL}／本ページは一般的な情報の提供を目的としており、個別の労務・法務上の判断や、特定の管理サービスの操作手順を示すものではありません。社内規程に関わる判断は、人事・法務担当にご確認ください。
         </p>
 
-        {/* 要点 */}
+        {/* 冒頭の要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">要点</h2>
+          <h2 className="font-display text-lg text-steel-900">業務端末の回収を円滑に進めるための要点</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">
