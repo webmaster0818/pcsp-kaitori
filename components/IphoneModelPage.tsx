@@ -19,23 +19,23 @@ const LINEUP_SOURCES = [
 /** 売る前の準備（掲載社の公式記載に基づく共通手順） */
 const PREP_STEPS: { t: string; d: string }[] = [
   {
-    t: "バックアップを取る",
-    d: "初期化すると端末内のデータは戻せません。ゲオの買取の案内でも「初期化を行うと、iPhone/iPad内のデータは全て消えてしまいます。必ず事前にバックアップを取ってください」と記載されています。写真・連絡先・アプリのログイン情報など、新しい端末に引き継ぐものがそろっているかを、初期化を始める前に確認してください。",
+    t: "バックアップの取得",
+    d: "初期化すると端末内のデータは戻せません。ゲオの買取の案内でも「初期化を行うと、iPhone/iPad内のデータは全て消えてしまいます。必ず事前にバックアップを取ってください」と記載されています。写真・連絡先・アプリのログイン情報など、新しい端末に引き継ぐデータが揃っているかを、初期化の前にご確認ください。",
   },
   {
-    t: "決済アプリ・交通系ICを先に処理する",
-    d: "ふるいち（古本市場）の事前準備ページでは「おサイフケータイ・楽天Edy・モバイルSuicaなどのICアプリはすべてデータ移行・削除した上でお送りください」「残額がある状態でお送りいただいた場合、残額分の金額・データについては当社では保障いたしかねます」と記載されています。残高の移行は初期化後だと手続きが難しくなることがあるため、必ず先に済ませます。",
+    t: "決済アプリ・交通系ICの事前処理",
+    d: "ふるいち（古本市場）の事前準備ページでは「おサイフケータイ・楽天Edy・モバイルSuicaなどのICアプリはすべてデータ移行・削除した上でお送りください」「残額がある状態でお送りいただいた場合、残額分の金額・データについては当社では保障いたしかねます」と記載されています。残高の移行は初期化後には手続きが難しくなることがあるため、必ず事前に済ませてください。",
   },
   {
-    t: "iCloudからサインアウトし「探す」をオフにする",
-    d: "ふるいちは「iCloudがログイン状態でiPhoneを探す機能がオン（アクティベーションロック有効）の端末は買取不可となります」と明記しています。にこスマ買取では、アクティベーションロックがかかっていた場合はCグレード（機能不良品）での買取か、キャンセル（返送）を選ぶ扱いになります。ゲオの買取も、アクティベーションロック中の端末を買取不可の対象に挙げています。",
+    t: "iCloudからのサインアウトと「探す」の解除",
+    d: "ふるいちは「iCloudがログイン状態でiPhoneを探す機能がオン（アクティベーションロック有効）の端末は買取不可となります」と明記しています。にこスマ買取では、アクティベーションロックがかかっていた場合はCグレード（機能不良品）での買取か、キャンセル（返送）を選択する扱いとなります。ゲオの買取も、アクティベーションロック中の端末を買取不可の対象に挙げています。",
   },
   {
-    t: "端末を初期化する",
-    d: "携帯市場は「端末内のデータは予め初期化していただいてから発送してください」と案内しています。ネットオフは「初期化されていないもの」、ブックオフの宅配買取は「データやアプリの消去など初期化がされていないもの」、リコマース宅配買取サービスは「初期化されていない商品」を、それぞれ受け付けない・買取できないものとして挙げています。初期化は送る側の前提条件だと考えてください。",
+    t: "端末の初期化",
+    d: "携帯市場は「端末内のデータは予め初期化していただいてから発送してください」と案内しています。ネットオフは「初期化されていないもの」、ブックオフの宅配買取は「データやアプリの消去など初期化がされていないもの」、リコマース宅配買取サービスは「初期化されていない商品」を、それぞれ受け付けない・買取できないものとして挙げています。初期化は、発送する側の前提条件となります。",
   },
   {
-    t: "SIMカードを抜き、充電して、暗証番号を戻す",
+    t: "SIMカードの取り出し・充電・暗証番号の初期化",
     d: "ふるいちは「SIMカード・SDカードを抜く」「カード類の残存があった場合はお客様ご住所へご返却いたします。なお、その際の送料につきましてはお客様ご負担となります」と記載しています。動作確認のため、ゲオの買取は「バッテリーが十分に充電された状態で発送」を、ゲオ・ふるいち・ブックオフは暗証番号を各キャリアの初期設定番号に戻すことを、それぞれ案内しています。",
   },
 ];
@@ -50,7 +50,7 @@ const CONDITION_ROWS: { label: string; value: string }[] = [
   {
     label: "バッテリーの状態",
     value:
-      "ゲオの買取は「電池パックの膨張」や「深刻なダメージ・バッテリー膨張（パネル浮き・厚み2倍以上）」を買取不可の対象として挙げています。ふるいちは「画面割れ・故障・バッテリー劣化は減額または値段が付かない場合あり」と記載しています。iPhoneでは「設定」→「バッテリー」→「バッテリーの状態」で最大容量の表示を確認できるため、申込前に控えておくと申告がぶれません。",
+      "ゲオの買取は「電池パックの膨張」や「深刻なダメージ・バッテリー膨張（パネル浮き・厚み2倍以上）」を買取不可の対象として挙げています。ふるいちは「画面割れ・故障・バッテリー劣化は減額または値段が付かない場合あり」と記載しています。iPhoneでは「設定」→「バッテリー」→「バッテリーの状態」で最大容量の表示を確認できるため、お申し込み前に控えておくと、正確に申告できます。",
   },
   {
     label: "背面・フレーム",
@@ -60,7 +60,7 @@ const CONDITION_ROWS: { label: string; value: string }[] = [
   {
     label: "カメラ",
     value:
-      "携帯市場の査定項目には「カメラ査定」が含まれます。にこスマ買取は「カメラに異常がある」状態を機能不良（Cグレード）の例に挙げています。ゲオの買取は「カメラレンズの傷」のあるiPhoneも買取対象と記載しています。レンズのひび・曇り、撮影時の黒点の有無は、送る前に一度写真を撮って確認しておくと申告しやすくなります。",
+      "携帯市場の査定項目には「カメラ査定」が含まれます。にこスマ買取は「カメラに異常がある」状態を機能不良（Cグレード）の例に挙げています。ゲオの買取は「カメラレンズの傷」のあるiPhoneも買取対象と記載しています。レンズのひび・曇り、撮影時の黒点の有無は、発送前に一度撮影して確認しておくと、申告が容易になります。",
   },
   {
     label: "水濡れ",
@@ -145,7 +145,7 @@ export interface IphoneModelPageProps {
   model: IphoneModel;
   h1: string;
   intro: string;
-  /** 先に結論 */
+  /** 要点 */
   conclusions: string[];
   /** ラインナップ節の補足（世代ごとに異なる説明） */
   lineupNote: string;
@@ -196,7 +196,7 @@ export default function IphoneModelPage({
         items={[
           { name: "ホーム", path: "/" },
           { name: "iPhoneの買取", path: "/iphone/" },
-          { name: `${model.name}を売る`, path: model.path },
+          { name: `${model.name}の売却`, path: model.path },
         ]}
       />
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
@@ -206,12 +206,12 @@ export default function IphoneModelPage({
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">{intro}</p>
         <p className="mt-4 max-w-3xl text-xs leading-loose text-steel-500">
-          公開日: {IPHONE_MODEL_PUBLISHED_LABEL}／掲載社の条件は公式サイトを一次確認した内容です。当サイトでは買取価格・相場の数値は扱いません。買取価格は機種・状態・時期により大きく変動します。最新の金額は各社公式サイトの表示をご確認ください。
+          公開日: {IPHONE_MODEL_PUBLISHED_LABEL}／掲載社の条件は、公式サイトで一次確認した内容です。買取価格は機種・状態・時期により大きく変動するため、当サイトでは買取価格・相場の数値を掲載しておりません。最新の金額は、各社公式サイトの表示をご確認ください。
         </p>
 
-        {/* 先に結論 */}
+        {/* 要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">先に結論</h2>
+          <h2 className="font-display text-lg text-steel-900">要点</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">
@@ -234,7 +234,7 @@ export default function IphoneModelPage({
             ))}
           </ul>
           <p className="mt-4 max-w-3xl text-xs leading-loose text-steel-500">
-            上の表記は、当サイト掲載社のうち公式サイトに機種一覧を掲載している次の4社のページを確認し、複数社に共通して掲載されていた表記だけを並べたものです（{IPHONE_MODEL_PUBLISHED_LABEL}確認）。1社にしか見当たらない表記は採用していません。容量・発売年・搭載チップなどの仕様は当サイトでは扱いません。
+            上記の表記は、当サイト掲載社のうち、公式サイトに機種一覧を掲載している次の4社のページを確認し、複数社に共通して掲載されていた表記のみを記載したものです（{IPHONE_MODEL_PUBLISHED_LABEL}確認）。1社のみに掲載されている表記は採用していません。容量・発売年・搭載チップなどの仕様は、当サイトでは扱っておりません。
           </p>
           <ul className="mt-3 space-y-1 text-xs text-steel-500">
             {sources.map((s) => (
@@ -250,7 +250,7 @@ export default function IphoneModelPage({
 
         {/* 世代固有の注意点 */}
         <section className="mt-14">
-          <h2 className="section-title mb-6">{model.name}を売るときに特に効く注意点</h2>
+          <h2 className="section-title mb-6">{model.name}の売却時に特に確認したい注意点</h2>
           <div className="grid gap-5 md:grid-cols-2">
             {genPoints.map((p, i) => (
               <div key={p.t} className="border border-chalk-line bg-chalk-card p-5">
@@ -268,7 +268,7 @@ export default function IphoneModelPage({
 
         {/* 売る前の準備 */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">売る前の準備は、この順番で進める</h2>
+          <h2 className="section-title mb-2">売却前の準備の手順</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">{prepNote}</p>
           <div className="space-y-5">
             {PREP_STEPS.map((s, i) => (
@@ -284,14 +284,14 @@ export default function IphoneModelPage({
             ))}
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Link href="/guide/data-shokyo/" className="btn-primary">初期化の手順を手順書で見る</Link>
-            <Link href="/guide/activation-lock/" className="btn-ghost">「探す」の解除方法を見る</Link>
+            <Link href="/guide/data-shokyo/" className="btn-primary">初期化の手順を見る</Link>
+            <Link href="/guide/activation-lock/" className="btn-ghost">「探す」の解除方法</Link>
           </div>
         </section>
 
         {/* 状態のどこを見られるか */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">状態は、どこを見られるのか</h2>
+          <h2 className="section-title mb-2">査定で確認される端末の状態</h2>
           <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">{conditionNote}</p>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
@@ -306,15 +306,15 @@ export default function IphoneModelPage({
             </table>
           </div>
           <p className="mt-3 text-xs text-steel-500">
-            ※ 上記は各社公式サイトの記載を整理したものです（{IPHONE_MODEL_PUBLISHED_LABEL}確認）。減額幅・金額についての記載は当サイトでは扱いません。査定結果は同じ状態でも社により異なります。
+            ※ 上記は、各社公式サイトの記載を整理したものです（{IPHONE_MODEL_PUBLISHED_LABEL}確認）。減額幅・金額は、当サイトでは扱っておりません。査定結果は、同じ状態でも社により異なります。
           </p>
         </section>
 
         {/* 付属品と箱 */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">付属品と箱の扱いは、社によって正反対</h2>
+          <h2 className="section-title mb-2">付属品と箱の扱いの違い</h2>
           <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">
-            箱や付属品をどう評価するかは、掲載社のあいだでもはっきり分かれます。「あれば持ってきてほしい」と案内する社がある一方で、「付属品の有無で金額は変わらない、本体のみで送ってほしい」と明記している社もあります。手元に箱が残っているかどうかで、申し込む先の向き不向きが変わるということです。次の記載はいずれも各社公式サイトで確認したものです。
+            箱や付属品の評価は、掲載社の間でも大きく異なります。付属品がある場合は持参するよう案内する社がある一方、付属品の有無で金額は変わらないため本体のみを送るよう明記している社もあります。お手元に箱が残っているかどうかによって、適した申込先が異なります。以下の記載は、いずれも各社公式サイトで確認したものです。
           </p>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
@@ -329,7 +329,7 @@ export default function IphoneModelPage({
             </table>
           </div>
           <p className="mt-3 text-xs text-steel-500">
-            ※ 箱や付属品があると金額がどれだけ変わるかは、当サイトでは扱いません。付属品の扱いは申込ページの記載を必ずご確認ください。
+            ※ 箱や付属品の有無による金額の差は、当サイトでは扱っておりません。付属品の扱いは、申込ページの記載を必ずご確認ください。
           </p>
         </section>
 
@@ -342,7 +342,7 @@ export default function IphoneModelPage({
               ネットワーク利用制限は、端末を購入したキャリアが公開している確認ページで、端末のIMEI（製造番号）を入力すると状態を調べられるのが一般的です。IMEIはiPhoneの「設定」→「一般」→「情報」で確認できます。ふるいちの事前準備ページでは、確認ページに表示されるステータスとして「◯（端末代金支払済／完済）」「△（端末代金未完済／支払中、保証サービス加入中）」「×（支払停滞中／利用制限中）」「－（製造番号の誤入力、本体交換製品、未反映等）」の4つが挙げられています。
             </p>
             <p>
-              分割払いが残っていること自体で売れなくなるわけではありませんが、支払いを止めると制限がかかり、買った側が使えなくなります。そのため掲載社の多くが、制限の状態によって減額したり、買取自体を断ったりする扱いを公式に明記しています。下の表は、掲載社ごとの公式記載をそのまま整理したものです。記載が見つからなかった社は「公式では確認できず」としており、対応していないという意味ではありません。
+              分割払いが残っていること自体で売却できなくなるわけではありませんが、支払いが止まると制限がかかり、購入した側が使用できなくなります。そのため、掲載社の多くが、制限の状態によって減額したり買取自体を断ったりする扱いを公式に明記しています。下表は、掲載社ごとの公式記載を整理したものです。記載を確認できなかった社は「公式では確認できず」と表示しており、対応していないという意味ではありません。
             </p>
           </div>
           <div className="mt-6 overflow-x-auto border border-chalk-line">
@@ -362,13 +362,13 @@ export default function IphoneModelPage({
             </table>
           </div>
           <p className="mt-3 text-xs text-steel-500">
-            ※ 記載は{IPHONE_MODEL_PUBLISHED_LABEL}時点の当サイト調査によるものです。規約・条件は変更されることがあるため、申込前に各社公式サイトの最新の記載をご確認ください。残債の有無と支払いの扱いは、契約しているキャリアで確認してください。
+            ※ 記載は、{IPHONE_MODEL_PUBLISHED_LABEL}時点の当サイトの調査によるものです。規約・条件は変更される場合があるため、ご利用前に、各社公式サイトにて最新情報をご確認ください。残債の有無と支払いの扱いは、ご契約中のキャリアにご確認ください。
           </p>
         </section>
 
         {/* FAQ */}
         <section className="mt-14">
-          <h2 className="section-title mb-6">{model.name}についてよくある質問</h2>
+          <h2 className="section-title mb-6">{model.name}に関するよくある質問</h2>
           <div className="space-y-4">
             {faqs.map((f) => (
               <div key={f.q} className="border border-chalk-line bg-chalk-card p-5">
@@ -382,15 +382,15 @@ export default function IphoneModelPage({
           </div>
         </section>
 
-        {/* 次にやること */}
+        {/* 次の手順 */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">次にやること</h2>
+          <h2 className="section-title mb-2">申し込みまでの次の手順</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
-            機種名の特定、初期化、ネットワーク利用制限の確認まで済んだら、あとは条件を見比べて申し込むだけです。掲載社の送料・返送料・入金・キャンセル規定・データ消去の扱いは、同じ物差しで並べた比較表にまとめています。故障や画面割れがある場合は、受け付けている社とそうでない社が分かれるため、先に故障品の扱いを確認してください。
+            機種名の特定、初期化、ネットワーク利用制限の確認が済んだら、各社の条件を比較のうえお申し込みください。掲載社の送料・返送料・入金・キャンセル規定・データ消去の扱いは、同じ基準で比較した比較表にまとめています。故障や画面割れがある場合は、受け付けている社とそうでない社に分かれるため、事前に故障品の扱いをご確認ください。
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link href="/compare/" className="btn-primary">掲載サービスの条件を比較表で見る</Link>
-            <Link href="/iphone/" className="btn-ghost">iPhone買取の全体像に戻る</Link>
+            <Link href="/compare/" className="btn-primary">掲載サービスの比較表</Link>
+            <Link href="/iphone/" className="btn-ghost">iPhoneの買取（全体）</Link>
           </div>
         </section>
 
@@ -401,7 +401,7 @@ export default function IphoneModelPage({
             {others.map((m) => (
               <li key={m.slug}>
                 <Link href={m.path} className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                  <span className="font-display text-steel-900">{m.name}を売る前に確認すること</span>
+                  <span className="font-display text-steel-900">{m.name}の売却前の確認事項</span>
                   <span className="mt-1 block text-xs text-steel-500">{m.summary}</span>
                 </Link>
               </li>
@@ -414,38 +414,38 @@ export default function IphoneModelPage({
             </li>
             <li>
               <Link href="/guide/data-shokyo/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">売る前のデータ消去 完全手順</span>
+                <span className="font-display text-steel-900">売却前のデータ消去手順</span>
                 <span className="mt-1 block text-xs text-steel-500">バックアップ・サインアウト・初期化の順番</span>
               </Link>
             </li>
             <li>
               <Link href="/guide/activation-lock/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">アクティベーションロックの解除</span>
+                <span className="font-display text-steel-900">アクティベーションロックと「探す」の解除</span>
                 <span className="mt-1 block text-xs text-steel-500">「探す」を解除しないと買取が成立しない理由</span>
               </Link>
             </li>
             <li>
               <Link href="/situation/kowareta/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">壊れた・起動しない端末を売る</span>
-                <span className="mt-1 block text-xs text-steel-500">画面割れ・水没・起動不可の受け皿</span>
+                <span className="font-display text-steel-900">壊れた・起動しない端末の売り方</span>
+                <span className="mt-1 block text-xs text-steel-500">画面割れ・水没・起動不可の端末の売却先</span>
               </Link>
             </li>
             <li>
               <Link href="/guide/shitadori-hikaku/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">下取りと買取はどっちが得？</span>
+                <span className="font-display text-steel-900">スマホの下取りと買取の違い</span>
                 <span className="mt-1 block text-xs text-steel-500">キャリア下取りとの違いを整理</span>
               </Link>
             </li>
             <li>
               <Link href="/guide/takuhai-nagare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">宅配買取の基本の流れ</span>
-                <span className="mt-1 block text-xs text-steel-500">申込から入金までに何が起きるか</span>
+                <span className="font-display text-steel-900">宅配買取の流れと梱包方法</span>
+                <span className="mt-1 block text-xs text-steel-500">申込から入金までの流れ</span>
               </Link>
             </li>
             <li>
               <Link href="/shindan/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">売り方診断（4問）</span>
-                <span className="mt-1 block text-xs text-steel-500">端末の種類と状態からルールベースで判定</span>
+                <span className="mt-1 block text-xs text-steel-500">端末の種類と状態から、判定ルールにもとづき提示</span>
               </Link>
             </li>
           </ul>

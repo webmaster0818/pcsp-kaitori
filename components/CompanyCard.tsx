@@ -28,7 +28,7 @@ export default function CompanyCard({ company }: { company: Company }) {
           {company.name}
         </h3>
         <span className="text-[11px] text-steel-300">
-          {company.confirmed_date} 公式確認
+          公式確認日 {company.confirmed_date}
         </span>
       </div>
       <dl className="divide-y divide-chalk-line text-[13px] leading-relaxed">
@@ -56,13 +56,13 @@ export default function CompanyCard({ company }: { company: Company }) {
           target="_blank"
           className="btn-primary flex-1 text-sm"
         >
-          公式サイトを見る
+          公式サイトへ
         </a>
         <Link
           href={`/kaitori/${company.slug}/`}
           className="btn-ghost flex-1 text-sm"
         >
-          一次確認の詳細
+          確認内容の詳細
         </Link>
       </div>
     </article>

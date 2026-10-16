@@ -39,7 +39,7 @@ export default function SiteFooter() {
         </div>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
           <FooterCol
-            title="カテゴリで探す"
+            title="カテゴリ別の買取情報"
             links={[
               ...categories.map((c) => ({ href: c.path, label: c.name })),
               { href: "/compare/", label: "掲載サービスの比較表" },
@@ -47,26 +47,26 @@ export default function SiteFooter() {
             ]}
           />
           <FooterCol
-            title="サービス情報（一次確認）"
+            title="サービス別の公式確認情報"
             links={companies.map((c) => ({
               href: `/kaitori/${c.slug}/`,
               label: c.name,
             }))}
           />
           <FooterCol
-            title="状況別・ガイド"
+            title="状況別の売却ガイド"
             links={[
-              { href: "/guide/data-shokyo/", label: "売る前のデータ消去 完全手順" },
+              { href: "/guide/data-shokyo/", label: "売る前のデータ消去の手順" },
               { href: "/guide/activation-lock/", label: "アクティベーションロックの解除" },
-              { href: "/guide/honnin-kakunin/", label: "買取の本人確認はなぜ必要か" },
-              { href: "/guide/shitadori-hikaku/", label: "下取りと買取はどっちが得？" },
-              { href: "/guide/takuhai-nagare/", label: "宅配買取の流れと梱包" },
-              { href: "/situation/kowareta/", label: "壊れた・起動しない端末を売る" },
-              { href: "/situation/houjin/", label: "法人のPC・スマホをまとめて処分" },
+              { href: "/guide/honnin-kakunin/", label: "買取で本人確認が必要な理由" },
+              { href: "/guide/shitadori-hikaku/", label: "スマホの下取りと買取の違い" },
+              { href: "/guide/takuhai-nagare/", label: "宅配買取の流れと梱包方法" },
+              { href: "/situation/kowareta/", label: "壊れた・起動しない端末の売却" },
+              { href: "/situation/houjin/", label: "法人のPC・スマホの一括処分・買取" },
             ]}
           />
           <FooterCol
-            title="サイトについて"
+            title="当サイトについて"
             links={[
               { href: "/about/", label: "運営者情報" },
               { href: "/content-policy/", label: "コンテンツ制作ポリシー" },
@@ -82,13 +82,13 @@ export default function SiteFooter() {
               {OPERATOR.address}
             </p>
             <p className="mt-4 text-xs leading-relaxed text-steel-400">
-              掲載するサービス情報はすべて各社公式サイトを一次確認し、確認日を明記しています。口コミ・体験談の創作は行いません。
+              掲載するサービス情報は、各社の公式サイトで一次確認した内容に限定し、確認日を記載しています。口コミ・体験談の創作は行いません。
             </p>
           </div>
         </div>
         <div className="mt-12 border-t border-steel-700 pt-6 text-xs text-steel-400">
           <p>
-            本サイトはプロモーション（PR）を含みます。掲載内容は確認日時点の各社公式サイトの記載に基づくもので、買取価格や条件は変動します。最新の条件は各社公式サイトでご確認ください。
+            本サイトはプロモーション（PR）を含みます。掲載内容は、確認日時点の各社公式サイトの記載にもとづいています。買取価格や条件は変動するため、ご利用前に各社公式サイトにて最新情報をご確認ください。
           </p>
           <p className="mt-2">
             &copy; {new Date().getFullYear()} {OPERATOR.name}

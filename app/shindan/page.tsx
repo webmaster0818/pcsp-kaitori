@@ -3,9 +3,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import ShindanClient from "@/components/ShindanClient";
 
 export const metadata: Metadata = {
-  title: "売り方診断（4問）｜端末の種類・状態からルールベースで判定",
+  title: "売り方診断（4問）｜端末の種類・状態から売り方を判定",
   description:
-    "端末の種類・状態・売り方・個人か法人かの4問に答えると、ルールベースで合うガイドとカテゴリ、掲載サービスを提示します。判定ロジックは全て開示し、該当がない場合は「該当なし」と正直に表示します。",
+    "端末の種類・状態・売り方・個人か法人かの4問に答えると、あらかじめ定めた判定ルールにもとづき、適したガイドとカテゴリ、掲載サービスを提示します。判定ロジックはすべて開示しており、該当がない場合は「該当なし」と表示します。",
   alternates: { canonical: "/shindan/" },
 };
 
@@ -21,10 +21,10 @@ export default function ShindanPage() {
       <div className="mx-auto max-w-3xl px-4 py-10 md:py-14">
         <p className="kicker mb-3">DIAGNOSIS</p>
         <h1 className="font-display text-2xl leading-relaxed text-steel-900 md:text-4xl md:leading-relaxed">
-          売り方診断｜4問でカテゴリを判定
+          売り方診断（4問によるカテゴリ判定）
         </h1>
         <p className="mt-5 text-sm leading-loose text-steel-600">
-          端末の種類・状態・売り方・個人か法人かの4問に答えると、あなたに合うガイドとカテゴリ、掲載サービスをルールベースで提示します。判定ロジックはページ下部で全て開示しており、当てはまるサービスがない場合は「該当なし」と正直に表示します。診断結果はサービスの優劣評価ではありません。
+          端末の種類・状態・売り方・個人か法人かの4問に答えると、あらかじめ定めた判定ルールにもとづき、適したガイドとカテゴリ、掲載サービスを提示します。判定ロジックはページ下部ですべて開示しており、該当するサービスがない場合は「該当なし」と表示します。診断結果はサービスの優劣を評価するものではありません。
         </p>
         <div className="mt-10">
           <ShindanClient />

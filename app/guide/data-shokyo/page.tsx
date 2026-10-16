@@ -4,9 +4,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL, OPERATOR, PUBLISHED_DATE } from "@/lib/site";
 
-const TITLE = "スマホ・PCを売る前のデータ消去 完全手順｜iPhone・Android・Windows・Mac別";
+const TITLE = "スマホ・PCを売る前のデータ消去の手順｜iPhone・Android・Windows・Mac別";
 const DESC =
-  "スマホ・PCを買取に出す前のデータ消去手順をOS別に整理。バックアップ、iPhoneの「探す」オフ、AndroidのGoogleアカウント削除、Windowsの「ドライブのクリーニング」、Macの全消去、SIM・SDカードの取り出し、おサイフケータイや認証アプリの移行までをチェックリスト付きで解説します。";
+  "スマホ・PCを買取に出す前のデータ消去の手順を、OS別にご説明します。バックアップ、iPhoneの「探す」オフ、AndroidのGoogleアカウント削除、Windowsの「ドライブのクリーニング」、Macの全消去、SIM・SDカードの取り出し、おサイフケータイや認証アプリの移行までを解説しています。";
 const PATH = "/guide/data-shokyo/";
 
 export const metadata: Metadata = {
@@ -29,17 +29,17 @@ const articleLd = {
 
 export default function DataShokyoGuidePage() {
   const conclusions = [
-    "順番は「バックアップ → アカウントのサインアウト（iPhoneは「探す」オフ） → 初期化 → SIM・SDカードを抜く」です。初期化を先にやるとアカウントの紐づけが残り、次の持ち主が使えない状態になることがあります。",
-    "現在のiPhone・Android・Mac・Windows（暗号化が有効な場合）は、初期化の際に暗号化キーが破棄される仕組みが一般的で、正しい手順で初期化すれば実用上のデータ復元は困難と考えられています。ただし暗号化が無効な古いPCは「ドライブのクリーニング」など上書き消去を選ぶのが安全側です。",
+    "順番は「バックアップ → アカウントのサインアウト（iPhoneは「探す」オフ） → 初期化 → SIM・SDカードを抜く」です。初期化を先に行うとアカウントの紐づけが残り、次の持ち主が使えない状態になることがあります。",
+    "現在のiPhone・Android・Mac・Windows（暗号化が有効な場合）は、初期化の際に暗号化キーが破棄される仕組みが一般的で、正しい手順で初期化すれば実用上のデータ復元は困難と考えられています。ただし暗号化が無効な古いPCは「ドライブのクリーニング」など上書き消去を選ぶほうが安全です。",
     "おサイフケータイ（Suica・iD・QUICPayなど）や2段階認証アプリは、初期化してから気づくと取り戻しに手間がかかります。初期化の前に機種変更手続き・移行を済ませてください。",
-    "機種・OSバージョンにより名称や手順が異なります。このページは一般的な流れの整理です。迷ったら各メーカーのサポートページで自分の機種の手順を確認してください。",
+    "機種・OSバージョンにより名称や手順が異なります。本ページでは一般的な流れをご説明しています。ご不明な点は、各メーカーのサポートページでお使いの機種の手順をご確認ください。",
   ];
 
   const backupRows = [
-    { label: "iPhone・iPad", value: "iCloudバックアップ、またはPC（Mac の Finder / Windows の iTunes・Apple Devices アプリ）へのバックアップ。写真が多い場合はiCloudの容量が足りるか事前に確認します。" },
+    { label: "iPhone・iPad", value: "iCloudバックアップ、またはPC（Mac の Finder / Windows の iTunes・Apple Devices アプリ）へバックアップします。写真が多い場合はiCloudの容量が足りるか事前に確認します。" },
     { label: "Androidスマホ", value: "Googleアカウントのバックアップ（設定の「システム」や「Google」メニューにあることが多い）に加え、写真はGoogleフォト、LINEなどのアプリは各アプリ内の引き継ぎ設定を使います。メーカー独自のバックアップ機能（Samsung・ソニー・シャープなど）がある機種もあります。" },
-    { label: "Windows PC", value: "外付けSSD・HDDやクラウド（OneDrive など）にドキュメント・写真・デスクトップをコピー。ブラウザのブックマークやパスワードはブラウザの同期機能かエクスポート機能で退避します。ライセンスが端末に紐づくソフトは、先に「ライセンス認証の解除」をしておくと再インストール時に困りません。" },
-    { label: "Mac", value: "Time Machine で外付けドライブにバックアップするのが基本です。新しいMacに引き継ぐ場合は「移行アシスタント」で丸ごと移せます。iCloud Drive を使っていても、ローカルにしかないファイルがないか確認しましょう。" },
+    { label: "Windows PC", value: "外付けSSD・HDDやクラウド（OneDrive など）にドキュメント・写真・デスクトップをコピーします。ブラウザのブックマークやパスワードはブラウザの同期機能かエクスポート機能で退避します。ライセンスが端末に紐づくソフトは、先に「ライセンス認証の解除」を行っておくと、再インストール時の手間を避けられます。" },
+    { label: "Mac", value: "Time Machine で外付けドライブにバックアップするのが基本です。新しいMacに引き継ぐ場合は「移行アシスタント」で一括して移行できます。iCloud Drive を使っている場合も、端末内にのみ保存されているファイルがないかご確認ください。" },
   ];
 
   const iphoneSteps = [
@@ -53,7 +53,7 @@ export default function DataShokyoGuidePage() {
     },
     {
       t: "「探す」をオフにして Apple ID（Apple アカウント）からサインアウトする",
-      d: "設定アプリの最上部にある自分の名前をタップし、「探す」→「iPhoneを探す」をオフにします（Apple ID のパスワード入力が求められます）。続けて画面下部の「サインアウト」を実行します。これがアクティベーションロック解除の要で、買取業者が最も重視する工程です。詳しくは別ページで解説しています。",
+      d: "設定アプリの最上部にあるご自身の名前をタップし、「探す」→「iPhoneを探す」をオフにします（Apple ID のパスワード入力が求められます）。続けて画面下部の「サインアウト」を実行します。これがアクティベーションロック解除の要で、買取業者が最も重視する工程です。詳しくは別ページで解説しています。",
     },
     {
       t: "「すべてのコンテンツと設定を消去」を実行する",
@@ -61,7 +61,7 @@ export default function DataShokyoGuidePage() {
     },
     {
       t: "SIM カードを抜き、eSIM の扱いを確認する",
-      d: "物理 SIM は側面のトレイから取り出します。eSIM を使っている場合は、初期化時に「eSIM を消去」するかどうか選択肢が出るのが一般的です。乗り換え先で再発行手続きが必要になることがあるため、キャリアの案内を確認してから消去してください。",
+      d: "物理 SIM は側面のトレイから取り出します。eSIM を使っている場合は、初期化時に「eSIM を消去」するかどうか選択肢が出るのが一般的です。乗り換え先で再発行手続きが必要になることがあるため、キャリアの案内をご確認のうえ消去してください。",
     },
     {
       t: "初期化後に「こんにちは」の初期設定画面で止まっていることを確認する",
@@ -84,26 +84,26 @@ export default function DataShokyoGuidePage() {
     },
     {
       t: "Googleアカウントを端末から削除する",
-      d: "設定 → 「パスワードとアカウント」または「アカウント」→ 対象の Google アカウント → 「アカウントを削除」。複数のアカウントを登録している場合はすべて削除します。この工程が Android の端末保護機能（FRP）を残さないための要で、iPhone の「探す」オフに相当します。Samsung アカウントなど、メーカー独自のアカウントを登録している場合はそれも削除します。",
+      d: "設定 → 「パスワードとアカウント」または「アカウント」→ 対象の Google アカウント → 「アカウントを削除」の順に進みます。複数のアカウントを登録している場合はすべて削除します。この工程が Android の端末保護機能（FRP）を残さないための要で、iPhone の「探す」オフに相当します。Samsung アカウントなど、メーカー独自のアカウントを登録している場合はそれも削除します。",
     },
     {
       t: "端末をリセット（初期化）する",
-      d: "設定 → 「システム」→「リセット オプション」→「すべてのデータを消去（出荷時リセット）」が Pixel などの標準的な位置ですが、Galaxy・Xperia・AQUOS・arrows などメーカーによって「一般管理」「端末情報」の下にあるなど、メニュー名も階層も異なります。設定アプリの検索欄に「リセット」や「初期化」と入力するとたどり着きやすいです。",
+      d: "設定 → 「システム」→「リセット オプション」→「すべてのデータを消去（出荷時リセット）」が Pixel などの標準的な位置ですが、Galaxy・Xperia・AQUOS・arrows などメーカーによって「一般管理」「端末情報」の下にあるなど、メニュー名も階層も異なります。設定アプリの検索欄に「リセット」や「初期化」と入力すると、目的の項目を見つけやすくなります。",
     },
     {
       t: "SIM カード・SD カードを抜き、初期設定画面で止まっていることを確認する",
-      d: "初期化が終わったら SIM と SD カードを取り出します。再起動後に言語選択の初期設定画面が表示されればほぼ完了です。Wi-Fi に接続した段階で「この端末は以前リセットされました」「以前使用していた Google アカウントでログインしてください」といった画面が出る場合は、アカウント削除が済んでいなかったサインです。",
+      d: "初期化が終わったら SIM と SD カードを取り出します。再起動後に言語選択の初期設定画面が表示されればほぼ完了です。Wi-Fi に接続した段階で「この端末は以前リセットされました」「以前使用していた Google アカウントでログインしてください」といった画面が出る場合は、アカウントの削除が完了していなかったことを示しています。",
     },
   ];
 
   const windowsSteps = [
     {
       t: "バックアップと、ライセンス・サブスクリプションの解除",
-      d: "ファイルを外付けドライブやクラウドに退避したら、端末に紐づくソフトのライセンス認証を解除しておきます。Microsoft 365 やクラウドサービスのサインイン端末上限に数えられているものは、初期化後に別の端末からでも解除できるものが多いですが、先にやっておくほうが確実です。",
+      d: "ファイルを外付けドライブやクラウドに退避したら、端末に紐づくソフトのライセンス認証を解除しておきます。Microsoft 365 やクラウドサービスのサインイン端末上限に数えられているものは、初期化後に別の端末からでも解除できるものが多いですが、事前に解除しておくほうが確実です。",
     },
     {
       t: "BitLocker の状態を確認し、回復キーを控える",
-      d: "設定 → 「プライバシーとセキュリティ」→「デバイスの暗号化」（Pro 版は「BitLocker ドライブ暗号化」）で状態を確認します。暗号化が有効なら、初期化時に暗号化キーが破棄されるためデータ保護の面では有利です。Microsoft アカウントに回復キーが保存されている場合、そのままでも初期化はできますが、万一初期化の途中で回復キーを求められた場合に備えて、事前に回復キーを控えておくと安心です。暗号化が無効の古い PC は、次の工程で必ず「ドライブのクリーニング」を選びます。",
+      d: "設定 → 「プライバシーとセキュリティ」→「デバイスの暗号化」（Pro 版は「BitLocker ドライブ暗号化」）で状態を確認します。暗号化が有効なら、初期化時に暗号化キーが破棄されるためデータ保護の面では有利です。Microsoft アカウントに回復キーが保存されている場合、そのままでも初期化はできますが、万一初期化の途中で回復キーを求められた場合に備えて、事前に回復キーを控えておくことをおすすめします。暗号化が無効の古い PC は、次の工程で必ず「ドライブのクリーニング」を選びます。",
     },
     {
       t: "「このPCを初期状態に戻す」→「すべて削除」→「ドライブのクリーニング」",
@@ -126,11 +126,11 @@ export default function DataShokyoGuidePage() {
     },
     {
       t: "iCloud・Apple ID・iMessage からサインアウトする",
-      d: "システム設定 → 自分の名前 → 「サインアウト」で Apple ID から抜けます。このとき「Macを探す」もオフになります。古い macOS では「メッセージ」アプリからも別途サインアウトが必要でした。Bluetooth 機器（Magic Mouse・キーボードなど）を一緒に売らない場合はペアリングも解除しておきます。",
+      d: "システム設定 → ご自身の名前 → 「サインアウト」の順に進み、Apple ID からサインアウトします。このとき「Macを探す」もオフになります。古い macOS では「メッセージ」アプリからも別途サインアウトが必要でした。Bluetooth 機器（Magic Mouse・キーボードなど）を一緒に売らない場合はペアリングも解除しておきます。",
     },
     {
       t: "Apple silicon / T2 搭載 Mac：「すべてのコンテンツと設定を消去」",
-      d: "Apple silicon（M1 以降）または T2 セキュリティチップ搭載の Mac で、macOS Monterey 以降なら、システム設定 → 「一般」→「転送またはリセット」→「すべてのコンテンツと設定を消去」で、iPhone と同じ感覚で初期化できます。「探す」のオフ・サインアウト・データ消去が一連の流れで進み、暗号化キーも破棄されます。この方法が使えるなら最も手順が少なく、推奨される消去方法です。",
+      d: "Apple silicon（M1 以降）または T2 セキュリティチップ搭載の Mac で、macOS Monterey 以降なら、システム設定 → 「一般」→「転送またはリセット」→「すべてのコンテンツと設定を消去」で、iPhone と同様の手順で初期化できます。「探す」のオフ・サインアウト・データ消去が一連の流れで進み、暗号化キーも破棄されます。この方法が使えるなら最も手順が少なく、推奨される消去方法です。",
     },
     {
       t: "Intel Mac（T2 なし）や古い macOS：復旧モードのディスクユーティリティで消去",
@@ -143,10 +143,10 @@ export default function DataShokyoGuidePage() {
   ];
 
   const cardRows = [
-    { label: "物理 SIM カード", value: "契約者情報と電話番号に紐づく大切なカードです。必ず取り出し、乗り換え先の端末に挿すか、解約時にキャリアへ返却します。買取業者に送るのは端末本体のみです。SIM トレイは失くしやすいので、トレイ自体は本体に戻しておきます。" },
+    { label: "物理 SIM カード", value: "契約者情報と電話番号に紐づく大切なカードです。必ず取り出し、乗り換え先の端末に挿すか、解約時にキャリアへ返却します。買取業者に送るのは端末本体のみです。SIM トレイは紛失しやすいため、トレイ自体は本体に戻しておきます。" },
     { label: "eSIM", value: "初期化時に消去する選択肢が出るのが一般的です。乗り換え先で使うには再発行（プロファイルの再ダウンロード）の手続きが必要になることが多いため、消去の前にキャリアの案内を確認してください。キャリアによっては再発行に手数料や本人確認が必要な場合があります。" },
     { label: "SD カード（microSD）", value: "写真・動画・音楽が保存されている可能性が高いカードです。端末の初期化では SD カード内のデータは消えないのが一般的なので、必ず抜き取ってください。付けたまま送ってしまうと、業者側の処理で戻ってこない可能性があります。" },
-    { label: "ケース・フィルム", value: "データとは関係ありませんが、ケースは外して本体の状態が分かるようにして送るのが一般的です。フィルムは剥がすかどうか業者の案内に従います。" },
+    { label: "ケース・フィルム", value: "データとは関係ありませんが、ケースは外して本体の状態がわかるようにして送るのが一般的です。フィルムは剥がすかどうか業者の案内に従います。" },
   ];
 
   const serviceRows = [
@@ -160,7 +160,7 @@ export default function DataShokyoGuidePage() {
     },
     {
       t: "2 段階認証アプリ（Google 認証システム・Microsoft Authenticator など）",
-      d: "認証アプリの「ワンタイムコード」は端末内に生成の鍵があるため、初期化すると新端末でコードを出せなくなります。Google 認証システムはアカウント同期または「アカウントを移行」機能で、Microsoft Authenticator はクラウドバックアップで、それぞれ新端末に移せます。同期に対応しない認証アプリを使っている場合は、各サービス（銀行・仮想通貨取引所・SNS など）で先に 2 段階認証を新端末に登録し直す必要があります。移行を忘れると、ログインできなくなり復旧に数日かかるサービスもあります。バックアップコードをどこかに保管してあるか、この機会に確認しておきましょう。",
+      d: "認証アプリの「ワンタイムコード」は端末内に生成の鍵があるため、初期化すると新端末でコードを出せなくなります。Google 認証システムはアカウント同期または「アカウントを移行」機能で、Microsoft Authenticator はクラウドバックアップで、それぞれ新端末に移せます。同期に対応しない認証アプリを使っている場合は、各サービス（銀行・仮想通貨取引所・SNS など）で先に 2 段階認証を新端末に登録し直す必要があります。移行を忘れると、ログインできなくなり復旧に数日かかるサービスもあります。バックアップコードを保管しているかも、あわせてご確認ください。",
     },
     {
       t: "銀行・証券・暗号資産アプリ、マイナンバーカード関連",
@@ -182,7 +182,7 @@ export default function DataShokyoGuidePage() {
     { item: "「探す」をオフにして Apple ID からサインアウトした", os: "iPhone・iPad・Mac" },
     { item: "Google アカウント（メーカーアカウントも）を端末から削除した", os: "Android" },
     { item: "画面ロックを解除した", os: "Android" },
-    { item: "BitLocker の状態確認・回復キーの控え", os: "Windows" },
+    { item: "BitLocker の状態を確認し、回復キーを控えた", os: "Windows" },
     { item: "ライセンス認証の解除（Microsoft 365・Adobe など）", os: "PC・Mac" },
     { item: "初期化を実行した（Windows は「ドライブのクリーニング」あり）", os: "共通" },
     { item: "SIM カード・SD カードを取り出した", os: "スマホ・タブレット" },
@@ -201,7 +201,7 @@ export default function DataShokyoGuidePage() {
     },
     {
       q: "画面が割れて操作できない、電源が入らない端末はどうすればいいですか？",
-      a: "操作できない端末は端末側から初期化できないため、別の端末から遠隔で処理します。iPhone・iPad・Mac は iCloud.com の「探す」から「このデバイスを消去」と「アカウントから削除」を、Android は Google の「デバイスを探す」から「デバイスをリセット」を実行できるのが一般的です。ネットに接続されていない端末は、次に接続されたときに消去が実行される扱いになります。それでも消去できない場合は、業者側でのデータ消去対応を確認したうえで送るか、処分の選択肢を検討します。詳しくは壊れた端末のページで解説しています。",
+      a: "操作できない端末は端末側から初期化できないため、別の端末から遠隔で処理します。iPhone・iPad・Mac は iCloud.com の「探す」から「このデバイスを消去」と「アカウントから削除」を、Android は Google の「デバイスを探す」から「デバイスをリセット」を実行できるのが一般的です。インターネットに接続されていない端末は、次に接続されたときに消去が実行される扱いになります。それでも消去できない場合は、業者側でのデータ消去対応を確認したうえで送るか、処分の選択肢を検討します。詳しくは壊れた端末のページで解説しています。",
     },
     {
       q: "SIM カードや SD カードは付けたまま送っていいですか？",
@@ -209,7 +209,7 @@ export default function DataShokyoGuidePage() {
     },
     {
       q: "買取業者がデータを消してくれるなら、自分でやらなくてもいいですか？",
-      a: "業者側のデータ消去を公式に案内している会社もありますが、輸送中の紛失や、業者に届く前の段階のリスクは自分の初期化でしか防げません。また「探す」や Google アカウントの解除は本人のパスワードが必要で、業者側では原則として行えません。業者の消去対応は「二重の安全策」と考え、自分で初期化してから送るのが基本です。",
+      a: "業者側のデータ消去を公式に案内している会社もありますが、輸送中の紛失や、業者に届く前の段階のリスクは、ご自身での初期化によってのみ防ぐことができます。また「探す」や Google アカウントの解除は本人のパスワードが必要で、業者側では原則として行えません。業者の消去対応は「二重の安全策」と位置付け、ご自身で初期化してから送ることを基本としてください。",
     },
   ];
 
@@ -220,21 +220,21 @@ export default function DataShokyoGuidePage() {
       <Breadcrumbs
         items={[
           { name: "ホーム", path: "/" },
-          { name: "売る前のデータ消去 完全手順", path: PATH },
+          { name: "売る前のデータ消去の手順", path: PATH },
         ]}
       />
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">DATA ERASE GUIDE</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          スマホ・PCを売る前のデータ消去 完全手順｜iPhone・Android・Windows・Mac別
+          スマホ・PCを売る前のデータ消去の手順｜iPhone・Android・Windows・Mac別
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          スマホや PC を買取に出すとき、査定額よりも先に気にしたいのがデータの扱いです。写真・連絡先・決済情報・パスワードが入った端末を第三者に渡す以上、「初期化した」だけでは足りない工程がいくつかあります。このページでは、バックアップからアカウントの解除、OS 別の初期化、SIM・SD カードの取り出し、おサイフケータイや認証アプリの移行までを、一般的な手順として順番に整理します。機種・OS バージョンにより名称や手順が異なるため、迷った箇所は各メーカーのサポートページで自分の機種の表記を確認してください。
+          スマホや PC を買取に出す際は、査定額とあわせてデータの扱いにも注意が必要です。写真・連絡先・決済情報・パスワードが入った端末を第三者に渡す以上、「初期化した」だけでは足りない工程がいくつかあります。本ページでは、バックアップからアカウントの解除、OS 別の初期化、SIM・SD カードの取り出し、おサイフケータイや認証アプリの移行までを、一般的な手順として順にご説明します。機種・OS バージョンにより名称や手順が異なるため、ご不明な点は各メーカーのサポートページでお使いの機種の表記をご確認ください。
         </p>
 
-        {/* 結論先出し */}
+        {/* 要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">先に結論</h2>
+          <h2 className="font-display text-lg text-steel-900">要点</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">
@@ -247,16 +247,16 @@ export default function DataShokyoGuidePage() {
 
         {/* 初期化と暗号化の関係 */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">「初期化」だけでは足りない理由｜暗号化とアカウントの紐づけ</h2>
+          <h2 className="section-title mb-2">初期化だけでは不十分な理由（暗号化とアカウントの紐づけ）</h2>
           <div className="space-y-4 max-w-3xl text-sm leading-loose text-steel-600">
             <p>
-              現在のスマートフォンや Mac、暗号化が有効な Windows PC は、端末内のデータを常に暗号化した状態で保存しています。初期化（工場出荷状態に戻す操作）を実行すると、この暗号化を解くためのキーが破棄される仕組みが一般的で、キーを失ったデータは実用上読み出せなくなります。つまり、正しく初期化さえすれば、データそのものは十分に保護されると考えられています。
+              現在のスマートフォンや Mac、暗号化が有効な Windows PC は、端末内のデータを常に暗号化した状態で保存しています。初期化（工場出荷状態に戻す操作）を実行すると、この暗号化を解くためのキーが破棄される仕組みが一般的で、キーを失ったデータは実用上読み出せなくなります。正しく初期化すれば、データそのものは十分に保護されると考えられています。
             </p>
             <p>
-              問題は「初期化しても消えないもの」があることです。一つは Apple ID や Google アカウントとの紐づけです。iPhone の「探す」、Android の端末保護機能（FRP）は、盗難された端末を初期化しても元の持ち主以外が使えないようにする仕組みなので、サインアウトせずに初期化すると、次の持ち主が使えない端末になります。買取業者がこの状態の端末を再販できないため、一般に買取不可や減額の扱いになります。
+              ただし、初期化しても消えないものがあります。一つは Apple ID や Google アカウントとの紐づけです。iPhone の「探す」、Android の端末保護機能（FRP）は、盗難された端末を初期化しても元の持ち主以外が使えないようにする仕組みなので、サインアウトせずに初期化すると、次の持ち主が使えない端末になります。買取業者がこの状態の端末を再販できないため、一般に買取不可や減額の扱いになります。
             </p>
             <p>
-              もう一つは、端末の外にあるデータです。SD カードの中身、おサイフケータイの残高（IC チップ側に記録されるものがあります）、そして各サービスに「この端末は本人のもの」と登録された認証情報は、初期化では処理されません。だからこそ、初期化の前後に「アカウントの解除」「カード類の取り出し」「サービス側の移行手続き」が必要になります。以下では、この 3 点を含めた順番を OS 別に整理します。
+              もう一つは、端末の外にあるデータです。SD カードの中身、おサイフケータイの残高（IC チップ側に記録されるものがあります）、そして各サービスに「この端末は本人のもの」と登録された認証情報は、初期化では処理されません。そのため、初期化の前後に「アカウントの解除」「カード類の取り出し」「サービス側の移行手続き」が必要になります。以下では、この 3 点を含めた順番を OS 別に整理します。
             </p>
           </div>
         </section>
@@ -265,7 +265,7 @@ export default function DataShokyoGuidePage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">手順 0：バックアップを取る</h2>
           <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">
-            初期化後にデータを取り戻す手段はありません。「新しい端末に移した」と思っていても、写真の一部がローカルにしかなかった、というのはよくあるケースです。バックアップを取ったあと、新端末やバックアップ先で実際にファイルが開けることまで確認してから次に進みます。
+            初期化後にデータを取り戻す手段はありません。新しい端末に移行したつもりでも、写真の一部が端末内にのみ残っていたという例は少なくありません。バックアップを取ったあと、新端末やバックアップ先で実際にファイルが開けることまで確認してから次に進みます。
           </p>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
@@ -285,7 +285,7 @@ export default function DataShokyoGuidePage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">iPhone・iPad の消去手順</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
-            iPhone・iPad で最も重要なのは「探す」のオフと Apple ID のサインアウトです。これを飛ばして初期化するとアクティベーションロックが残ります。iPad も基本的に同じ手順です。
+            iPhone・iPad で最も重要なのは「探す」のオフと Apple ID のサインアウトです。この工程を省いて初期化すると、アクティベーションロックが残ります。iPad も基本的に同じ手順です。
           </p>
           <div className="space-y-5">
             {iphoneSteps.map((s, i) => (
@@ -359,7 +359,7 @@ export default function DataShokyoGuidePage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">Mac（MacBook・iMac・Mac mini）の消去手順</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
-            Mac は搭載チップと macOS のバージョンによって、iPhone のように簡単に消去できる機種と、復旧モードでの操作が必要な機種に分かれます。自分の Mac がどちらか分からない場合は、アップルメニュー →「この Mac について」でチップ名を確認します。
+            Mac は搭載チップと macOS のバージョンによって、iPhone のように簡単に消去できる機種と、復旧モードでの操作が必要な機種に分かれます。お使いの Mac がどちらにあたるかわからない場合は、アップルメニュー →「この Mac について」でチップ名を確認します。
           </p>
           <div className="space-y-5">
             {macSteps.map((s, i) => (
@@ -378,7 +378,7 @@ export default function DataShokyoGuidePage() {
 
         {/* SIM・SD */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">SIM カード・SD カードは必ず取り出す</h2>
+          <h2 className="section-title mb-2">SIM カード・SD カードの取り出し</h2>
           <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">
             初期化はあくまで端末内蔵のストレージに対する処理です。差し込み式のカードは初期化の対象外なので、送る前に必ず取り出します。
           </p>
@@ -400,7 +400,7 @@ export default function DataShokyoGuidePage() {
         <section className="mt-14">
           <h2 className="section-title mb-6">初期化の「前」に済ませるサービス側の手続き</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
-            ここで挙げるものは、初期化してから気づくと取り戻しに時間と手間がかかる項目です。買取の申込前にひととおり確認しておくと安心です。
+            以下は、初期化後に気づくと取り戻しに時間と手間がかかる項目です。買取の申込前に、ひととおりご確認ください。
           </p>
           <div className="space-y-4">
             {serviceRows.map((c) => (
@@ -416,7 +416,7 @@ export default function DataShokyoGuidePage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">送る前の最終チェックリスト</h2>
           <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">
-            上から順に確認していけば、そのまま作業の順番になります。「対象」列で自分の端末に関係する項目だけ拾ってください。
+            上から順に確認すると、そのまま作業の順番になります。「対象」列で、お使いの端末に関係する項目をご確認ください。
           </p>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
@@ -445,13 +445,13 @@ export default function DataShokyoGuidePage() {
 
         {/* 業者選び */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">データ消去の扱いを業者選びの軸に加える</h2>
+          <h2 className="section-title mb-2">業者選びにおけるデータ消去の扱い</h2>
           <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
-            自分で初期化するのが基本ですが、業者側でデータ消去を行う旨を公式サイトに記載している会社と、記載が確認できない会社があります。当サイトの比較表では「データ消去の扱い」を項目として並べ、公式で確認できなかったものはその旨を表示しています。送料・返送料・入金までの日数と合わせて、同じ物差しで確認してください。
+            ご自身で初期化することが基本ですが、業者側でデータ消去を行う旨を公式サイトに記載している会社と、記載が確認できない会社があります。当サイトの比較表では「データ消去の扱い」を項目として掲載し、公式サイトで確認できなかったものはその旨を表示しています。送料・返送料・入金までの日数とあわせて、同じ基準でご確認ください。
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/compare/" className="btn-primary">データ消去の扱いを比較表で見る</Link>
-            <Link href="/shindan/" className="btn-ghost">売り方診断で自分に合う売り方を確認する</Link>
+            <Link href="/shindan/" className="btn-ghost">売り方診断で売り方を確認する</Link>
           </div>
         </section>
 
@@ -477,7 +477,7 @@ export default function DataShokyoGuidePage() {
           <ul className="grid gap-3 text-sm md:grid-cols-2">
             <li>
               <Link href="/guide/osaifu-keitai/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">おサイフケータイ・電子マネーを先に移す</span>
+                <span className="font-display text-steel-900">おサイフケータイ・電子マネーの移行</span>
                 <span className="mt-1 block text-xs text-steel-500">初期化前に済ませる順番</span>
               </Link>
             </li>
@@ -490,7 +490,7 @@ export default function DataShokyoGuidePage() {
             <li>
               <Link href="/guide/pc-storage-shokyo/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">PCを売る前のストレージの扱い</span>
-                <span className="mt-1 block text-xs text-steel-500">回復キー・ドライブのクリーニング・抜いて売る</span>
+                <span className="mt-1 block text-xs text-steel-500">回復キー・ドライブのクリーニング・取り外して売る場合</span>
               </Link>
             </li>
             <li>
@@ -550,7 +550,7 @@ export default function DataShokyoGuidePage() {
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">掲載業者の比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">データ消去の扱い・送料・入金を同じ物差しで比較</span>
+                <span className="mt-1 block text-xs text-steel-500">データ消去の扱い・送料・入金を同じ基準で比較</span>
               </Link>
             </li>
           </ul>

@@ -36,7 +36,7 @@ const q2Options: { value: Q2; label: string }[] = [
   { value: "kidou_shinai", label: "起動しない・電源が入らない" },
 ];
 const q3Options: { value: Q3; label: string }[] = [
-  { value: "takuhai", label: "宅配で送って売りたい" },
+  { value: "takuhai", label: "宅配で送って売却したい" },
   { value: "tenpo", label: "店頭に持ち込みたい" },
   { value: "matomete", label: "他の不用品もまとめて手放したい" },
 ];
@@ -69,31 +69,31 @@ function judge(q1: Q1, q2: Q2, q3: Q3, q4: Q4): Result {
   if (q4 === "houjin") {
     return {
       rule: "ルール1",
-      title: "法人向けの処分・買取の確認点から始める",
+      title: "法人向けの処分・買取の確認事項",
       reason:
-        "法人・会社の端末は、データ消去証明・台数対応・資産管理の扱いが個人と異なります。まず法人向けの確認点を整理したページを提示します。掲載サービスの法人対応の有無は各社ページの「法人対応」欄をご確認ください。",
+        "法人・会社の端末は、データ消去証明・台数対応・資産管理の扱いが個人と異なります。まず法人向けの確認点を整理したページを提示します。掲載サービスの法人対応の有無は、各社ページの「法人対応」欄をご確認ください。",
       hub: hubOf[q1],
       companies: companiesOf[q1],
-      guide: { path: "/situation/houjin/", label: "法人のPC・スマホをまとめて処分するには" },
+      guide: { path: "/situation/houjin/", label: "法人のPC・スマホの処分・買取とデータ消去証明" },
     };
   }
   if (q2 === "kidou_shinai") {
     return {
       rule: "ルール2",
-      title: "起動しない端末の売り方・処分先を先に確認",
+      title: "起動しない端末の売り方・処分先の確認",
       reason:
-        "起動しない端末は、データを自分で消去できないという固有のリスクがあります。遠隔でのアカウント解除と、故障品の受付条件を明記しているサービスの確認が先です。",
+        "起動しない端末は、ご自身でデータを消去できないという固有のリスクがあります。まず、遠隔でのアカウント解除の方法と、故障品の受付条件を明記しているサービスをご確認ください。",
       hub: hubOf[q1],
       companies: companiesOf[q1],
-      guide: { path: "/situation/kowareta/", label: "壊れた・起動しない端末を売るには" },
+      guide: { path: "/situation/kowareta/", label: "壊れた・起動しない端末の売り方" },
     };
   }
   if (q3 === "matomete") {
     return {
       rule: "ルール3",
-      title: "一括査定・価格比較型のサービスも候補に",
+      title: "一括査定・価格比較型サービスの検討",
       reason:
-        "端末以外の不用品もまとめて手放したい場合は、複数の買取店にまとめて依頼できる一括査定型や、価格比較型のサービスという選択肢があります。端末単体の条件は該当カテゴリのハブでも確認できます。",
+        "端末以外の不用品もまとめて手放したい場合は、複数の買取店にまとめて依頼できる一括査定型や、価格比較型のサービスという選択肢があります。端末単体の条件は、該当カテゴリのハブでもご確認いただけます。",
       hub: hubOf[q1],
       companies: platformCompanies.map((c) => ({ name: c.name, slug: c.slug })),
       guide: null,
@@ -102,9 +102,9 @@ function judge(q1: Q1, q2: Q2, q3: Q3, q4: Q4): Result {
   if (q3 === "tenpo") {
     return {
       rule: "ルール4",
-      title: "店頭買取に対応するサービスを条件表で確認",
+      title: "店頭買取に対応するサービスの確認",
       reason:
-        "店頭持ち込みを希望の場合は、各サービスの「買取方法」欄で店頭対応の有無を確認してください。掲載サービスは宅配買取を中心に一次確認しているため、店頭の可否は各社ページの記載を必ず確認する必要があります。",
+        "店頭への持ち込みをご希望の場合は、各サービスの「買取方法」欄で店頭対応の有無をご確認ください。当サイトでは宅配買取を中心に一次確認しているため、店頭買取の可否は各社ページの記載を必ずご確認ください。",
       hub: hubOf[q1],
       companies: companiesOf[q1],
       guide: { path: "/compare/", label: "掲載サービスの統一比較表" },
@@ -114,19 +114,19 @@ function judge(q1: Q1, q2: Q2, q3: Q3, q4: Q4): Result {
   if (q2 === "kowareta") {
     return {
       rule: "ルール5",
-      title: "故障品の受付条件を明記したサービスで宅配買取",
+      title: "故障品の受付条件を明記したサービスでの宅配買取",
       reason:
-        "画面割れやバッテリー劣化のある端末は、故障品の受付可否と減額の考え方がサービスにより異なります。各社ページの「故障品」欄と、査定後にキャンセルした場合の返送料を必ず確認してから送りましょう。",
+        "画面割れやバッテリー劣化のある端末は、故障品の受付可否と減額の考え方がサービスにより異なります。発送前に、各社ページの「故障品」欄と、査定後にキャンセルした場合の返送料を必ずご確認ください。",
       hub: hubOf[q1],
       companies: companiesOf[q1],
-      guide: { path: "/situation/kowareta/", label: "壊れた端末を売るときの確認点" },
+      guide: { path: "/situation/kowareta/", label: "壊れた端末を売却する際の確認事項" },
     };
   }
   return {
     rule: "ルール6",
-    title: "宅配買取の流れを確認して、該当カテゴリのサービスへ",
+    title: "宅配買取の流れと該当カテゴリのサービスの確認",
     reason:
-      "動く端末を宅配で売る、もっとも一般的なパターンです。送る前のデータ消去と「探す」の解除を済ませたうえで、送料・返送料・入金タイミングを各社ページで比較してください。",
+      "動作する端末を宅配で売却する、最も一般的なケースです。発送前にデータ消去と「探す」の解除を済ませたうえで、送料・返送料・入金タイミングを各社ページで比較してください。",
     hub: hubOf[q1],
     companies: companiesOf[q1],
     guide: { path: "/guide/takuhai-nagare/", label: "宅配買取の流れと梱包方法" },
@@ -188,10 +188,10 @@ export default function ShindanClient() {
 
   return (
     <div className="space-y-6">
-      <Fieldset legend="Q1. 売りたい端末の種類は？" name="q1" options={q1Options} value={q1} onChange={setQ1} />
-      <Fieldset legend="Q2. 端末の状態は？" name="q2" options={q2Options} value={q2} onChange={setQ2} />
-      <Fieldset legend="Q3. どう売りたい？" name="q3" options={q3Options} value={q3} onChange={setQ3} />
-      <Fieldset legend="Q4. 個人と法人、どちらの端末？" name="q4" options={q4Options} value={q4} onChange={setQ4} />
+      <Fieldset legend="Q1. 売却する端末の種類" name="q1" options={q1Options} value={q1} onChange={setQ1} />
+      <Fieldset legend="Q2. 端末の状態" name="q2" options={q2Options} value={q2} onChange={setQ2} />
+      <Fieldset legend="Q3. 希望する売り方" name="q3" options={q3Options} value={q3} onChange={setQ3} />
+      <Fieldset legend="Q4. 個人・法人の別" name="q4" options={q4Options} value={q4} onChange={setQ4} />
 
       {!done && (
         <p className="text-sm text-steel-500">
@@ -211,11 +211,11 @@ export default function ShindanClient() {
           <p className="mt-4 text-sm leading-loose text-steel-700">{result.reason}</p>
           {result.companies.length === 0 && (
             <p className="mt-3 border border-dashed border-steel-300 bg-chalk p-3 text-sm leading-loose text-steel-700">
-              該当なし: 確認日時点で、当サイト掲載の買取サービスにWindows PCを対象と明記している社はありません。PCカテゴリを持つ一括査定・価格比較型サービス（おいくら・ヒカカク）を候補としてご検討ください。
+              該当なし: 確認日時点で、当サイト掲載の買取サービスのうち、Windows PCを対象と明記している社はありません。PCカテゴリのある一括査定・価格比較型サービス（おいくら・ヒカカク）をご検討ください。
             </p>
           )}
           <p className="mt-3 text-sm leading-loose text-steel-700">
-            どのパターンでも、送る前に「データ消去」と「探す（アクティベーションロック）の解除」を済ませることが共通の前提です。
+            いずれの場合も、発送前に「データ消去」と「探す（アクティベーションロック）の解除」を済ませておくことが前提となります。
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             {result.guide && (
@@ -234,7 +234,7 @@ export default function ShindanClient() {
                 href={`/kaitori/${c.slug}/`}
                 className="btn-ghost text-sm"
               >
-                {c.name}の一次確認
+                {c.name}の一次確認情報
               </Link>
             ))}
           </div>
@@ -247,15 +247,15 @@ export default function ShindanClient() {
           判定ロジック（全開示）
         </h2>
         <p className="mt-2 text-xs leading-relaxed text-steel-600">
-          この診断は以下のルールを上から順に評価するだけの、シンプルなルールベースです。スコアリングや隠れた重み付けはありません。Q1（端末の種類）は、提示するカテゴリハブと掲載サービスの絞り込みにのみ使います。
+          この診断は、以下のルールを上から順に評価する方式です。スコアリングや非公開の重み付けは行っていません。Q1（端末の種類）は、提示するカテゴリハブと掲載サービスの絞り込みにのみ使用します。
         </p>
         <ol className="mt-4 list-decimal space-y-2 pl-5 text-[13px] leading-relaxed text-steel-700">
-          <li>Q4が「法人」→ 法人のまとめて処分ページを提示（＋Q1のカテゴリハブ）</li>
+          <li>Q4が「法人」→ 法人向けの処分・買取ページを提示（＋Q1のカテゴリハブ）</li>
           <li>Q2が「起動しない」→ 壊れた・起動しない端末のページを提示（＋Q1のカテゴリハブ）</li>
           <li>Q3が「まとめて手放したい」→ 一括査定・価格比較型サービス（おいくら・ヒカカク・みんなの買取）を提示</li>
-          <li>Q3が「店頭に持ち込みたい」→ 比較表で買取方法欄を確認するよう案内</li>
-          <li>Q3が「宅配」かつ Q2が「故障あり」→ 壊れた端末の確認点ページ＋Q1のカテゴリの掲載サービス</li>
-          <li>上記以外（動く端末を宅配で売る）→ 宅配買取の流れページ＋Q1のカテゴリの掲載サービス</li>
+          <li>Q3が「店頭に持ち込みたい」→ 比較表の買取方法欄の確認を案内</li>
+          <li>Q3が「宅配」かつ Q2が「故障あり」→ 壊れた端末の確認事項ページ＋Q1のカテゴリの掲載サービス</li>
+          <li>上記以外（動作する端末を宅配で売却）→ 宅配買取の流れページ＋Q1のカテゴリの掲載サービス</li>
         </ol>
       </section>
     </div>

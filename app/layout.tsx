@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: `%s｜${SITE_NAME}`,
   },
   description:
-    "iPhone・Android・Mac・PC・タブレットの買取サービスの条件（送料・返送料・入金・キャンセル規定・データ消去・古物商許可）を公式サイトで一次確認し、確認日つきで比較。売る前のデータ消去手順も中立の視点で整理します。",
+    "iPhone・Android・Mac・PC・タブレットの買取サービスの条件（送料・返送料・入金・キャンセル規定・データ消去・古物商許可）を公式サイトで一次確認し、確認日を明記して比較しています。売る前のデータ消去手順も、中立の立場で整理しています。",
 };
 
 export default function RootLayout({

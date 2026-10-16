@@ -15,7 +15,7 @@ import { CHECKED_RANGE_LABEL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "PC・スマホ買取サービスの比較表【送料・返送料・入金・データ消去を公式確認】",
   description:
-    "iPhone・Android・iPad・Mac・Windows PCの買取サービス26社と、一括査定・価格比較型4サービスを統一フォーマットで比較。送料・梱包キット・返送料・査定日数・入金・キャンセル規定・データ消去・故障品の受付・古物商許可を各社公式サイトで一次確認し、確認日を明記しています。",
+    "iPhone・Android・iPad・Mac・Windows PCの買取サービス26社と、一括査定・価格比較型4サービスを統一フォーマットで比較しています。送料・梱包キット・返送料・査定日数・入金・キャンセル規定・データ消去・故障品の受付・古物商許可を各社公式サイトで一次確認し、確認日を明記しています。",
   alternates: { canonical: "/compare/" },
 };
 
@@ -34,9 +34,9 @@ export default function ComparePage() {
           PC・スマホ買取サービスの統一比較表
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          掲載サービスの条件を、各社公式サイトの一次確認に基づいて同じ物差しで並べています。
+          掲載サービスの条件を、各社公式サイトの一次確認にもとづき、統一基準で掲載しています。
           <strong className="text-steel-800">確認日: {CHECKED_RANGE_LABEL}（各社の確認日は業者ページに記載）</strong>
-          。公式サイトで確認できなかった項目は「公式では確認できず」とそのまま表示しています。買取価格そのものは日々変動するため掲載せず、条件の比較に絞っています。最新の条件・詳細な規定は必ず各社公式サイトでご確認ください。
+          。公式サイトで確認できなかった項目は「公式では確認できず」と表示しています。買取価格は日々変動するため掲載しておらず、条件の比較に限定しています。ご利用前に、各社公式サイトにて最新の条件・詳細な規定をご確認ください。
         </p>
 
         <h2 className="section-title mt-12 mb-4">買取サービス（宅配買取が中心）</h2>
@@ -105,7 +105,7 @@ export default function ComparePage() {
 
         <h2 className="section-title mt-14 mb-4">一括査定・価格比較サービス</h2>
         <p className="mb-4 max-w-3xl text-sm leading-loose text-steel-600">
-          以下は端末を直接買い取るのではなく、複数の買取店へまとめて査定依頼をしたり、買取価格を比較したりするためのサービスです。仕組みが買取業者とは異なるため、別表にしています。
+          以下は、端末を直接買い取るサービスではなく、複数の買取店へ一括で査定を依頼したり、買取価格を比較したりするためのサービスです。仕組みが買取業者とは異なるため、別表で掲載しています。
         </p>
         <div className="overflow-x-auto border border-chalk-line">
           <table className="spec-table min-w-[960px]">
@@ -158,14 +158,13 @@ export default function ComparePage() {
           </table>
         </div>
         <p className="mt-3 text-xs text-steel-500">
-          ※ 横にスクロールできます。表中の「公式では確認できず」は、各社の確認日
-          時点の当サイト調査で公式サイト上に記載を発見できなかったことを意味します（サービスが存在しないという意味ではありません）。
+          ※ 表は横にスクロールできます。表中の「公式では確認できず」は、各社の確認日時点の当サイトの調査で、公式サイト上に該当する記載を確認できなかったことを示します（サービスが存在しないという意味ではありません）。
         </p>
 
         <section className="mt-14 grid gap-4 md:grid-cols-2">
           <div className="border border-chalk-line bg-chalk-card p-6">
             <h2 className="font-display text-lg text-steel-900">
-              カテゴリから絞り込む
+              カテゴリ別の比較
             </h2>
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link className="text-vermilion underline underline-offset-4" href="/iphone/">iPhoneの買取</Link></li>
@@ -176,9 +175,9 @@ export default function ComparePage() {
             </ul>
           </div>
           <div className="flex flex-col justify-center border border-chalk-line bg-steel-800 p-6 text-chalk">
-            <h2 className="font-display text-lg">送る前に必ずデータ消去を</h2>
+            <h2 className="font-display text-lg">発送前のデータ消去について</h2>
             <p className="mt-3 text-[13px] leading-relaxed text-steel-200">
-              どのサービスを使う場合も、初期化と「探す」の解除は自分で済ませるのが基本です。iPhone・Android・Windows・Mac別の手順をまとめています。
+              どのサービスを利用する場合も、初期化と「探す」の解除はご自身で済ませておくのが基本です。iPhone・Android・Windows・Mac別の手順をご説明しています。
             </p>
             <Link href="/guide/data-shokyo/" className="btn-primary mt-5 self-start text-sm">
               データ消去の手順を見る

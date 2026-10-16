@@ -19,8 +19,8 @@ export function generateStaticParams() {
 
 /** description を160字以内に収める（長い場合は補足文→運営会社名の順で省く） */
 function fitDesc(base: string, short: string): string {
-  const note = "確認できなかった項目は「公式では確認できず」と正直に記載しています。";
-  for (const s of [base + note, base + "未確認の項目は「公式では確認できず」と記載。", base, short]) {
+  const note = "確認できなかった項目は「公式では確認できず」と記載しています。";
+  for (const s of [base + note, base + "未確認の項目は「公式では確認できず」と記載しています。", base, short]) {
     if (s.length <= 160) return s;
   }
   return short;
@@ -43,15 +43,15 @@ export async function generateMetadata({
   }
   return {
     title: isPlatform
-      ? `${c.name}の仕組みまとめ｜利用料・流れ・運営会社【${jaMonth(c.confirmed_date)}公式確認】`
-      : `${c.name}の買取サービスまとめ｜送料・返送料・入金・データ消去【${jaMonth(c.confirmed_date)}公式確認】`,
+      ? `${c.name}の仕組みと利用条件｜利用料・流れ・運営会社【${jaMonth(c.confirmed_date)}公式確認】`
+      : `${c.name}の買取条件｜送料・返送料・入金・データ消去【${jaMonth(c.confirmed_date)}公式確認】`,
     description: fitDesc(
       isPlatform
-        ? `${c.name}（運営: ${c.operator.name}）の仕組み・対象・利用料・流れを公式サイトで一次確認（${jaDate(c.confirmed_date)}）。`
-        : `${c.name}（運営: ${c.operator.name}）の送料・梱包キット・返送料・査定日数・入金タイミング・キャンセル規定・データ消去・故障品の受付を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。`,
+        ? `${c.name}（運営: ${c.operator.name}）の仕組み・対象・利用料・流れを公式サイトで一次確認しています（${jaDate(c.confirmed_date)}確認）。`
+        : `${c.name}（運営: ${c.operator.name}）の送料・梱包キット・返送料・査定日数・入金タイミング・キャンセル規定・データ消去・故障品の受付を公式サイトで一次確認しています（${jaDate(c.confirmed_date)}確認）。`,
       isPlatform
-        ? `${c.name}の仕組み・対象・利用料・流れを公式サイトで一次確認（${jaDate(c.confirmed_date)}）。運営は${c.operator.name}。`
-        : `${c.name}の送料・返送料・査定日数・入金タイミング・キャンセル規定・データ消去・故障品の受付を公式サイトで一次確認（${jaDate(c.confirmed_date)}）。`,
+        ? `${c.name}の仕組み・対象・利用料・流れを公式サイトで一次確認しています（${jaDate(c.confirmed_date)}確認）。運営は${c.operator.name}です。`
+        : `${c.name}の送料・返送料・査定日数・入金タイミング・キャンセル規定・データ消去・故障品の受付を公式サイトで一次確認しています（${jaDate(c.confirmed_date)}確認）。`,
     ),
     alternates: { canonical: `/kaitori/${c.slug}/` },
   };
@@ -72,16 +72,18 @@ export default async function KaitoriPage({
         {
           q: `${c.name}の利用に費用はかかりますか？`,
           a: fmt(c.hiyou.satei) === "公式では確認できず"
-            ? `利用料については公式サイトで確認できませんでした（${c.confirmed_date}時点）。利用前に公式サイトでご確認ください。`
-            : `公式サイトの記載では「${c.hiyou.satei}」です（${c.confirmed_date}確認）。`,
+            ? `利用料は、公式サイトでは確認できませんでした（${jaDate(c.confirmed_date)}時点）。ご利用前に、公式サイトにて最新情報をご確認ください。`
+            : `公式サイトの記載にもとづく利用料は「${c.hiyou.satei}」です（${jaDate(c.confirmed_date)}確認）。`,
         },
         {
           q: `${c.name}は端末を直接買い取るサービスですか？`,
-          a: `いいえ。${c.name}は${serviceTypeOf(c)}です。実際の買取契約は、紹介先や比較先の各買取店との間で行うのが一般的です。買取条件は各店で異なるため、契約前に各店の規定をご確認ください。`,
+          a: `端末を直接買い取るサービスではありません。${c.name}のサービス形態は「${serviceTypeOf(c)}」です。実際の買取契約は、紹介先や比較先の各買取店との間で行うのが一般的です。買取条件は各店で異なるため、契約前に各店の規定をご確認ください。`,
         },
         {
-          q: `${c.name}で扱える品目は？`,
-          a: `公式サイトの記載では「${fmt(c.target)}」です（${c.confirmed_date}確認）。`,
+          q: `${c.name}で扱える品目は何ですか？`,
+          a: fmt(c.target) === "公式では確認できず"
+            ? `対象品目は、公式サイトでは確認できませんでした（${jaDate(c.confirmed_date)}時点）。ご利用前に、公式サイトにて最新情報をご確認ください。`
+            : `公式サイトの記載にもとづく対象品目は「${c.target}」です（${jaDate(c.confirmed_date)}確認）。`,
         },
       ]
     : companyFaq(c);
@@ -113,8 +115,8 @@ export default async function KaitoriPage({
       ];
 
   const h1 = c.seo?.h1 ?? (isPlatform
-    ? `${c.name}の仕組みまとめ｜利用料・流れ・運営会社【${jaMonth(c.confirmed_date)}公式確認】`
-    : `${c.name}の買取サービスまとめ｜送料・返送料・入金・データ消去【${jaMonth(c.confirmed_date)}公式確認】`);
+    ? `${c.name}の仕組みと利用条件｜利用料・流れ・運営会社【${jaMonth(c.confirmed_date)}公式確認】`
+    : `${c.name}の買取条件｜送料・返送料・入金・データ消去【${jaMonth(c.confirmed_date)}公式確認】`);
 
   return (
     <>
@@ -160,13 +162,13 @@ export default async function KaitoriPage({
           </section>
         )}
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          {c.name}のサービス条件を、公式サイトの記載に基づいて一次確認しました（確認日: {jaDate(c.confirmed_date)}{c.seo?.modified ? `、最終更新: ${jaDate(c.seo.modified)}` : ""}）。
-          サービス形態: {serviceTypeOf(c)}。対象: {fmt(c.target)}。対応エリア: {fmt(c.area)}。買取価格は日々変動するため当ページには掲載せず、条件のみを整理しています。
+          {c.name}のサービス条件を、公式サイトの記載にもとづき一次確認しています（確認日: {jaDate(c.confirmed_date)}{c.seo?.modified ? `、最終更新: ${jaDate(c.seo.modified)}` : ""}）。
+          サービス形態: {serviceTypeOf(c)}。対象: {fmt(c.target)}。対応エリア: {fmt(c.area)}。買取価格は日々変動するため本ページには掲載せず、条件のみを整理しています。
         </p>
 
         {/* 実務即答テーブル */}
         <section className="mt-10">
-          <h2 className="section-title mb-5">実務のポイント即答表</h2>
+          <h2 className="section-title mb-5">主要な取引条件</h2>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
               <tbody>
@@ -189,7 +191,7 @@ export default async function KaitoriPage({
               {c.name}の公式サイトを見る
             </a>
             <Link href="/compare/" className="btn-ghost">
-              比較表で他社と並べる
+              比較表で他社と比較する
             </Link>
           </div>
         </section>
@@ -208,21 +210,21 @@ export default async function KaitoriPage({
             ))}
           </ul>
           <p className="mt-3 text-xs text-steel-500">
-            ※ いずれも{c.name}公式サイトの記載に基づきます（{jaDate(c.confirmed_date)}確認）。当サイト独自の評価ではありません。
+            ※ いずれも{c.name}公式サイトの記載にもとづきます（{jaDate(c.confirmed_date)}確認）。当サイト独自の評価ではありません。
           </p>
         </section>
 
         {/* 送る前の準備（買取業者のみ） */}
         {!isPlatform && (
           <section className="mt-14 border border-chalk-line bg-chalk-warm p-6">
-            <h2 className="font-display text-lg text-steel-900">送る前に自分で済ませること</h2>
+            <h2 className="font-display text-lg text-steel-900">発送前にご自身で済ませておくこと</h2>
             <p className="mt-3 text-sm leading-loose text-steel-700">
-              データ消去の取り扱いは上表のとおりですが、どの業者に送る場合でも、バックアップ・サインアウト・初期化・「探す」の解除・SIMカードの取り出しは自分で済ませるのが基本です。手順は以下のガイドにまとめています。
+              データ消去の取り扱いは上表のとおりですが、どの業者に発送する場合でも、バックアップ・サインアウト・初期化・「探す」の解除・SIMカードの取り出しは、ご自身で済ませておくのが基本です。手順は以下のガイドでご説明しています。
             </p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-              <Link href="/guide/data-shokyo/" className="btn-ghost text-sm">データ消去 完全手順</Link>
-              <Link href="/guide/activation-lock/" className="btn-ghost text-sm">アクティベーションロックの解除</Link>
-              <Link href="/guide/takuhai-nagare/" className="btn-ghost text-sm">宅配買取の流れと梱包</Link>
+              <Link href="/guide/data-shokyo/" className="btn-ghost text-sm">売却前のデータ消去手順</Link>
+              <Link href="/guide/activation-lock/" className="btn-ghost text-sm">アクティベーションロックと「探す」の解除</Link>
+              <Link href="/guide/takuhai-nagare/" className="btn-ghost text-sm">宅配買取の流れと梱包方法</Link>
             </div>
           </section>
         )}
@@ -265,7 +267,7 @@ export default async function KaitoriPage({
 
         {/* FAQ */}
         <section className="mt-14">
-          <h2 className="section-title mb-5">{c.name}のよくある疑問</h2>
+          <h2 className="section-title mb-5">{c.name}に関するよくある質問</h2>
           <div className="space-y-4">
             {faqs.map((f) => (
               <div key={f.q} className="border border-chalk-line bg-chalk-card p-5">
@@ -281,12 +283,12 @@ export default async function KaitoriPage({
 
         {/* 情報の検証欄 */}
         <section className="mt-14 border border-steel-200 bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">この情報の検証について</h2>
+          <h2 className="font-display text-lg text-steel-900">掲載情報の確認方法について</h2>
           <ul className="mt-4 space-y-2 text-[13px] leading-loose text-steel-700">
             <li>・本ページの条件は、{c.name}公式サイト（{c.official_url}）および運営会社ページを{jaDate(c.confirmed_date)}に確認して作成しています。</li>
             <li>・公式サイトで確認できなかった項目は「公式では確認できず」と表示し、推測で補完していません。</li>
-            <li>・口コミ・体験談の創作、架空の買取金額・実績の掲載は行いません。買取価格は変動するため当サイトでは掲載していません。</li>
-            <li>・条件は変更される場合があります。申込前に必ず公式サイト・利用規約で最新の内容をご確認ください。</li>
+            <li>・口コミ・体験談の創作、架空の買取金額・実績の掲載は行いません。買取価格は変動するため、当サイトでは掲載しておりません。</li>
+            <li>・条件は変更される場合があります。お申し込み前に、公式サイトおよび利用規約にて最新の内容をご確認ください。</li>
           </ul>
           <p className="mt-4 text-xs text-steel-500">
             詳細は<Link href="/content-policy/" className="text-vermilion underline underline-offset-4">コンテンツ制作ポリシー</Link>をご覧ください。
@@ -295,12 +297,12 @@ export default async function KaitoriPage({
 
         {/* 導線 */}
         <section className="mt-14">
-          <h2 className="section-title mb-5">あわせて読む</h2>
+          <h2 className="section-title mb-5">関連ページ</h2>
           <ul className="grid gap-3 text-sm md:grid-cols-2">
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">掲載サービスの統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">同じ物差しで条件を並べる</span>
+                <span className="mt-1 block text-xs text-steel-500">同じ基準で条件を比較</span>
               </Link>
             </li>
             {cats.map((cat) => (
@@ -313,14 +315,14 @@ export default async function KaitoriPage({
             ))}
             <li>
               <Link href="/guide/data-shokyo/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">売る前のデータ消去 完全手順</span>
+                <span className="font-display text-steel-900">売却前のデータ消去手順</span>
                 <span className="mt-1 block text-xs text-steel-500">iPhone・Android・Windows・Mac別</span>
               </Link>
             </li>
             <li>
               <Link href="/shindan/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">売り方診断（4問）</span>
-                <span className="mt-1 block text-xs text-steel-500">端末の種類と状態からルールベースで判定</span>
+                <span className="mt-1 block text-xs text-steel-500">端末の種類と状態から、判定ルールにもとづき提示</span>
               </Link>
             </li>
           </ul>

@@ -4,9 +4,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL, OPERATOR, PUBLISHED_DATE } from "@/lib/site";
 
-const TITLE = "法人のPC・スマホをまとめて処分・買取に出すには｜データ消去証明と台数対応の確認点";
+const TITLE = "法人のPC・スマホの一括処分・買取｜データ消去証明と台数対応の確認事項";
 const DESC =
-  "法人が業務用のPC・スマホ・タブレットをまとめて処分・買取に出すときに個人と異なる点を整理。資産管理と会計担当への確認、データ消去方式と消去証明書、MDMや組織アカウントの解除、リース・レンタル品の扱い、法人買取の流れ、古物営業法上の本人確認、チェックリストをまとめました。";
+  "法人が業務用のPC・スマホ・タブレットをまとめて処分・買取に出す際の、個人の売却と異なる点をご説明します。資産管理と会計担当への確認、データ消去方式と消去証明書、MDMや組織アカウントの解除、リース・レンタル品の扱い、法人買取の流れ、古物営業法上の本人確認、チェックリストを掲載しています。";
 const PATH = "/situation/houjin/";
 
 export const metadata: Metadata = {
@@ -29,9 +29,9 @@ const articleLd = {
 
 export default function HoujinSituationPage() {
   const conclusions = [
-    "法人の端末処分は「情報漏えい対策」「資産管理・会計処理」「台数のさばき方」の三つが個人と大きく異なります。売却前に会計担当・情報システム担当と方針をそろえるのが出発点です。",
-    "データ消去は、ソフトウェア消去か物理破壊かの方式と、消去証明書（消去報告書）を発行してもらえるかを確認します。監査や取引先への説明に証明書が必要になる場合があります。",
-    "MDM（モバイルデバイス管理）の登録解除、Apple Business ManagerやGoogleの組織アカウントからの端末の登録解除、Activation Lockの解除は、法人でつまずきやすい工程です。管理者権限を持つ担当者が事前に行います。",
+    "法人の端末処分は、「情報漏えい対策」「資産管理・会計処理」「大量台数への対応」の3点で個人の売却と大きく異なります。売却前に、会計担当・情報システム担当と方針を統一することが必要です。",
+    "データ消去は、ソフトウェア消去か物理破壊かの方式と、消去証明書（消去報告書）の発行可否を確認します。監査や取引先への説明に証明書が必要になる場合があります。",
+    "MDM（モバイルデバイス管理）の登録解除、Apple Business ManagerやGoogleの組織アカウントからの端末の登録解除、Activation Lockの解除は、法人で滞りやすい工程です。管理者権限を持つ担当者が事前に行います。",
     "リース品・レンタル品は所有権が法人にないため売却できません。契約書で所有権と返却条件を確認し、返却・買い取りの手続きを先に済ませます。",
     "古物営業法に基づく本人確認は法人取引でも必要とされており、法人の登記情報に加えて担当者の本人確認書類や在籍を示す書類が求められるのが一般的です。",
   ];
@@ -40,17 +40,17 @@ export default function HoujinSituationPage() {
     {
       label: "資産管理・会計処理",
       value:
-        "業務用端末は固定資産や備品として台帳に登録されていることが一般的です。減価償却が済んでいるか、除却・売却の仕訳をどう処理するか、売却代金の扱いは会計担当・顧問税理士と確認します。台帳から外す手続きと売却の時期を合わせておくと後の説明が楽になります。",
+        "業務用端末は固定資産や備品として台帳に登録されていることが一般的です。減価償却が済んでいるか、除却・売却の仕訳をどう処理するか、売却代金の扱いは会計担当・顧問税理士と確認します。台帳から除く手続きと売却の時期を合わせておくと、事後の説明が容易になります。",
     },
     {
       label: "データ消去証明書",
       value:
-        "個人では自分で初期化すれば済みますが、法人では第三者の証明として消去証明書（消去報告書）が求められることがあります。情報セキュリティ方針や取引先との契約、監査対応で必要かどうかを先に確認し、発行できる業者を選びます。",
+        "個人の場合はご自身で初期化すれば足りますが、法人では第三者の証明として消去証明書（消去報告書）が求められることがあります。情報セキュリティ方針や取引先との契約、監査対応で必要かどうかを先に確認し、発行できる業者を選びます。",
     },
     {
       label: "台数・出張対応",
       value:
-        "数十台から数百台になると、宅配での個別送付は現実的ではありません。まとめて集荷する出張回収、リストによる一括見積、拠点ごとの集荷に対応できるかどうかが業者選びの条件になります。",
+        "数十台から数百台に及ぶ場合、宅配での個別送付は現実的ではありません。まとめて集荷する出張回収、リストによる一括見積、拠点ごとの集荷に対応できるかどうかが業者選びの条件になります。",
     },
     {
       label: "組織アカウントによる管理",
@@ -60,7 +60,7 @@ export default function HoujinSituationPage() {
     {
       label: "契約関係の確認",
       value:
-        "リース・レンタルのほか、携帯電話会社の法人契約に付随する端末、補助金で購入した機器など、処分に制約がかかる場合があります。所有権と処分条件を契約書で確認する工程が個人にはない手間です。",
+        "リース・レンタルのほか、携帯電話会社の法人契約に付随する端末、補助金で購入した機器など、処分に制約がかかる場合があります。所有権と処分条件を契約書で確認する工程は、個人の売却にはない手続きです。",
     },
     {
       label: "本人確認と書類",
@@ -80,11 +80,11 @@ export default function HoujinSituationPage() {
     },
     {
       t: "消去証明書（消去報告書）の発行可否",
-      d: "消去した端末のシリアル番号・消去方式・実施日・実施者などを記載した証明書を発行できるかどうかは、業者ごとに対応が異なります。発行の有無、費用の有無、記載項目、発行までの期間を事前に確認してください。台帳と突き合わせるため、シリアル番号単位での記載があるかどうかも確認したい点です。",
+      d: "消去した端末のシリアル番号・消去方式・実施日・実施者などを記載した証明書を発行できるかどうかは、業者ごとに対応が異なります。発行の有無、費用の有無、記載項目、発行までの期間を事前に確認してください。台帳と照合するため、シリアル番号単位で記載されるかどうかもご確認ください。",
     },
     {
       t: "消去のタイミングと保管",
-      d: "端末を引き渡してから消去されるまでの間、どこに保管され、誰がアクセスできるのかも情報漏えい対策の観点では重要です。集荷から消去までの流れと保管方法が公式サイトや契約書で説明されているかを見ます。社内で先に初期化してから引き渡す運用にすれば、輸送中のリスクを下げられます。",
+      d: "端末を引き渡してから消去されるまでの間、どこに保管され、誰がアクセスできるのかも情報漏えい対策の観点では重要です。集荷から消去までの流れと保管方法が、公式サイトや契約書で説明されているかを確認します。社内で先に初期化してから引き渡す運用にすれば、輸送中のリスクを下げられます。",
     },
   ];
 
@@ -99,7 +99,7 @@ export default function HoujinSituationPage() {
     },
     {
       t: "Activation Lock（「探す」）の組織アカウント解除",
-      d: "個人のApple IDではなく、管理対象Apple IDや業務用のアカウントで「探す」が有効になっている場合、そのアカウントの持ち主か管理者が解除する必要があります。退職者のアカウントで有効になっている端末は解除が難しくなるため、退職時のオフボーディング手順に「探す」の無効化を含めておくと後で困りません。",
+      d: "個人のApple IDではなく、管理対象Apple IDや業務用のアカウントで「探す」が有効になっている場合、そのアカウントの持ち主か管理者が解除する必要があります。退職者のアカウントで有効になっている端末は解除が難しくなるため、退職時のオフボーディング手順に「探す」の無効化を含めておくことをおすすめします。",
     },
     {
       t: "Android・Windowsの組織アカウント",
@@ -109,7 +109,7 @@ export default function HoujinSituationPage() {
 
   const leaseNotes = [
     {
-      t: "リース品は所有権がリース会社にある",
+      t: "リース品の所有権",
       d: "リース契約の端末は、使用しているのが自社であっても所有権はリース会社にあります。売却するとリース会社の資産を無断で処分することになるため、契約満了時の返却または再リース、買い取りの手続きを契約書で確認します。買い取りが可能な契約であれば、所有権が移ってから買取に出せます。",
     },
     {
@@ -129,7 +129,7 @@ export default function HoujinSituationPage() {
     },
     {
       t: "端末リストの提出",
-      d: "機種名・型番・シリアル番号・状態・付属品を一覧にして提出します。資産台帳から書き出せる場合は、台帳の番号も添えておくと後の消去証明書との突き合わせが楽になります。この時点で概算が精査されます。",
+      d: "機種名・型番・シリアル番号・状態・付属品を一覧にして提出します。資産台帳から書き出せる場合は、台帳の番号も併記しておくと、後の消去証明書との照合が容易になります。この時点で概算が精査されます。",
     },
     {
       t: "集荷・引き渡し",
@@ -137,7 +137,7 @@ export default function HoujinSituationPage() {
     },
     {
       t: "査定・結果の通知",
-      d: "端末ごとの査定結果が一覧で通知されます。リストと突き合わせて、買取対象外となった端末の扱い（返送か処分か、処分費用の有無）を確認します。納得できない場合のキャンセル条件と返送費用の負担も、この段階までに把握しておきます。",
+      d: "端末ごとの査定結果が一覧で通知されます。リストと照合し、買取対象外となった端末の扱い（返送か処分か、処分費用の有無）を確認します。納得できない場合のキャンセル条件と返送費用の負担も、この段階までに把握しておきます。",
     },
     {
       t: "請求書・振込・消去証明書の受領",
@@ -147,7 +147,7 @@ export default function HoujinSituationPage() {
 
   const honninPoints = [
     {
-      t: "法人でも本人確認は必要",
+      t: "法人取引における本人確認",
       d: "古物営業法では、買取業者は相手方の確認を行うことが求められており、これは相手が法人の場合も同様とされています。法人の名称・所在地を確認する書類と、実際に取引にあたる担当者の本人確認書類の両方が求められるのが一般的です。",
     },
     {
@@ -156,7 +156,7 @@ export default function HoujinSituationPage() {
     },
     {
       t: "非対面（宅配）取引の場合",
-      d: "宅配買取のような非対面取引では、法令で定められた方法での本人確認が必要とされており、書類のコピーの送付だけでは足りない場合があります。法人取引でどの方法に対応しているかは業者の案内で確認します。詳細は本人確認のガイドページで整理しています。",
+      d: "宅配買取のような非対面取引では、法令で定められた方法での本人確認が必要とされており、書類のコピーの送付だけでは足りない場合があります。法人取引でどの方法に対応しているかは業者の案内で確認します。詳細は本人確認のガイドページでご説明しています。",
     },
   ];
 
@@ -167,26 +167,26 @@ export default function HoujinSituationPage() {
     "MDM・Apple Business Manager・Android Enterprise・Intuneなどの管理コンソールから対象端末を登録解除した",
     "Activation Lock（「探す」）とデバイス保護（FRP）を、管理者または該当アカウントの持ち主が解除した",
     "退職者アカウントで有効なロックが残っていないか確認した",
-    "社内で初期化を実施し、SIMカード・SDカード・セキュリティキーなどを抜き取った",
+    "社内で初期化を実施し、SIMカード・SDカード・セキュリティキーなどを取り外した",
     "機種・型番・シリアル番号・状態を記載した端末リストを作成した",
     "法人の登記事項証明書と担当者の本人確認書類・権限を示す書類を準備した",
     "業者の公式サイトで、法人対応・出張回収・消去証明書の発行・買取不可端末の処分条件・返送費用を確認した",
     "見積書・請求書・振込先が法人名義でそろっている",
-    "消去証明書の受領後、シリアル番号を台帳と突き合わせて記録を保管する",
+    "消去証明書の受領後にシリアル番号を台帳と照合し、記録を保管する手順を定めた",
   ];
 
   const faqs = [
     {
       q: "法人のPCやスマホは個人と同じ買取サービスに出せますか？",
-      a: "業者によって異なります。個人向けの宅配買取をそのまま法人にも開放している業者もあれば、法人専用の窓口や出張回収を設けている業者、法人取引は受け付けない業者もあります。台数・消去証明書の要否・出張の有無で条件が変わるため、公式サイトの法人対応の記載を確認したうえで問い合わせてください。当サイトの比較表では各社の公式で確認できた「法人対応」を並べています。",
+      a: "業者によって異なります。個人向けの宅配買取をそのまま法人にも開放している業者もあれば、法人専用の窓口や出張回収を設けている業者、法人取引は受け付けない業者もあります。台数・消去証明書の要否・出張の有無で条件が変わるため、公式サイトの法人対応の記載を確認したうえで問い合わせてください。当サイトの比較表では、各社の公式サイトで確認できた「法人対応」を掲載しています。",
     },
     {
       q: "データ消去証明書は必ず必要ですか？",
-      a: "法令で一律に義務付けられているものではなく、社内の情報セキュリティ方針、取引先との契約、監査対応などで必要になるかどうかが決まります。個人情報や機密情報を扱った端末については、第三者による消去の記録として証明書を残しておく運用が一般に推奨されています。要否は情報システム担当・法務担当と確認してください。",
+      a: "法令で一律に義務付けられているものではなく、社内の情報セキュリティ方針、取引先との契約、監査対応などで必要になるかどうかが決まります。個人情報や機密情報を扱った端末については、第三者による消去の記録として証明書を残しておく運用が一般に推奨されています。要否は情報システム担当・法務担当とご確認ください。",
     },
     {
       q: "減価償却が終わっていない端末を売却しても問題ありませんか？",
-      a: "売却自体は可能ですが、帳簿価額と売却額の差を固定資産売却損益として処理するなど、会計上の手続きが必要になります。処理の方法は法人の会計方針によるため、売却前に会計担当や顧問税理士に確認してください。除却して処分する場合と売却する場合で処理が異なる点も相談の対象です。",
+      a: "売却自体は可能ですが、帳簿価額と売却額の差を固定資産売却損益として処理するなど、会計上の手続きが必要になります。処理の方法は法人の会計方針によるため、売却前に会計担当や顧問税理士にご確認ください。除却して処分する場合と売却する場合で処理が異なる点も、あわせてご相談ください。",
     },
     {
       q: "MDMの登録を解除しないまま送ってしまうとどうなりますか？",
@@ -194,15 +194,15 @@ export default function HoujinSituationPage() {
     },
     {
       q: "リースが満了した端末は売却できますか？",
-      a: "リース満了後の扱いは契約によります。返却が原則の契約であればリース会社に返却し、再リースや買い取り（所有権の移転）が可能な契約であれば、所有権が自社に移った後に売却できます。契約書とリース会社の案内で確認してください。",
+      a: "リース満了後の扱いは契約によります。返却が原則の契約であればリース会社に返却し、再リースや買い取り（所有権の移転）が可能な契約であれば、所有権が自社に移った後に売却できます。契約書とリース会社の案内でご確認ください。",
     },
     {
       q: "担当者個人の本人確認書類も必要ですか？",
-      a: "古物営業法に基づく確認は法人取引でも必要とされており、法人の登記情報に加え、取引にあたる担当者の本人確認書類や、法人を代表して取引する権限を示す書類が求められるのが一般的です。必要書類は業者ごとに異なるため、申込前に一覧を確認してください。",
+      a: "古物営業法に基づく確認は法人取引でも必要とされており、法人の登記情報に加え、取引にあたる担当者の本人確認書類や、法人を代表して取引する権限を示す書類が求められるのが一般的です。必要書類は業者ごとに異なるため、申込前に一覧をご確認ください。",
     },
     {
       q: "買取不可と判断された端末はどうなりますか？",
-      a: "返送されるか、業者側で処分（廃棄・リサイクル）されるかは業者の規定によります。処分の場合は費用の有無や消去証明書の対象に含まれるかどうかも確認が必要です。台数が多い法人取引では、買取対象外端末の処分条件を見積段階で確認しておくと後の手戻りを防げます。",
+      a: "返送されるか、業者側で処分（廃棄・リサイクル）されるかは業者の規定によります。処分の場合は費用の有無や消去証明書の対象に含まれるかどうかも確認が必要です。台数が多い法人取引では、買取対象外端末の処分条件を見積段階で確認しておくことで、後の手戻りを防ぐことができます。",
     },
   ];
 
@@ -213,21 +213,21 @@ export default function HoujinSituationPage() {
       <Breadcrumbs
         items={[
           { name: "ホーム", path: "/" },
-          { name: "法人のPC・スマホをまとめて処分・買取に出すには", path: PATH },
+          { name: "法人のPC・スマホの一括処分・買取", path: PATH },
         ]}
       />
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">FOR BUSINESS</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          法人のPC・スマホをまとめて処分・買取に出すには｜データ消去証明と台数対応の確認点
+          法人のPC・スマホの一括処分・買取｜データ消去証明と台数対応の確認事項
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
-          入れ替えで不要になった業務用のノートPC、社用スマホ、タブレットをまとめて手放すとき、個人の売却とは別の確認事項が加わります。資産台帳と会計処理、情報漏えい対策としてのデータ消去と証明書、MDMや組織アカウントの解除、リース品の扱い、古物営業法上の本人確認。このページでは、法人の端末処分・買取で一般に必要になる確認点と流れを整理します。個別の会計・法務の判断は、担当部署や専門家への確認を前提にしてください。
+          機器の入れ替えで不要になった業務用のノートPC、社用スマホ、タブレットをまとめて手放す際は、個人の売却とは異なる確認事項があります。具体的には、資産台帳と会計処理、情報漏えい対策としてのデータ消去と証明書、MDMや組織アカウントの解除、リース品の扱い、古物営業法上の本人確認です。本ページでは、法人の端末処分・買取で一般に必要となる確認事項と流れをご説明します。個別の会計・法務の判断は、担当部署や専門家へのご確認を前提としてください。
         </p>
 
-        {/* 結論先出し */}
+        {/* 要点 */}
         <section className="mt-10 border-2 border-vermilion bg-chalk-warm p-6">
-          <h2 className="font-display text-lg text-steel-900">先に結論</h2>
+          <h2 className="font-display text-lg text-steel-900">要点</h2>
           <ul className="mt-4 space-y-3">
             {conclusions.map((c) => (
               <li key={c} className="flex gap-2 text-sm leading-loose text-steel-800">
@@ -242,24 +242,24 @@ export default function HoujinSituationPage() {
         <section className="mt-14">
           <h2 className="section-title mb-2">テーマ別の詳しい解説</h2>
           <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">
-            このページは法人の端末処分の全体像をまとめたものです。つまずきやすい三つのテーマについては、確認事項と進め方を個別のページで詳しく整理しています。
+            本ページでは、法人の端末処分の全体像をご説明します。特に対応が滞りやすい3つのテーマについては、確認事項と進め方を個別のページで詳しく解説しています。
           </p>
           <ul className="grid gap-3 text-sm md:grid-cols-3">
             <li>
               <Link href="/situation/houjin/data-shokyo-shomeisho/" className="block h-full border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">法人の端末処分とデータ消去証明書</span>
-                <span className="mt-1 block text-xs leading-loose text-steel-500">何のために求められるのか、記載項目、依頼前に確認したい質問、台帳との突き合わせ方</span>
+                <span className="mt-1 block text-xs leading-loose text-steel-500">証明書が求められる理由、記載項目、依頼前の確認事項、台帳との照合方法</span>
               </Link>
             </li>
             <li>
               <Link href="/situation/houjin/lease-shisan-chui/" className="block h-full border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">リース品・資産計上した端末を手放すときの注意</span>
+                <span className="font-display text-steel-900">リース品・資産計上した端末を手放す際の注意点</span>
                 <span className="mt-1 block text-xs leading-loose text-steel-500">所有権での仕分け、残債の確認、固定資産台帳と社内決裁の順番</span>
               </Link>
             </li>
             <li>
               <Link href="/situation/houjin/jugyoin-tanmatsu-kaishu/" className="block h-full border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">従業員の業務端末を回収するときの進め方</span>
+                <span className="font-display text-steel-900">従業員の業務端末を回収する際の進め方</span>
                 <span className="mt-1 block text-xs leading-loose text-steel-500">回収漏れ、私物混在の切り分け、MDM・組織アカウント解除の順番</span>
               </Link>
             </li>
@@ -268,9 +268,9 @@ export default function HoujinSituationPage() {
 
         {/* 個人との違い */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">法人の端末処分で個人と違う点</h2>
+          <h2 className="section-title mb-2">法人の端末処分における個人との違い</h2>
           <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-600">
-            端末を初期化して送る、という基本は個人と同じです。違いは「会社の資産として記録がある」「会社の情報が入っている」「台数が多い」「担当者が代理で取引する」という四点から生じます。項目ごとに整理しました。
+            端末を初期化して送るという基本は、個人の場合と同じです。違いは、「会社の資産として記録がある」「会社の情報が保存されている」「台数が多い」「担当者が代理で取引する」という4点から生じます。項目ごとに以下に掲載します。
           </p>
           <div className="overflow-x-auto border border-chalk-line">
             <table className="spec-table">
@@ -285,7 +285,7 @@ export default function HoujinSituationPage() {
             </table>
           </div>
           <p className="mt-3 text-xs text-steel-500">
-            ※ 会計処理・税務上の扱いは法人ごとの会計方針によります。会計担当・顧問税理士に確認してください。
+            ※ 会計処理・税務上の扱いは法人ごとの会計方針によります。会計担当・顧問税理士にご確認ください。
           </p>
         </section>
 
@@ -306,9 +306,9 @@ export default function HoujinSituationPage() {
             ))}
           </div>
           <p className="mt-4 max-w-3xl text-sm leading-loose text-steel-600">
-            証明書に記載されることが多い項目、依頼前に業者へ確認したい質問、受け取った証明書と資産台帳の突き合わせ方は、
+            証明書に記載されることが多い項目、依頼前に業者へ確認すべき事項、受領した証明書と資産台帳の照合方法は、
             <Link href="/situation/houjin/data-shokyo-shomeisho/" className="text-vermilion underline underline-offset-4">法人の端末処分とデータ消去証明書</Link>
-            のページで詳しく整理しています。
+            のページで詳しく解説しています。
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link href="/guide/data-shokyo/" className="btn-primary">端末ごとの初期化手順を見る</Link>
@@ -328,18 +328,18 @@ export default function HoujinSituationPage() {
             ))}
           </div>
           <p className="mt-3 text-xs text-steel-500">
-            ※ 各管理サービスの操作手順は提供元の公式ドキュメントに従ってください。「探す」の個人向け解除手順は<Link href="/guide/activation-lock/" className="text-vermilion underline underline-offset-4">アクティベーションロックの解説ページ</Link>で整理しています。
+            ※ 各管理サービスの操作手順は提供元の公式ドキュメントに従ってください。「探す」の個人向け解除手順は<Link href="/guide/activation-lock/" className="text-vermilion underline underline-offset-4">アクティベーションロックの解説ページ</Link>でご説明しています。
           </p>
           <p className="mt-4 max-w-3xl text-sm leading-loose text-steel-600">
-            従業員から端末を回収する場面では、回収・登録解除・初期化をどの順番で進めるかが要点になります。私物との切り分けや回収漏れへの対処を含めて、
-            <Link href="/situation/houjin/jugyoin-tanmatsu-kaishu/" className="text-vermilion underline underline-offset-4">従業員の業務端末を回収するときの進め方</Link>
-            にまとめています。
+            従業員から端末を回収する場面では、回収・登録解除・初期化を進める順番が要点となります。私物との切り分けや回収漏れへの対処を含めて、
+            <Link href="/situation/houjin/jugyoin-tanmatsu-kaishu/" className="text-vermilion underline underline-offset-4">従業員の業務端末を回収する際の進め方</Link>
+            でご説明しています。
           </p>
         </section>
 
         {/* リース・レンタル */}
         <section className="mt-14">
-          <h2 className="section-title mb-6">リース品・レンタル品は売却できない</h2>
+          <h2 className="section-title mb-6">リース品・レンタル品の扱い</h2>
           <div className="space-y-4">
             {leaseNotes.map((c) => (
               <div key={c.t} className="border-l-2 border-vermilion bg-chalk-card p-5">
@@ -349,9 +349,9 @@ export default function HoujinSituationPage() {
             ))}
           </div>
           <p className="mt-4 max-w-3xl text-sm leading-loose text-steel-600">
-            所有権での仕分け方、契約書のどこを見るか、資産計上された端末で経理と相談する項目は、
-            <Link href="/situation/houjin/lease-shisan-chui/" className="text-vermilion underline underline-offset-4">リース品・資産計上した端末を手放すときの注意</Link>
-            のページで整理しています。契約内容・会計方針により扱いが異なるため、判断はリース会社・経理部門への確認を前提にしてください。
+            所有権による仕分け方法、契約書の確認箇所、資産計上された端末について経理部門と相談すべき項目は、
+            <Link href="/situation/houjin/lease-shisan-chui/" className="text-vermilion underline underline-offset-4">リース品・資産計上した端末を手放す際の注意点</Link>
+            のページでご説明しています。契約内容・会計方針により扱いが異なるため、判断はリース会社・経理部門へのご確認を前提としてください。
           </p>
         </section>
 
@@ -382,7 +382,7 @@ export default function HoujinSituationPage() {
 
         {/* 本人確認 */}
         <section className="mt-14">
-          <h2 className="section-title mb-6">古物営業法上の本人確認は法人でも必要</h2>
+          <h2 className="section-title mb-6">法人取引における古物営業法上の本人確認</h2>
           <div className="space-y-4">
             {honninPoints.map((c) => (
               <div key={c.t} className="border-l-2 border-vermilion bg-chalk-card p-5">
@@ -410,7 +410,7 @@ export default function HoujinSituationPage() {
 
         {/* FAQ */}
         <section className="mt-14">
-          <h2 className="section-title mb-6">法人の端末買取でよくある質問</h2>
+          <h2 className="section-title mb-6">法人の端末買取に関するよくある質問</h2>
           <div className="space-y-4">
             {faqs.map((f) => (
               <div key={f.q} className="border border-chalk-line bg-chalk-card p-5">
@@ -431,18 +431,18 @@ export default function HoujinSituationPage() {
             <li>
               <Link href="/situation/houjin/data-shokyo-shomeisho/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">法人の端末処分とデータ消去証明書</span>
-                <span className="mt-1 block text-xs text-steel-500">何を求め、何を確認するか</span>
+                <span className="mt-1 block text-xs text-steel-500">求められる理由と確認事項</span>
               </Link>
             </li>
             <li>
               <Link href="/situation/houjin/lease-shisan-chui/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">リース品・資産計上した端末を手放すときの注意</span>
+                <span className="font-display text-steel-900">リース品・資産計上した端末を手放す際の注意点</span>
                 <span className="mt-1 block text-xs text-steel-500">所有権・残債・社内手続き</span>
               </Link>
             </li>
             <li>
               <Link href="/situation/houjin/jugyoin-tanmatsu-kaishu/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                <span className="font-display text-steel-900">従業員の業務端末を回収するときの進め方</span>
+                <span className="font-display text-steel-900">従業員の業務端末を回収する際の進め方</span>
                 <span className="mt-1 block text-xs text-steel-500">回収漏れ・私物混在・MDM解除</span>
               </Link>
             </li>
@@ -479,7 +479,7 @@ export default function HoujinSituationPage() {
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">買取業者の統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">法人対応・データ消去の扱いを同じ物差しで</span>
+                <span className="mt-1 block text-xs text-steel-500">法人対応・データ消去の扱いを同じ基準で比較</span>
               </Link>
             </li>
             <li>

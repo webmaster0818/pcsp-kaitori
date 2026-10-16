@@ -40,7 +40,7 @@ export interface Company {
   note?: string | null;
   /** 検索語に合わせた個別 title/description/h1（未指定なら共通テンプレート） */
   seo?: { title: string; description: string; h1?: string; modified?: string } | null;
-  /** h1直下に置く「検索語への直接の答え」（公式確認値・出典・確認日つき） */
+  /** h1直下に置く「検索語への直接の答え」（公式確認値・出典・確認日を記載） */
   lead?: {
     heading: string;
     answer: string;
@@ -58,7 +58,7 @@ export const platformCompanies = companies.filter((c) => c.kind === "platform");
 
 export const NA = "公式では確認できず";
 
-/** null/未確認項目は正直に「公式では確認できず」を返す */
+/** null/未確認項目は「公式では確認できず」を返す */
 export function fmt(v: string | null | undefined): string {
   return v && v.trim() !== "" ? v : NA;
 }
@@ -110,7 +110,7 @@ export const categories: Category[] = [
     path: "/iphone/",
     name: "iPhoneの買取",
     short: "iPhone",
-    lead: "iPhoneは機種・容量・状態で条件が細かく分かれます。宅配買取を中心に、送料・返送料・入金・データ消去の扱いを一次確認で整理しました。",
+    lead: "iPhoneは機種・容量・状態で条件が細かく分かれます。宅配買取を中心に、送料・返送料・入金・データ消去の扱いを、公式サイトでの一次確認にもとづき整理しています。",
     companySlugs: ["furuichi", "netoff", "mac-kaitori-net", "geo-kaitori", "nicosuma-kaitori", "bookoff-mobile", "keitai-ichiba", "daikoku-mobile", "recommerce", "iosys-kaitori", "mobile-ichiban", "kaitori-rudeya", "apple-trade-in", "dospara-kaitori", "treasure-factory", "2nd-street", "hardoff", "eco-ring"],
   },
   {
@@ -118,7 +118,7 @@ export const categories: Category[] = [
     path: "/android/",
     name: "Androidスマホの買取",
     short: "Android",
-    lead: "Galaxy・Xperia・AQUOS・Pixelなど。メーカーが多く条件確認が煩雑になりがちなAndroid端末の売り方と、対応業者の条件をまとめました。",
+    lead: "Galaxy・Xperia・AQUOS・PixelなどのAndroid端末は、メーカーが多く条件の確認が煩雑になりがちです。売却方法と対応業者の条件をまとめています。",
     companySlugs: ["furuichi", "netoff", "geo-kaitori", "nicosuma-kaitori", "bookoff-mobile", "keitai-ichiba", "daikoku-mobile", "recommerce", "iosys-kaitori", "mobile-ichiban", "kaitori-rudeya", "apple-trade-in", "dospara-kaitori", "treasure-factory", "2nd-street", "hardoff", "eco-ring"],
   },
   {
@@ -126,7 +126,7 @@ export const categories: Category[] = [
     path: "/mac/",
     name: "Mac・MacBookの買取",
     short: "Mac",
-    lead: "MacBook・iMac・Mac miniはMac専門の買取サービスという選択肢があります。専門業者の条件と、売る前の初期化・「探す」解除の要点を整理しました。",
+    lead: "MacBook・iMac・Mac miniはMac専門の買取サービスという選択肢があります。専門業者の条件と、売る前の初期化・「探す」解除の要点を整理しています。",
     companySlugs: ["mac-kaitori-net", "iosys-kaitori", "mobile-ichiban", "kaitori-rudeya", "apple-trade-in", "dospara-kaitori", "tsukumo-kaitori", "kaitori-kensakukun", "2nd-street", "hardoff", "eco-ring"],
   },
   {
@@ -134,7 +134,7 @@ export const categories: Category[] = [
     path: "/pc/",
     name: "Windows PC・ノートPCの買取",
     short: "PC",
-    lead: "ノートPC・デスクトップ・自作PC。データ消去の責任が最も重いカテゴリです。売る前の消去手順と、一括査定・価格比較型サービスの使い方を整理しました。",
+    lead: "ノートPC・デスクトップ・自作PCは、データ消去の責任が最も重いカテゴリです。売る前の消去手順と、一括査定・価格比較型サービスの利用方法を整理しています。",
     companySlugs: ["janpara", "pc-koubou", "rakuuru-sofmap", "takakuureru", "pcwrap", "pasokai", "recommerce", "iosys-kaitori", "kaitori-rudeya", "dospara-kaitori", "tsukumo-kaitori", "kaitori-kensakukun", "2nd-street", "hardoff", "eco-ring"],
   },
   {
@@ -142,7 +142,7 @@ export const categories: Category[] = [
     path: "/tablet/",
     name: "iPad・タブレットの買取",
     short: "タブレット",
-    lead: "iPad・Androidタブレット。Wi-Fiモデルとセルラーモデルの違い、アクティベーションロック解除など、タブレット特有の注意点と対応業者をまとめました。",
+    lead: "iPad・Androidタブレットについて、Wi-Fiモデルとセルラーモデルの違いやアクティベーションロック解除など、タブレット特有の注意点と対応業者をまとめています。",
     companySlugs: ["furuichi", "netoff", "mac-kaitori-net", "geo-kaitori", "nicosuma-kaitori", "bookoff-mobile", "keitai-ichiba", "daikoku-mobile", "iosys-kaitori", "mobile-ichiban", "kaitori-rudeya", "apple-trade-in", "dospara-kaitori", "tsukumo-kaitori", "kaitori-kensakukun", "treasure-factory", "2nd-street", "hardoff", "eco-ring"],
   },
 ];
@@ -160,7 +160,7 @@ export function categoriesOf(company: Company): Category[] {
 /** 業者詳細ページ用FAQ（データからのみ生成・創作なし） */
 export function companyFaq(c: Company): { q: string; a: string }[] {
   const naAnswer = (item: string) =>
-    `${item}については、公式サイトでは確認できませんでした（${c.confirmed_date}時点の当サイト調査）。申込前に${c.name}へ直接確認することをおすすめします。`;
+    `${item}については、公式サイトでは確認できませんでした（${c.confirmed_date}時点の当サイト調査）。申込前に${c.name}へ直接ご確認ください。`;
   return [
     {
       q: `${c.name}の送料・梱包キットは無料ですか？`,
@@ -178,13 +178,13 @@ export function companyFaq(c: Company): { q: string; a: string }[] {
       q: `${c.name}は査定額に納得できなかったらキャンセルできますか？返送料は？`,
       a: isNA(c.cancel)
         ? naAnswer("キャンセル規定・返送料")
-        : `公式サイトの記載では「${c.cancel}」、返送料は「${fmt(c.hiyou.hensou)}」とされています（${c.confirmed_date}確認）。実際の条件は必ず申込時の規約で確認してください。`,
+        : `公式サイトの記載では「${c.cancel}」、返送料は「${fmt(c.hiyou.hensou)}」とされています（${c.confirmed_date}確認）。実際の条件は、必ず申込時の規約にてご確認ください。`,
     },
     {
       q: `${c.name}に送った端末のデータはどうなりますか？`,
       a: isNA(c.data_erase)
         ? naAnswer("データ消去の取り扱い")
-        : `公式サイトの記載では「${c.data_erase}」とされています（${c.confirmed_date}確認）。いずれの業者でも、送る前に自分で初期化・「探す」解除を済ませるのが基本です。`,
+        : `公式サイトの記載では「${c.data_erase}」とされています（${c.confirmed_date}確認）。いずれの業者でも、送付前にご自身で初期化と「探す」の解除を済ませてください。`,
     },
   ];
 }

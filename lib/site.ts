@@ -1,6 +1,6 @@
 export const SITE_URL = "https://sell-device.com"; // 本番ドメイン（2026-09-05確定）
 export const SITE_NAME = "PC・スマホ買取ナビ";
-export const SITE_TAGLINE = "売る前の5分で読む、中立のPC・スマホ買取ナビ";
+export const SITE_TAGLINE = "公式情報にもとづく中立のPC・スマホ買取比較";
 export const CHECKED_DATE = "2026-09-05";
 export const CHECKED_LABEL = "2026年9月5日";
 /** 掲載社全体の確認期間（各社の確認日は data/companies.json の confirmed_date） */

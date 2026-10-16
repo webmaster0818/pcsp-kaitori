@@ -90,7 +90,7 @@ export default function CategoryHub({
 
         {/* 判断ポイント（一般知識） */}
         <section className="mt-12">
-          <h2 className="section-title mb-6">売る前に押さえる判断ポイント</h2>
+          <h2 className="section-title mb-6">売却前に確認したい判断ポイント</h2>
           <div className="grid gap-5 md:grid-cols-2">
             {points.map((p, i) => (
               <div key={p.t} className="border border-chalk-line bg-chalk-card p-5">
@@ -105,15 +105,15 @@ export default function CategoryHub({
             ))}
           </div>
           <p className="mt-3 text-xs text-steel-500">
-            ※ ここに挙げたのは端末売却に関する一般的な知識です。個別の買取価格・査定結果はここでは扱いません。
+            ※ 上記は端末の売却に関する一般的な知識です。個別の買取価格・査定結果は本項では扱っておりません。
           </p>
         </section>
 
         {/* 業者比較カード */}
         <section className="mt-14">
-          <h2 className="section-title mb-2">このカテゴリで掲載中の買取サービス</h2>
+          <h2 className="section-title mb-2">本カテゴリの掲載買取サービス</h2>
           <p className="mb-6 text-sm leading-loose text-steel-600">
-            各社の条件は公式サイトを一次確認したものです（確認日: {CHECKED_RANGE_LABEL}。各社の確認日は業者ページに記載）。「公式では確認できず」の項目は、公式サイト上に記載を発見できなかったことを意味します。買取価格は日々変動するため、必ず各社公式サイトの最新表示をご確認ください。
+            各社の条件は公式サイトを一次確認したものです（確認日: {CHECKED_RANGE_LABEL}。各社の確認日は業者ページに記載）。「公式では確認できず」と表示している項目は、公式サイト上で該当する記載を確認できなかったものです。買取価格は日々変動するため、ご利用前に、各社公式サイトにて最新情報をご確認ください。
           </p>
           {hubCompanies.length > 0 ? (
             <div className="grid gap-5 lg:grid-cols-2">
@@ -123,7 +123,7 @@ export default function CategoryHub({
             </div>
           ) : (
             <div className="border border-dashed border-steel-300 bg-chalk p-6 text-sm leading-loose text-steel-700">
-              確認日時点で、当サイト掲載の買取サービスのうち、公式サイト上でこのカテゴリを買取対象と明記している社はありませんでした。正直に「該当なし」と表示し、掲載社の拡充は今後の更新で対応します。
+              確認日時点で、当サイト掲載の買取サービスのうち、公式サイト上で本カテゴリを買取対象と明記している社はありませんでした。そのため「該当なし」と表示しています。掲載社の拡充は、今後の更新で対応いたします。
             </div>
           )}
         </section>
@@ -131,9 +131,9 @@ export default function CategoryHub({
         {/* 併売・一括査定 */}
         {platformCompanies.length > 0 && (
           <section className="mt-14">
-            <h2 className="section-title mb-2">複数社にまとめて聞く・他のものも一緒に売る</h2>
+            <h2 className="section-title mb-2">複数社への一括査定・不用品との同時売却</h2>
             <p className="mb-6 text-sm leading-loose text-steel-600">
-              端末以外の不用品もまとめて手放したい場合や、複数の買取店の条件を一度に確認したい場合は、一括査定・価格比較型のサービスという選択肢もあります。仕組みは各サービスの一次確認ページで確認してください。
+              端末以外の不用品もまとめて手放したい場合や、複数の買取店の条件を一度に確認したい場合は、一括査定・価格比較型のサービスという選択肢もあります。仕組みは、各サービスの一次確認情報のページでご確認ください。
             </p>
             <div className="grid gap-5 lg:grid-cols-2">
               {platformCompanies.map((c) => (
@@ -145,7 +145,7 @@ export default function CategoryHub({
 
         {/* 売る前の準備・注意（一般知識） */}
         <section className="mt-14">
-          <h2 className="section-title mb-6">売る前の準備と注意点</h2>
+          <h2 className="section-title mb-6">売却前の準備と注意点</h2>
           <div className="space-y-4">
             {cautions.map((c) => (
               <div key={c.t} className="border-l-2 border-vermilion bg-chalk-card p-5">
@@ -187,19 +187,19 @@ export default function CategoryHub({
             <li>
               <Link href="/compare/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">掲載サービスの統一比較表</span>
-                <span className="mt-1 block text-xs text-steel-500">全カテゴリの掲載サービスを同じ物差しで比較</span>
+                <span className="mt-1 block text-xs text-steel-500">全カテゴリの掲載サービスを同じ基準で比較</span>
               </Link>
             </li>
             <li>
               <Link href="/shindan/" className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                 <span className="font-display text-steel-900">売り方診断（4問）</span>
-                <span className="mt-1 block text-xs text-steel-500">端末の種類と状態からルールベースで判定</span>
+                <span className="mt-1 block text-xs text-steel-500">端末の種類と状態から、判定ルールにもとづき提示</span>
               </Link>
             </li>
             {hubCompanies.map((c) => (
               <li key={c.slug}>
                 <Link href={`/kaitori/${c.slug}/`} className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
-                  <span className="font-display text-steel-900">{c.name}の一次確認まとめ</span>
+                  <span className="font-display text-steel-900">{c.name}の一次確認情報</span>
                   <span className="mt-1 block text-xs text-steel-500">送料・返送料・入金・データ消去の詳細</span>
                 </Link>
               </li>
@@ -208,7 +208,7 @@ export default function CategoryHub({
               <li key={c.slug}>
                 <Link href={c.path} className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
                   <span className="font-display text-steel-900">{c.name}</span>
-                  <span className="mt-1 block text-xs text-steel-500">別カテゴリの判断ポイントを見る</span>
+                  <span className="mt-1 block text-xs text-steel-500">他カテゴリの判断ポイント</span>
                 </Link>
               </li>
             ))}
