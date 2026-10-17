@@ -77,6 +77,7 @@ export default function IphonePage() {
       guides={[
         { href: "/guide/data-shokyo/", label: "売却前のデータ消去手順", desc: "iPhoneのバックアップ・サインアウト・初期化の順番" },
         { href: "/guide/activation-lock/", label: "アクティベーションロックと「探す」の解除", desc: "「探す」の解除と遠隔削除の方法" },
+        { href: "/guide/osaifu-keitai/", label: "ウォレット・電子マネーの移行手順", desc: "交通系ICなどを初期化前に移す順番" },
         { href: "/guide/shitadori-hikaku/", label: "スマホの下取りと買取の違い", desc: "キャリア下取り・Apple Trade Inとの違い" },
         { href: "/situation/kowareta/", label: "壊れた・起動しない端末の売り方", desc: "画面割れ・水没・起動不可の売り方" },
       ]}
