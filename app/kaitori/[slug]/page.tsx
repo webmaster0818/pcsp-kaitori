@@ -11,7 +11,7 @@ import {
   getCompany,
   serviceTypeOf,
 } from "@/lib/companies";
-import { jaDate, jaMonth } from "@/lib/site";
+import { jaDate } from "@/lib/site";
 
 export function generateStaticParams() {
   return companies.map((c) => ({ slug: c.slug }));
@@ -43,8 +43,8 @@ export async function generateMetadata({
   }
   return {
     title: isPlatform
-      ? `${c.name}の仕組みと利用条件｜利用料・流れ・運営会社【${jaMonth(c.confirmed_date)}公式確認】`
-      : `${c.name}${/買取(サービス)?(（.*）)?$/.test(c.name) ? "の利用条件" : "の買取条件"}｜送料・返送料・入金・データ消去【${jaMonth(c.confirmed_date)}公式確認】`,
+      ? `${c.name}の仕組みと利用条件｜利用料・流れ・運営会社【公式確認】`
+      : `${c.name}${/買取(サービス)?(（.*）)?$/.test(c.name) ? "の利用条件" : "の買取条件"}｜送料・返送料・入金・データ消去【公式確認】`,
     description: fitDesc(
       isPlatform
         ? `${c.name}（運営: ${c.operator.name}）の仕組み・対象・利用料・流れを公式サイトで一次確認しています（${jaDate(c.confirmed_date)}確認）。`
@@ -115,8 +115,8 @@ export default async function KaitoriPage({
       ];
 
   const h1 = c.seo?.h1 ?? (isPlatform
-    ? `${c.name}の仕組みと利用条件｜利用料・流れ・運営会社【${jaMonth(c.confirmed_date)}公式確認】`
-    : `${c.name}${/買取(サービス)?(（.*）)?$/.test(c.name) ? "の利用条件" : "の買取条件"}｜送料・返送料・入金・データ消去【${jaMonth(c.confirmed_date)}公式確認】`);
+    ? `${c.name}の仕組みと利用条件｜利用料・流れ・運営会社【公式確認】`
+    : `${c.name}${/買取(サービス)?(（.*）)?$/.test(c.name) ? "の利用条件" : "の買取条件"}｜送料・返送料・入金・データ消去【公式確認】`);
 
   return (
     <>
