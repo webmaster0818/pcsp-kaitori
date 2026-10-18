@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServiceNotice from "@/components/ServiceNotice";
 import { Company, ctaFor, fmt, serviceTypeOf } from "@/lib/companies";
 
 /** カテゴリハブ・TOPで使うサービス比較カード（companies.jsonのみが情報源） */
@@ -31,6 +32,11 @@ export default function CompanyCard({ company }: { company: Company }) {
           公式確認日 {company.confirmed_date}
         </span>
       </div>
+      {company.notice && (
+        <div className="px-4 pt-3">
+          <ServiceNotice company={company} />
+        </div>
+      )}
       <dl className="divide-y divide-chalk-line text-[13px] leading-relaxed">
         {rows.map((r) => (
           <div key={r.label} className="flex gap-3 px-4 py-2.5">

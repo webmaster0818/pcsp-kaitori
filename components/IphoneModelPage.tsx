@@ -2,6 +2,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { getCompany } from "@/lib/companies";
+import ServiceNotice from "@/components/ServiceNotice";
 import { IphoneModel, otherIphoneModels } from "@/lib/iphone-models";
 import { SITE_NAME, SITE_URL, OPERATOR } from "@/lib/site";
 
@@ -246,6 +247,7 @@ export default function IphoneModelPage({
                 <a href={s.url} rel="nofollow noopener" target="_blank" className="text-vermilion underline underline-offset-4">
                   {s.url}
                 </a>
+                <ServiceNotice company={s.company} />
               </li>
             ))}
           </ul>

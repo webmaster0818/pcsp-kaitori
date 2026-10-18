@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ServiceNotice from "@/components/ServiceNotice";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import {
   ctaFor,
@@ -76,6 +77,7 @@ export default function ComparePage() {
                       >
                         公式サイト ↗
                       </a>
+                      <ServiceNotice company={c} />
                     </td>
                     <td>
                       {serviceTypeOf(c)}
@@ -139,6 +141,7 @@ export default function ComparePage() {
                       >
                         公式サイト ↗
                       </a>
+                      <ServiceNotice company={c} />
                     </td>
                     <td>{serviceTypeOf(c)}</td>
                     <td>{fmt(c.target)}</td>

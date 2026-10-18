@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ServiceNotice from "@/components/ServiceNotice";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import {
@@ -133,6 +134,7 @@ export default async function KaitoriPage({
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
           {h1}
         </h1>
+        <ServiceNotice company={c} variant="full" />
         {c.lead && (
           <section className="mt-6 max-w-3xl border-2 border-vermilion bg-chalk-warm p-5 md:p-6">
             <h2 className="font-display text-base text-steel-900 md:text-lg">{c.lead.heading}</h2>

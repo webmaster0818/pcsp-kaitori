@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { categories, companies, platformCompanies } from "@/lib/companies";
+import ServiceNotice from "@/components/ServiceNotice";
 
 type Q1 = "iphone" | "android" | "mac" | "pc" | "tablet";
 type Q2 = "ugoku" | "kowareta" | "kidou_shinai";
@@ -238,6 +239,15 @@ export default function ShindanClient() {
               </Link>
             ))}
           </div>
+          {result.companies
+            .map((rc) => companies.find((x) => x.slug === rc.slug))
+            .filter((x) => x?.notice)
+            .map((x) => (
+              <div key={x!.slug} className="mt-3">
+                <p className="text-xs font-bold text-steel-700">{x!.name}</p>
+                <ServiceNotice company={x!} />
+              </div>
+            ))}
         </section>
       )}
 

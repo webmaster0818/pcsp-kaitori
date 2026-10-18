@@ -48,6 +48,14 @@ export interface Company {
     sources: { label: string; url: string }[];
     checked: string;
   } | null;
+  /** 公式が告知しているサービス停止などの状況（ページ冒頭・比較表・カードに表示。公式の原文どおり・確認日付き） */
+  notice?: {
+    checked: string;
+    heading: string;
+    points: string[];
+    short: string;
+    sources: { label: string; url: string }[];
+  } | null;
   /** 業者別の追加FAQ（スマホ・PCを売る人向けの論点） */
   extra_faq?: { q: string; a: string }[] | null;
 }
