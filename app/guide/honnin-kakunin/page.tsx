@@ -280,7 +280,7 @@ export default function HonninKakuninGuidePage() {
           <div className="border border-chalk-line bg-chalk-card p-5">
             <h3 className="font-display text-base text-steel-900">当サイトの比較表で確認できること</h3>
             <p className="mt-2 text-[13px] leading-loose text-steel-700">
-              当サイトの<Link href="/compare/" className="text-vermilion underline underline-offset-4">統一比較表</Link>では、掲載各社の公式サイトで確認できた本人確認書類の条件を、送料・返送料・入金・データ消去の扱いとあわせて掲載しています。公式サイトで確認できなかった項目は「公式では確認できず」と表示しています。不明な点は、申込前に各社へ直接ご確認ください。
+              当サイトの<Link href="/compare/" className="text-vermilion underline underline-offset-4">統一比較表</Link>では、掲載各社の公式サイトで確認できた本人確認書類の条件を、送料・返送料・入金・データ消去の扱いとあわせて掲載しています。公式サイトで確認できなかった項目は「公式では確認できず」と表示しています。不明な点は、申込前に各社へ直接ご確認ください。同じ業者でも宅配と店頭で扱いが分かれることがあります。たとえば<Link href="/kaitori/pc-koubou/" className="text-vermilion underline underline-offset-4">パソコン工房買取</Link>は、宅配ではマイナンバーカードを本人確認書類として使えず、店頭では提示できると案内しています。<Link href="/kaitori/furuichi/" className="text-vermilion underline underline-offset-4">古本市場</Link>の店頭買取では、マイナンバー通知カードは使えず、18歳未満は親権者・保護者の同意書が必要です（いずれも公式サイト、2026年10月19日確認）。
             </p>
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">

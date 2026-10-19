@@ -198,6 +198,44 @@ export default async function KaitoriPage({
           </div>
         </section>
 
+        {/* 業者別の追加セクション（流れ・条件） */}
+        {c.sections?.map((sec) => (
+          <section key={sec.title} className="mt-14">
+            <h2 className="section-title mb-5">{sec.title}</h2>
+            {sec.intro && <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-700">{sec.intro}</p>}
+            {sec.steps ? (
+              <ol className="space-y-3">
+                {sec.items.map((it, i) => (
+                  <li key={it.t} className="flex gap-4 border border-chalk-line bg-chalk-card p-5">
+                    <span aria-hidden="true" className="font-display text-lg leading-none text-vermilion">{String(i + 1).padStart(2, "0")}</span>
+                    <div>
+                      <h3 className="font-display text-base text-steel-900">{it.t}</h3>
+                      <p className="mt-2 text-[13px] leading-loose text-steel-700">{it.d}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <div className="grid gap-3 md:grid-cols-2">
+                {sec.items.map((it) => (
+                  <div key={it.t} className="border-l-2 border-vermilion bg-chalk-card px-4 py-4">
+                    <h3 className="font-display text-[15px] text-steel-900">{it.t}</h3>
+                    <p className="mt-2 text-[13px] leading-loose text-steel-700">{it.d}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+            {sec.links && sec.links.length > 0 && (
+              <div className="mt-5 flex flex-wrap gap-3">
+                {sec.links.map((l) => (
+                  <Link key={l.href} href={l.href} className="btn-ghost text-sm">{l.label}</Link>
+                ))}
+              </div>
+            )}
+            <p className="mt-4 text-xs leading-relaxed text-steel-500">出典：{sec.source}</p>
+          </section>
+        ))}
+
         {/* 特徴 */}
         <section className="mt-14">
           <h2 className="section-title mb-5">公式サイトが掲げる特徴</h2>
@@ -249,6 +287,12 @@ export default async function KaitoriPage({
                   <th>古物商許可</th>
                   <td>{fmt(c.operator.kobutsu)}</td>
                 </tr>
+                {c.operator.extra?.map((e) => (
+                  <tr key={e.label}>
+                    <th>{e.label}</th>
+                    <td>{e.value}</td>
+                  </tr>
+                ))}
                 <tr>
                   <th>確認元</th>
                   <td>
@@ -307,6 +351,17 @@ export default async function KaitoriPage({
                 <span className="mt-1 block text-xs text-steel-500">同じ基準で条件を比較</span>
               </Link>
             </li>
+            {isPlatform &&
+              companies
+                .filter((x) => x.kind === "platform" && x.slug !== c.slug)
+                .map((x) => (
+                  <li key={x.slug}>
+                    <Link href={`/kaitori/${x.slug}/`} className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">
+                      <span className="font-display text-steel-900">{x.name}</span>
+                      <span className="mt-1 block text-xs text-steel-500">一括査定・価格比較サービスの仕組みと対象（公式確認）</span>
+                    </Link>
+                  </li>
+                ))}
             {cats.map((cat) => (
               <li key={cat.slug}>
                 <Link href={cat.path} className="block border border-chalk-line bg-chalk-card px-4 py-4 hover:border-vermilion">

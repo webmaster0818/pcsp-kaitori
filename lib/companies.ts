@@ -5,6 +5,8 @@ export interface Operator {
   address: string;
   kobutsu: string | null;
   source: string;
+  /** 会社概要の追加項目（代表者・設立など。公式の会社概要で確認したもの） */
+  extra?: { label: string; value: string }[] | null;
 }
 
 /** 費用まわり（宅配買取の実務項目） */
@@ -56,6 +58,15 @@ export interface Company {
     short: string;
     sources: { label: string; url: string }[];
   } | null;
+  /** 業者別の追加セクション（流れ・条件の整理。公式の記載にもとづき出典・確認日を付ける） */
+  sections?: {
+    title: string;
+    intro?: string;
+    steps?: boolean;
+    items: { t: string; d: string }[];
+    links?: { label: string; href: string }[];
+    source: string;
+  }[] | null;
   /** 業者別の追加FAQ（スマホ・PCを売る人向けの論点） */
   extra_faq?: { q: string; a: string }[] | null;
 }

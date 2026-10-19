@@ -162,7 +162,23 @@ export default function OsaifuKeitaiGuidePage() {
     },
   ];
 
-  const companyNotes = [
+  const companyNotes: { name: string; field: string; date: string; value: string; href?: string }[] = [
+    {
+      name: "パソコン工房買取",
+      field: "sections",
+      date: "2026年10月19日",
+      href: "/kaitori/pc-koubou/",
+      value:
+        "おサイフケータイ等のICアプリが削除されていない端末は、買取を断るか大幅減額のうえ買取と記載されています。au端末は「EZ Felicaメモリクリア実施書」のコピーの同封を求めています。",
+    },
+    {
+      name: "古本市場（ふるいち）スマホ買取",
+      field: "sections",
+      date: "2026年10月19日",
+      href: "/kaitori/furuichi/",
+      value:
+        "店頭・宅配とも、端末の初期化・各種ロック解除とあわせて、おサイフケータイアプリ（ICデータ）の初期化・削除を事前に行うよう案内しています。",
+    },
     {
       name: "ドスパラ中古買取",
       field: "broken",
@@ -440,7 +456,13 @@ export default function OsaifuKeitaiGuidePage() {
           <div className="space-y-4">
             {companyNotes.map((c) => (
               <div key={c.name} className="border border-chalk-line bg-chalk-card p-5">
-                <h3 className="font-display text-base text-steel-900">{c.name}</h3>
+                <h3 className="font-display text-base text-steel-900">
+                  {c.href ? (
+                    <Link href={c.href} className="underline underline-offset-4 hover:text-vermilion">{c.name}</Link>
+                  ) : (
+                    c.name
+                  )}
+                </h3>
                 <p className="mt-2 text-[13px] leading-loose text-steel-700">{c.value}</p>
                 <p className="mt-2 text-xs text-steel-500">
                   出典: 各社公式サイト（当サイト確認日 {c.date}／掲載データの「{c.field}」欄）
