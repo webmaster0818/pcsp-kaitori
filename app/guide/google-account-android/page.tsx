@@ -4,13 +4,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL, OPERATOR } from "@/lib/site";
 
-const TITLE = "Android売却前のGoogleアカウント削除手順｜初期化前の削除によるFRP（端末保護）の解除【Google公式確認】";
+const TITLE = "Android下取り・売却前のGoogleアカウント削除｜ロック（FRP）が残った端末は下取り不可・返却【公式確認】";
 const DESC =
-  "Androidを売る・下取りに出す前は、「設定→［パスワードとアカウント］→アカウントを削除→初期化」の順に進めます。Google公式ヘルプは、FRP（デバイスの保護）を無効にするにはGoogleアカウントの削除が必要と案内しています。端末が使えなくなる事態を防ぐ手順をご説明します（2026年10月14日確認）。";
+  "Googleアカウントのロック（FRP）が残ったAndroidは、Google ストアの下取りでは返却、ソフトバンクでは申込不可、auでは下取りできない例に該当します（2026年10月20日公式確認）。下取り・売却前に「アカウントを削除→初期化」の順で解除する手順をご説明します。";
 const PATH = "/guide/google-account-android/";
 const PAGE_PUBLISHED = "2026-09-23";
-const PAGE_DATE = "2026-10-14";
-const PAGE_DATE_LABEL = "2026年10月14日";
+const PAGE_DATE = "2026-10-20";
+const PAGE_DATE_LABEL = "2026年10月20日";
+const TRADEIN_CHECKED_LABEL = "2026年10月20日";
 const GOOGLE_CHECKED_LABEL = "2026年10月14日";
 
 export const metadata: Metadata = {
@@ -253,6 +254,39 @@ export default function GoogleAccountAndroidGuidePage() {
     },
   ];
 
+  const tradeInRows = [
+    {
+      name: "Google ストア",
+      value:
+        "「下取りの払い戻しを受けるには、パスワード、パターン、PIN、指紋認証などのデバイスのロックをすべて解除する必要があります」とし、Androidはデバイスの保護（アクティベーション ロック）を無効にしてから出荷時の設定にリセットするよう案内しています。ロック解除とリセットがされていないデバイスは返却されます。下取りプログラムのページでは、到着時点でリセットされていないスマートフォンやロックが設定されたスマートフォンは下取り対象として受け付けず、安全性上の問題や規則・規制により返送できない場合があると記載しています。",
+      sources: [
+        { label: "Google ストア ヘルプ「下取り用のデバイスを発送する」", url: "https://support.google.com/store/answer/14282767?hl=ja" },
+        { label: "Google ストア「下取りして Google Pixel にアップグレード」", url: "https://store.google.com/jp/magazine/trade_in?hl=ja" },
+      ],
+    },
+    {
+      name: "ソフトバンク",
+      value:
+        "下取りの査定基準で、「初期化されていない」「各種ロックが解除されていない」場合は下取りの申し込みができないとしています。下取り前のデータのバックアップと初期化を必ず実施するよう求めています。",
+      sources: [{ label: "ソフトバンク「下取りプログラム」", url: "https://www.softbank.jp/mobile/campaigns/list/trade-in/" }],
+    },
+    {
+      name: "au",
+      value:
+        "下取りできない例として「暗証番号ロック解除とオールリセットが実施されていない」端末を挙げています。下取り対象機種のデータのバックアップと初期化は、利用者自身で実施するよう案内しています。",
+      sources: [
+        { label: "au「下取りプログラム」", url: "https://www.au.com/mobile/trade-in/" },
+        { label: "au「郵送での下取り」", url: "https://www.au.com/mobile/trade-in/yusou/" },
+      ],
+    },
+    {
+      name: "ドコモ",
+      value:
+        "下取り申込機種に残っているデータの消去・移行と、アクティベーションロックなど各種ロックの解除は、利用者自身の責任で実施するよう求めています。機種の送付後は、データの復元・閲覧はできないと記載しています。",
+      sources: [{ label: "NTTドコモ「下取りプログラム」", url: "https://www.docomo.ne.jp/campaign_event/shitadori/" }],
+    },
+  ];
+
   const checkRows = [
     { label: "バックアップ", value: "残したい写真・連絡先・アプリのデータを退避した。アカウント削除後では取り出せなくなるものがないか確認した。" },
     { label: "Googleアカウント", value: "設定アプリから、端末に登録されているGoogleアカウントを削除した。複数ある場合はすべて確認した。" },
@@ -266,6 +300,10 @@ export default function GoogleAccountAndroidGuidePage() {
   ];
 
   const faqs = [
+    {
+      q: "Googleアカウントのロックが残ったAndroidは下取りに出せますか？",
+      a: "主な下取りでは受け付けられません。Google ストアはロックの解除と出荷時の設定へのリセットがされていないデバイスを返却すると案内し、ソフトバンクは「初期化されていない」「各種ロックが解除されていない」場合は申し込みができないとしています。auも「暗証番号ロック解除とオールリセットが実施されていない」端末を下取りできない例に挙げています（2026年10月20日に各社公式サイトで確認）。端末からGoogleアカウントを削除してから初期化し、初期設定画面で以前のアカウント情報を求められないことを確認してから下取りに出してください。",
+    },
     {
       q: "Androidにも、iPhoneのアクティベーションロックのような仕組みはありますか？",
       a: "呼び方と仕組みは異なりますが、目的の近い機能があります。Androidでは、初期化したあとの初期設定で、以前その端末で使っていたGoogleアカウントの情報を求められる場合があります。端末保護機能、あるいはFactory Reset Protection（FRP）と呼ばれることがあります。売る側の対応は共通で、初期化の前にアカウントを端末から削除しておくことです。",
@@ -309,12 +347,15 @@ export default function GoogleAccountAndroidGuidePage() {
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">ANDROID ACCOUNT</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          Android売却前のGoogleアカウント削除手順｜初期化前の削除によるFRP（端末保護）の解除
+          Android下取り・売却前のGoogleアカウント削除手順｜ロック（FRP）が残った端末の扱い
         </h1>
 
         {/* 検索意図への直接の答え（Google公式ヘルプで確認） */}
         <section className="mt-6 max-w-3xl border-2 border-vermilion bg-chalk-warm p-5 md:p-6">
           <h2 className="font-display text-base text-steel-900 md:text-lg">Googleアカウントを端末から削除してから初期化します</h2>
+          <p className="mt-3 text-sm leading-loose text-steel-800">
+            Googleアカウントのロック（FRP・デバイスの保護）が残ったAndroidは、下取りでは受け付けられません。Google ストアの下取りは、ロックの解除と出荷時の設定へのリセットがされていないデバイスを返却すると案内しています。ソフトバンクは「初期化されていない」「各種ロックが解除されていない」場合は下取りの申し込みができないとし、auは「暗証番号ロック解除とオールリセットが実施されていない」端末を下取りできない例に挙げています（いずれも{TRADEIN_CHECKED_LABEL}に公式サイトで確認。詳細は<a href="#shitadori-lock" className="text-vermilion underline underline-offset-4">下取り窓口ごとの扱い</a>をご覧ください）。
+          </p>
           <p className="mt-3 text-sm leading-loose text-steel-800">
             Androidを売る・譲る・下取りに出す前は、「Googleアカウントを端末から削除 → 出荷時の設定にリセット（初期化）」の順で進めます。Google公式ヘルプは、初期化された端末を他人が使えないようにする保護機能（FRP・デバイスの保護）について「デバイスの保護を無効にするには、お使いのデバイスから Google アカウントを削除します」と案内しています。削除しないまま初期化すると、初期設定でそのアカウント情報を入力できない限り「デバイスをまったく使用できなくなります」（同ヘルプ）。
           </p>
@@ -533,6 +574,48 @@ export default function GoogleAccountAndroidGuidePage() {
             、タブレットは
             <Link href="/tablet/" className="text-vermilion underline underline-offset-4">タブレットの買取</Link>
             をご覧ください。
+          </p>
+        </section>
+
+        {/* 下取り窓口の扱い */}
+        <section id="shitadori-lock" className="mt-14 scroll-mt-4">
+          <h2 className="section-title mb-2">下取り（Google ストア・携帯キャリア）でのGoogleアカウントのロックの扱い</h2>
+          <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
+            新しい端末の購入とあわせて下取りに出す場合も、Googleアカウントの削除と初期化は利用者自身が行います。各社の公式サイトで確認できた記載は次のとおりです（確認日：{TRADEIN_CHECKED_LABEL}）。
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[640px] border border-chalk-line text-[13px] leading-loose">
+              <thead className="bg-chalk-warm">
+                <tr>
+                  <th className="border-b border-chalk-line px-3 py-2 text-left text-steel-900">下取りの窓口</th>
+                  <th className="border-b border-chalk-line px-3 py-2 text-left text-steel-900">ロック・初期化に関する公式の記載</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tradeInRows.map((r) => (
+                  <tr key={r.name} className="align-top">
+                    <td className="border-b border-chalk-line px-3 py-2 font-display text-steel-900 whitespace-nowrap">{r.name}</td>
+                    <td className="border-b border-chalk-line px-3 py-2 text-steel-700">
+                      {r.value}
+                      <span className="mt-1 block text-xs text-steel-500">
+                        出典：
+                        {r.sources.map((src, i) => (
+                          <span key={src.url}>
+                            {i > 0 && "／"}
+                            <a href={src.url} rel="nofollow noopener" target="_blank" className="underline underline-offset-4 hover:text-vermilion">{src.label}</a>
+                          </span>
+                        ))}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs leading-relaxed text-steel-500">
+            ※ Google ストアの下取りでは、初期化後にデバイスやアカウントのパスワードを求められる場合、リセットが完了していないと案内しています。発送・持ち込みの前に、電源を入れ直して初期設定画面で以前のアカウント情報を求められないことをご確認ください。下取りの申し込みから発送までの流れは
+            <Link href="/guide/shitadori-nagare/" className="text-vermilion underline underline-offset-4">下取りの流れ</Link>
+            でご説明しています。
           </p>
         </section>
 
