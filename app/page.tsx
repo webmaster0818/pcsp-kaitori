@@ -35,9 +35,24 @@ const guides = [
     desc: "キャリア下取り・Apple Trade In・買取店の違い",
   },
   {
+    href: "/guide/shitadori-merit-demerit/",
+    label: "下取りのメリット・デメリット",
+    desc: "手間・受け取り方・期限・データ消去の責任",
+  },
+  {
+    href: "/guide/shitadori-nagare/",
+    label: "下取りの申し込みから完了までの流れ",
+    desc: "店頭とオンラインの違い・期限・送ったあとの扱い",
+  },
+  {
     href: "/guide/takuhai-nagare/",
     label: "宅配買取の流れと梱包方法",
     desc: "申込から入金までの流れと、トラブル時の相談先",
+  },
+  {
+    href: "/guide/osaifu-keitai/",
+    label: "おサイフケータイ・電子マネーの移行手順",
+    desc: "端末を手放す前、初期化前に済ませる順番",
   },
   {
     href: "/situation/kowareta/",

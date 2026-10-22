@@ -68,6 +68,8 @@ export default function AndroidPage() {
         { href: "/guide/activation-lock/", label: "端末保護機能（FRP）とロックの解除", desc: "Googleアカウントに紐付くロックの解除方法" },
         { href: "/guide/osaifu-keitai/", label: "おサイフケータイ・電子マネーの移行手順", desc: "初期化前に済ませる手続きの順番" },
         { href: "/guide/takuhai-nagare/", label: "宅配買取の流れと梱包方法", desc: "申込から入金までの流れ" },
+        { href: "/guide/shitadori-merit-demerit/", label: "下取りのメリット・デメリット", desc: "手間・受け取り方・期限・データ消去の責任" },
+        { href: "/guide/shitadori-nagare/", label: "下取りの申し込みから完了までの流れ", desc: "店頭とオンラインの違い・期限" },
         { href: "/situation/kowareta/", label: "壊れた・起動しない端末の売り方", desc: "故障品の売り方と処分先" },
       ]}
     />

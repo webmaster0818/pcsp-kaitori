@@ -166,7 +166,7 @@ export default function OsaifuKeitaiGuidePage() {
     {
       name: "パソコン工房買取",
       field: "sections",
-      date: "2026年10月19日",
+      date: "2026年10月22日",
       href: "/kaitori/pc-koubou/",
       value:
         "おサイフケータイ等のICアプリが削除されていない端末は、買取を断るか大幅減額のうえ買取と記載されています。au端末は「EZ Felicaメモリクリア実施書」のコピーの同封を求めています。",
@@ -182,7 +182,7 @@ export default function OsaifuKeitaiGuidePage() {
     {
       name: "ドスパラ中古買取",
       field: "broken",
-      date: "2026年9月22日",
+      date: "2026年10月22日",
       value:
         "「ICアプリ登録データが残った商品」は買取対象外と整理されています（あわせてパスワードロックが残った商品、SIMカードが挿さったままの商品も対象外と記載）。",
     },
@@ -194,16 +194,9 @@ export default function OsaifuKeitaiGuidePage() {
         "Androidについて、おサイフケータイ等のICアプリが残っていると買取を断る場合があると記載されています。",
     },
     {
-      name: "トレジャーファクトリー（トレファク）",
-      field: "data_erase",
-      date: "2026年9月22日",
-      value:
-        "売却前の作業として、端末の初期化やデータのバックアップとあわせて、ICアプリの初期化・削除、SIM・SDカードの取り外し、Apple ID等のログアウト、画面ロックの解除を求めています。",
-    },
-    {
       name: "ブックオフ スマホ・タブレット買取",
       field: "data_erase",
-      date: "2026年9月12日",
+      date: "2026年10月22日",
       value:
         "売る前に利用者自身でのデータ消去・ICアプリの初期化・暗証番号の初期設定番号への変更・遠隔ロック解除が必要と案内されています。",
     },

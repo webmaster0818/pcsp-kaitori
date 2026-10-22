@@ -79,6 +79,8 @@ export default function IphonePage() {
         { href: "/guide/activation-lock/", label: "アクティベーションロックと「探す」の解除", desc: "「探す」の解除と遠隔削除の方法" },
         { href: "/guide/osaifu-keitai/", label: "ウォレット・電子マネーの移行手順", desc: "交通系ICなどを初期化前に移す順番" },
         { href: "/guide/shitadori-hikaku/", label: "スマホの下取りと買取の違い", desc: "キャリア下取り・Apple Trade Inとの違い" },
+        { href: "/guide/shitadori-merit-demerit/", label: "下取りのメリット・デメリット", desc: "手間・受け取り方・期限・データ消去の責任" },
+        { href: "/guide/shitadori-nagare/", label: "下取りの申し込みから完了までの流れ", desc: "店頭とオンラインの違い・期限" },
         { href: "/situation/kowareta/", label: "壊れた・起動しない端末の売り方", desc: "画面割れ・水没・起動不可の売り方" },
       ]}
     />

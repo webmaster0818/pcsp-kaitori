@@ -216,7 +216,7 @@ export default function GoogleAccountAndroidGuidePage() {
       name: "モバイル一番",
       url: "https://www.mobile-ichiban.com/",
       slug: "mobile-ichiban",
-      date: "2026年9月22日",
+      date: "2026年10月22日",
       value:
         "利用者側でGoogleアカウント（およびApple ID・iCloud）のサインアウトと端末本体のリセットを行うよう求めています。初期化忘れ等で不測の事態が起きても責任を負いかねる旨を記載しています。",
     },
@@ -224,7 +224,7 @@ export default function GoogleAccountAndroidGuidePage() {
       name: "じゃんぱら",
       url: "https://www.janpara.co.jp/buy/",
       slug: "janpara",
-      date: "2026年9月11日",
+      date: "2026年10月22日",
       value:
         "記録媒体を持つ品物について、データの消去に加えて「パスワードやアカウントの登録解除も含め、事前にお客様の元でお願いいたします」と案内しています。",
     },
@@ -248,7 +248,7 @@ export default function GoogleAccountAndroidGuidePage() {
       name: "Apple Trade In",
       url: "https://www.apple.com/jp/shop/trade-in",
       slug: "apple-trade-in",
-      date: "2026年9月22日",
+      date: "2026年10月22日",
       value:
         "Androidについて、アカウントからサインアウトしないと下取りできなくなる場合があると案内しています（Apple製品以外も下取り対象に含む公式プログラムのため、Android端末にも言及があります）。",
     },
