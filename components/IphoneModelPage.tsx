@@ -8,6 +8,8 @@ import { SITE_NAME, SITE_URL, OPERATOR } from "@/lib/site";
 
 export const IPHONE_MODEL_PUBLISHED = "2026-09-12";
 export const IPHONE_MODEL_PUBLISHED_LABEL = "2026年9月12日";
+/** ラインナップ表記（lib/iphone-models.ts）を4社の機種一覧で再確認した日 */
+export const IPHONE_LINEUP_CHECKED_LABEL = "2026年10月31日";
 
 /** ラインナップの確認元（公式サイトの機種一覧） */
 const LINEUP_SOURCES = [
@@ -238,7 +240,7 @@ export default function IphoneModelPage({
             ))}
           </ul>
           <p className="mt-4 max-w-3xl text-xs leading-loose text-steel-500">
-            上記の表記は、当サイト掲載社のうち、公式サイトに機種一覧を掲載している次の4社のページを確認し、複数社に共通して掲載されていた表記のみを記載したものです（{IPHONE_MODEL_PUBLISHED_LABEL}確認）。1社のみに掲載されている表記は採用していません。容量・発売年・搭載チップなどの仕様は、当サイトでは扱っておりません。
+            上記の表記は、当サイト掲載社のうち、公式サイトに機種一覧を掲載している次の4社のページを確認し、複数社に共通して掲載されていた表記のみを記載したものです（{IPHONE_LINEUP_CHECKED_LABEL}確認）。1社のみに掲載されている表記は採用していません。容量・発売年・搭載チップなどの仕様は、当サイトでは扱っておりません。
           </p>
           <ul className="mt-3 space-y-1 text-xs text-steel-500">
             {sources.map((s) => (
