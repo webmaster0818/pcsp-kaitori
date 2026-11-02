@@ -67,6 +67,15 @@ export interface Company {
     links?: { label: string; href: string }[];
     source: string;
   }[] | null;
+  /** 公式が公開している参考買取価格の転記（公式表示のみ・出典と確認日必須。架空・推計の金額は入れない） */
+  price_table?: {
+    title: string;
+    intro: string;
+    groups: { label: string; rows: { model: string; unused: string; used: string }[] }[];
+    notes: string[];
+    source: string;
+    checked: string;
+  } | null;
   /** 業者別の追加FAQ（スマホ・PCを売る人向けの論点） */
   extra_faq?: { q: string; a: string }[] | null;
 }

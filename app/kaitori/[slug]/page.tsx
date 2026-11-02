@@ -165,8 +165,46 @@ export default async function KaitoriPage({
         )}
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           {c.name}のサービス条件を、公式サイトの記載にもとづき一次確認しています（確認日: {jaDate(c.confirmed_date)}{c.seo?.modified ? `、最終更新: ${jaDate(c.seo.modified)}` : ""}）。
-          サービス形態: {serviceTypeOf(c)}。対象: {fmt(c.target)}。対応エリア: {fmt(c.area)}。買取価格は日々変動するため本ページには掲載せず、条件のみを整理しています。
+          サービス形態: {serviceTypeOf(c)}。対象: {fmt(c.target)}。対応エリア: {fmt(c.area)}。{c.price_table ? "買取価格は日々変動するため、下記の価格は公式が公開している参考価格を確認日付きで転記したものに限り、当サイト独自の推計値は掲載していません。" : "買取価格は日々変動するため本ページには掲載せず、条件のみを整理しています。"}
         </p>
+
+        {c.price_table && (
+          <section className="mt-10">
+            <h2 className="section-title mb-5">{c.price_table.title}</h2>
+            <p className="mb-5 max-w-3xl text-sm leading-loose text-steel-700">{c.price_table.intro}</p>
+            {c.price_table.groups.map((g) => (
+              <div key={g.label} className="mb-6">
+                <h3 className="mb-3 font-display text-base text-steel-900">{g.label}</h3>
+                <div className="overflow-x-auto border border-chalk-line">
+                  <table className="spec-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">機種・容量（公式表記）</th>
+                        <th scope="col">未使用品</th>
+                        <th scope="col">中古品</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {g.rows.map((r) => (
+                        <tr key={r.model}>
+                          <th scope="row">{r.model}</th>
+                          <td>{r.unused}</td>
+                          <td>{r.used}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
+            <ul className="mt-4 space-y-1 text-xs leading-relaxed text-steel-600">
+              {c.price_table.notes.map((n) => (
+                <li key={n}>※ {n}</li>
+              ))}
+            </ul>
+            <p className="mt-3 text-xs leading-relaxed text-steel-500">出典：{c.price_table.source}／確認日 {jaDate(c.price_table.checked)}</p>
+          </section>
+        )}
 
         {/* 実務即答テーブル */}
         <section className="mt-10">
@@ -333,7 +371,7 @@ export default async function KaitoriPage({
           <ul className="mt-4 space-y-2 text-[13px] leading-loose text-steel-700">
             <li>・本ページの条件は、{c.name}公式サイト（{c.official_url}）および運営会社ページを{jaDate(c.confirmed_date)}に確認して作成しています。</li>
             <li>・公式サイトで確認できなかった項目は「公式では確認できず」と表示し、推測で補完していません。</li>
-            <li>・口コミ・体験談の創作、架空の買取金額・実績の掲載は行いません。買取価格は変動するため、当サイトでは掲載しておりません。</li>
+            <li>・口コミ・体験談の創作、架空の買取金額・実績の掲載は行いません。{c.price_table ? "買取価格は、公式が公開している参考価格を出典・確認日付きで転記する場合に限って掲載しています。" : "買取価格は変動するため、当サイトでは掲載しておりません。"}</li>
             <li>・条件は変更される場合があります。お申し込み前に、公式サイトおよび利用規約にて最新の内容をご確認ください。</li>
           </ul>
           <p className="mt-4 text-xs text-steel-500">
