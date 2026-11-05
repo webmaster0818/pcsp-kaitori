@@ -4,9 +4,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd, { faqPageLd } from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL, OPERATOR, PUBLISHED_DATE } from "@/lib/site";
 
-const TITLE = "アクティベーションロックと「探す」の解除｜iPhone・iPad・Mac売却前の手順";
+const TITLE = "アクティベーションロックの確認方法と「探す」の解除｜iPhone・iPad・Mac売却前の手順";
 const DESC =
-  "アクティベーションロックはAppleの「探す」に紐づく盗難防止機能で、解除せずに送付すると、一般に減額や買取不可となります。iPhone・iPad・Mac・Apple Watchで「探す」をオフにする手順、iCloud.comからの削除、ロックが残る場合の対処、AndroidのFRPとの違いを整理しています。";
+  "アクティベーションロックはAppleの「探す」に紐づく盗難防止機能で、解除せずに送ると減額・買取不可の原因になります。かかっているかの確認方法（Apple公式の手順）、iPhone・iPad・Mac・Apple Watchの「探す」をオフにする手順、iCloud.comからの削除、ロックが残る場合の対処を整理しました。";
 const PATH = "/guide/activation-lock/";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ const articleLd = {
   headline: TITLE,
   description: DESC,
   datePublished: PUBLISHED_DATE,
-  dateModified: PUBLISHED_DATE,
+  dateModified: "2026-11-05",
   mainEntityOfPage: `${SITE_URL}${PATH}`,
   author: { "@type": "Organization", name: OPERATOR.name },
   publisher: { "@type": "Organization", name: SITE_NAME },
@@ -29,6 +29,7 @@ const articleLd = {
 
 export default function ActivationLockGuidePage() {
   const conclusions = [
+    "アクティベーションロックがかかっているかは、自分の端末なら「設定 → 自分の名前 → 探す」で「iPhone を探す」がオンかどうかで確認できます。Apple は「探す」をオンにするとアクティベーションロックが自動的に有効になると案内しています。初期化後や中古の端末は、電源を入れて初期設定を進め、以前の持ち主の Apple アカウントの入力を求められるかで確認します（下記「確認方法」）。",
     "アクティベーションロックは、Apple の「探す」をオンにすると自動で有効になる盗難防止機能です。初期化しても元の Apple ID を入力しないと端末が使えないため、解除しないまま送付すると買取業者は再販できず、一般に減額や買取不可の扱いとなります。",
     "解除の方法は、「設定 → 自分の名前 → 探す → オフ」の操作を行ったうえで、Apple ID からサインアウトすることです。パスワードが必要なため、忘れている場合は先にリセットしておきます。",
     "すでに発送した端末や、画面が割れて操作できない端末は、別の端末のブラウザから iCloud.com にサインインし、「探す」のデバイス一覧から「アカウントから削除」すれば遠隔で解除できるのが一般的です。",
@@ -41,6 +42,29 @@ export default function ActivationLockGuidePage() {
     { label: "対象の端末", value: "iPhone・iPad・iPod touch・Apple Watch・Mac（T2 チップまたは Apple silicon 搭載機で、macOS Catalina 以降が一般的）・AirPods（「探す」に登録した場合）など。Mac は古い Intel 機では対象外のことがあります。" },
     { label: "初期化との関係", value: "端末を初期化してもロックは消えません。「探す」をオフにする、または Apple ID からサインアウトする操作を初期化の前に行うことで、はじめて解除されます。順番を誤った場合は、iCloud.com からの削除で対処します。" },
     { label: "買取での扱い", value: "ロックが残った端末は業者側で解除できないため再販できず、一般に減額、または買取不可・返送の扱いになります。返送料が自己負担となる業者もあるため、発送前の確認が重要です。" },
+  ];
+
+  const checkSteps = [
+    {
+      t: "自分の端末：「設定」→ 自分の名前 →「探す」で「iPhone を探す」がオンかを見る",
+      d: "Apple のサポートページは、アクティベーションロックは「デバイスで「探す」をオンにすると自動的に有効になります」と案内しています。「iPhone を探す」（iPad は「iPad を探す」）がオンになっていれば、ロックも有効です。売却前には、この項目をオフにしてから Apple アカウントからサインアウトします（手順は次の節）。",
+    },
+    {
+      t: "電源を入れたときに「iPhoneは所有者にロックされています」と表示されるか",
+      d: "Apple のサポートページによると、iOS または iPadOS 15 以降の端末がアクティベーションロックで保護されている場合、電源を入れたりスリープを解除したりしたときに「iPhoneは所有者にロックされています」画面が表示されます。この画面が出る端末は、ロックがかかったままです。",
+    },
+    {
+      t: "画面が出ない場合：パスコードロック画面やホーム画面が出るなら、まだ消去されていない",
+      d: "上の画面が表示されない場合、Apple は端末の電源を入れてロックを解除し、パスコードロック画面やホーム画面が表示されるかを確認するよう案内しています。表示される場合、その端末はまだ消去されていません。",
+    },
+    {
+      t: "初期設定を始めて、以前の持ち主の Apple アカウントを求められるか",
+      d: "初期設定の途中で以前の持ち主の Apple アカウント情報の入力を求められる場合、その端末はまだ以前の持ち主のアカウントに紐付けられています（ロックが残っている状態）。「こんにちは」画面が表示されていれば、新しい持ち主が利用できる状態です。",
+    },
+    {
+      t: "Apple Watch：自分の iPhone とペアリングして、以前の持ち主のパスワードを求められるか",
+      d: "Apple のサポートページは、Apple Watch を自分の iPhone とペアリングし、設定中に以前の持ち主の Apple アカウントのパスワードを求められる場合は、アクティベーションロックがかかったままと案内しています。",
+    },
   ];
 
   const offSteps = [
@@ -146,6 +170,10 @@ export default function ActivationLockGuidePage() {
 
   const faqs = [
     {
+      q: "アクティベーションロックがかかっているか確認する方法は？",
+      a: "自分の端末は、設定 → 自分の名前 → 「探す」で「iPhone を探す」がオンならロックも有効です（Apple は「探す」をオンにすると自動的に有効になると案内しています）。初期化後や中古の端末は、電源を入れたときに「iPhoneは所有者にロックされています」画面が出るか（iOS・iPadOS 15 以降）、初期設定の途中で以前の持ち主の Apple アカウントの入力を求められるかで確認します。「こんにちは」画面が出れば利用できる状態です（Apple サポート、2026年11月5日確認）。",
+    },
+    {
       q: "アクティベーションロックがかかったまま送ってしまいました。どうなりますか？",
       a: "業者側では解除できないため、一般に減額、または買取不可として返送される扱いになります。ただし、気づいた時点で iCloud.com の「探す」から「アカウントから削除」を実行すれば、端末が手元になくても遠隔で解除できるのが一般的です。解除したあと、業者の問い合わせ窓口に「ロックを解除した」旨を伝えて再確認を依頼してください。返送料の負担条件は業者ごとに異なるため、公式サイトの案内をご確認ください。",
     },
@@ -180,7 +208,7 @@ export default function ActivationLockGuidePage() {
       <article className="mx-auto max-w-site px-4 py-10 md:py-14">
         <p className="kicker mb-3">ACTIVATION LOCK GUIDE</p>
         <h1 className="max-w-4xl font-display text-2xl leading-relaxed text-steel-900 md:text-3xl md:leading-relaxed">
-          アクティベーションロックと「探す」の解除｜iPhone・iPad・Mac売却前の手順
+          アクティベーションロックの確認方法と「探す」の解除｜iPhone・iPad・Mac売却前の手順
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-loose text-steel-600">
           iPhone・iPad・Mac を買取に出す際、初期化とあわせて必ず求められるのがアクティベーションロックの解除です。これは Apple の「探す」に紐付く盗難防止機能で、解除せずに送付すると業者が端末を再利用できず、一般に減額や買取不可の扱いとなります。本ページでは、ロックの仕組み、端末ごとの「探す」のオフ手順、発送済みの端末や故障した端末を遠隔で解除する方法、初期化後もロックが残る場合の対処、Android の同等機能（端末保護機能）までを、一般的な知識として整理しています。機種・OS バージョンにより名称や手順が異なります。
@@ -197,6 +225,34 @@ export default function ActivationLockGuidePage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        {/* 確認方法 */}
+        <section className="mt-14">
+          <h2 className="section-title mb-2">アクティベーションロックがかかっているかの確認方法（Apple 公式の手順）</h2>
+          <p className="mb-6 max-w-3xl text-sm leading-loose text-steel-600">
+            売る前の自分の端末と、初期化後・中古で受け取った端末とで、確認する場所が異なります。以下は Apple のサポートページ「iPhoneとiPadのアクティベーションロック」「Apple Watchを売却、譲渡、下取りに出す前にやっておくべきこと」の記載にもとづきます（2026年11月5日確認）。
+          </p>
+          <div className="space-y-5">
+            {checkSteps.map((s, i) => (
+              <div key={s.t} className="border border-chalk-line bg-chalk-card p-5">
+                <h3 className="flex items-baseline gap-3 font-display text-base text-steel-900">
+                  <span className="font-display text-sm tracking-widest2 text-vermilion">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {s.t}
+                </h3>
+                <p className="mt-3 text-[13px] leading-loose text-steel-700">{s.d}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs leading-relaxed text-steel-500">
+            出典：
+            <a href="https://support.apple.com/ja-jp/108794" rel="nofollow noopener" target="_blank" className="underline underline-offset-4 hover:text-vermilion">Apple サポート「iPhoneとiPadのアクティベーションロック」</a>
+            ／
+            <a href="https://support.apple.com/ja-jp/102542" rel="nofollow noopener" target="_blank" className="underline underline-offset-4 hover:text-vermilion">Apple サポート「Apple Watchを売却、譲渡、下取りに出す前にやっておくべきこと」</a>
+            （確認日：2026年11月5日）
+          </p>
         </section>
 
         {/* 仕組み */}
