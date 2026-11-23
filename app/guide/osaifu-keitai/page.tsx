@@ -189,7 +189,7 @@ export default function OsaifuKeitaiGuidePage() {
     {
       name: "エコリング",
       field: "broken",
-      date: "2026年9月22日",
+      date: "2026年11月23日",
       value:
         "Androidについて、おサイフケータイ等のICアプリが残っていると買取を断る場合があると記載されています。",
     },

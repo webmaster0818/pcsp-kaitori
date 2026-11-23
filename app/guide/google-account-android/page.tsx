@@ -232,7 +232,7 @@ export default function GoogleAccountAndroidGuidePage() {
       name: "エコリング",
       url: "https://www.eco-ring.com/",
       slug: "eco-ring",
-      date: "2026年9月22日",
+      date: "2026年11月23日",
       value:
         "Androidについて、おサイフケータイ等のICアプリが残っていると買取を断る場合があると記載しています。iPhone・Androidとも電源が入る状態が必須で、ネットワーク利用制限中の端末は買取不可としています。",
     },
