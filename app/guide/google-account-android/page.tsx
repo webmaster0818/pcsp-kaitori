@@ -200,7 +200,7 @@ export default function GoogleAccountAndroidGuidePage() {
       name: "ネットオフ スマホ買取",
       url: "https://www.netoff.co.jp/mobilebuy/",
       slug: "netoff",
-      date: "2026年9月5日",
+      date: "2026年11月24日",
       value:
         "「初期化されていないもの」「各種アカウント・パスワードロックが設定されているもの」を買取不可としています。あわせて、利用者自身での初期化が必須と案内しています。",
     },
