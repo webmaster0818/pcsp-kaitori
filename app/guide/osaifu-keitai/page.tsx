@@ -166,7 +166,7 @@ export default function OsaifuKeitaiGuidePage() {
     {
       name: "パソコン工房買取",
       field: "sections",
-      date: "2026年10月22日",
+      date: "2026年11月26日",
       href: "/kaitori/pc-koubou/",
       value:
         "おサイフケータイ等のICアプリが削除されていない端末は、買取を断るか大幅減額のうえ買取と記載されています。au端末は「EZ Felicaメモリクリア実施書」のコピーの同封を求めています。",
