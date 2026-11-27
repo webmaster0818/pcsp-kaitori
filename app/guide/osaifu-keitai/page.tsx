@@ -182,7 +182,7 @@ export default function OsaifuKeitaiGuidePage() {
     {
       name: "ドスパラ中古買取",
       field: "broken",
-      date: "2026年10月22日",
+      date: "2026年11月27日",
       value:
         "「ICアプリ登録データが残った商品」は買取対象外と整理されています（あわせてパスワードロックが残った商品、SIMカードが挿さったままの商品も対象外と記載）。",
     },
